@@ -21,11 +21,11 @@ export default function RootLayout({ children }: Props) {
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body className={inter.className}>
-				<NavBar />
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+					<NavBar />
 					{children}
+					<Footer />
 				</ThemeProvider>
-				<Footer />
 			</body>
 		</html>
 	);
