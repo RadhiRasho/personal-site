@@ -1,7 +1,7 @@
 import { GoogleResponse } from "@/app/types/google-response";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function verifyCaptcha(token: string) {
+async function verifyCaptcha(token: string) {
 	try {
 		const res = await fetch(
 			`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${token}`
