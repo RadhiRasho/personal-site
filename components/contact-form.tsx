@@ -4,10 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
+import { createRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { Textarea } from "./ui/textarea";
+import { ReCAPTCHA } from "react-google-recaptcha";
+import CaptchaTest from "./captcha";
 
 const formSchema = z
 	.object({
@@ -33,66 +35,77 @@ export function ContactForm() {
 		},
 	});
 
-	const [messageSent, setMessageSent] = useState(sessionStorage.getItem("messageSent") === "Sent");
+	const [messageSent, setMessageSent] = useState(false);
+	const [captchaSubmitted, setCaptchaSubmitted] = useState(false);
 
-	function onSubmit(values: z.infer<typeof formSchema>) {
-		sessionStorage.setItem("messageSent", "Sent");
+	const onSubmit = (values: z.infer<typeof formSchema>) => {
 		setMessageSent(!messageSent);
 		console.log(values);
+	};
+
+	function handleIsVerified(isVerified: boolean) {
+		setCaptchaSubmitted(isVerified);
 	}
 
 	return (
 		<main className="flex min-h-screen min-w-screen flex-col items-center justify-between">
-			{messageSent ? (
-				<div>Thank you for contacting us.</div>
-			) : (
-				<Form {...form}>
+			<Form {...form}>
+				{!captchaSubmitted ? (
+					<CaptchaTest setIsVerified={handleIsVerified} />
+				) : (
 					<form onSubmit={form.handleSubmit(onSubmit)} className="border rounded-3xl p-10 space-y-8">
-						<h1>Contact Me</h1>
-						<FormDescription>Leave me a message and I&apos;ll get back to you as soon as I can: </FormDescription>
-						<FormField
-							control={form.control}
-							name="name"
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel>Name</FormLabel>
-									<FormControl>
-										<Input placeholder="Radhi Rasho" {...field} />
-									</FormControl>
-									<FormMessage />
-								</FormItem>
-							)}
-						/>
-						<FormField
-							control={form.control}
-							name="email"
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel>Email</FormLabel>
-									<FormControl>
-										<Input placeholder="example@email.com" {...field} />
-									</FormControl>
-									<FormMessage />
-								</FormItem>
-							)}
-						/>
-						<FormField
-							control={form.control}
-							name="message"
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel>Message</FormLabel>
-									<FormControl>
-										<Textarea aria-expanded={false} placeholder="Hello There..." {...field} />
-									</FormControl>
-									<FormMessage />
-								</FormItem>
-							)}
-						/>
-						<Button type="submit">Submit</Button>
+						{!messageSent ? (
+							<>
+								<h1>Contact Me</h1>
+								<FormDescription>Leave me a message and I&apos;ll get back to you as soon as I can: </FormDescription>
+								<FormField
+									control={form.control}
+									name="name"
+									render={({ field }) => (
+										<FormItem>
+											<FormLabel>Name</FormLabel>
+											<FormControl>
+												<Input placeholder="Radhi Rasho" {...field} />
+											</FormControl>
+											<FormMessage />
+										</FormItem>
+									)}
+								/>
+								<FormField
+									control={form.control}
+									name="email"
+									render={({ field }) => (
+										<FormItem>
+											<FormLabel>Email</FormLabel>
+											<FormControl>
+												<Input placeholder="example@email.com" {...field} />
+											</FormControl>
+											<FormMessage />
+										</FormItem>
+									)}
+								/>
+								<FormField
+									control={form.control}
+									name="message"
+									render={({ field }) => (
+										<FormItem>
+											<FormLabel>Message</FormLabel>
+											<FormControl>
+												<Textarea aria-expanded={false} placeholder="Hello There..." {...field} />
+											</FormControl>
+											<FormMessage />
+										</FormItem>
+									)}
+								/>
+
+								<Button type="submit">Submit</Button>
+							</>
+						) : (
+							<div>Thank you for contacting us.</div>
+						)}
 					</form>
-				</Form>
-			)}
+				)}
+			</Form>
 		</main>
 	);
 }
