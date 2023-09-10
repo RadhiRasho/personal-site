@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ReactNode } from "react";
 import { NavBar } from "@/components/nav-menu";
-import { Footer } from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +23,6 @@ export default function RootLayout({ children }: Props) {
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					<NavBar />
 					{children}
-					<Footer />
 				</ThemeProvider>
 			</body>
 		</html>

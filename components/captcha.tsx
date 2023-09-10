@@ -1,6 +1,7 @@
+"use client";
+
 import ReCAPTCHA from "react-google-recaptcha";
 import { useRef } from "react";
-import { useTheme } from "next-themes";
 
 type CaptchaTestProps = {
 	setIsVerified: (isVerified: boolean) => void;
@@ -8,7 +9,6 @@ type CaptchaTestProps = {
 
 export default function CaptchaTest({ setIsVerified }: CaptchaTestProps) {
 	const recaptchaRef = useRef(null);
-	const { theme } = useTheme();
 
 	async function handleCaptchaSubmission(token: string | null) {
 		// Server function to verify captcha
