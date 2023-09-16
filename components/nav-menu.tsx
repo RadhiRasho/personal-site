@@ -15,7 +15,7 @@ export function NavBar() {
 
 	return (
 		<>
-			<div className="flex flex-row justify-between">
+			<div className="flex flex-row justify-between border-b-2">
 				<NavigationMenu className="px-4 flex min-w-screen flex-col">
 					<NavigationMenuList>
 						<NavigationMenuItem>
