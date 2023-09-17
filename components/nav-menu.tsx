@@ -6,12 +6,15 @@ import {
 	NavigationMenuList,
 	navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Github, Twitter } from "lucide-react";
+import { Github, Linkedin, Moon, Sun, Twitter } from "lucide-react";
+import { useTheme } from "next-themes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 export function NavBar() {
 	const pathname = usePathname();
+	const { setTheme } = useTheme();
 
 	return (
 		<>
@@ -41,28 +44,50 @@ export function NavBar() {
 							</Link>
 						</NavigationMenuItem>
 						<NavigationMenuItem>
-							<Link href="/contact" legacyBehavior passHref>
+							<Link href="/contacts" legacyBehavior passHref>
 								<NavigationMenuLink
-									className={`hover:text-red-600 focus:text-red-600 ${
+									className={`${navigationMenuTriggerStyle()} hover:text-red-600 focus:text-red-600 ${
 										pathname === "/contact" && "text-red-600"
-									} ${navigationMenuTriggerStyle()}`}
+									}`}
 								>
-									Contact
+									Contacts
 								</NavigationMenuLink>
 							</Link>
 						</NavigationMenuItem>
 					</NavigationMenuList>
 				</NavigationMenu>
-				<NavigationMenu className="px-4 flex w-20 flex-row justify-between">
+				<NavigationMenu className="px-4 flex flex-row justify-between">
 					<NavigationMenuList>
 						<NavigationMenuItem>
-							<Link href="https://github.com/radhirasho" passHref>
-								<Github className="hover:text-red-600" />
+							<Button variant="ghost" size="icon" className="hover:bg-transparent hover:text-red-600">
+								<Sun
+									size={35}
+									onClick={() => setTheme("dark")}
+									className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+								/>
+								<Moon
+									size={35}
+									onClick={() => setTheme("light")}
+									className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+								/>
+							</Button>
+						</NavigationMenuItem>
+						<NavigationMenuItem>
+							<Link as="https://github.com/radhirasho" href="https://github.com/radhirasho">
+								<Github size={35} className="hover:text-red-600" />
 							</Link>
 						</NavigationMenuItem>
 						<NavigationMenuItem>
-							<Link href="https://twitter.com/RadhiH1" passHref>
-								<Twitter className="hover:text-red-600" />
+							<Link as="https://twitter.com/RadhiH1" href="https://twitter.com/RadhiH1">
+								<Twitter size={35} className="hover:text-red-600" />
+							</Link>
+						</NavigationMenuItem>
+						<NavigationMenuItem>
+							<Link
+								as="https://www.linkedin.com/in/radhi-rasho-7827b218a/"
+								href="https://www.linkedin.com/in/radhi-rasho-7827b218a/"
+							>
+								<Linkedin size={35} className="hover:text-red-600" />
 							</Link>
 						</NavigationMenuItem>
 					</NavigationMenuList>
