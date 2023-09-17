@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createTransport } from "nodemailer";
 import { promises as fs } from "fs";
 import path from "path";
+import { Mail } from "@/app/types/mail";
 
 export async function POST(req: NextRequest, res: NextResponse) {
 	try {
@@ -18,9 +19,9 @@ export async function POST(req: NextRequest, res: NextResponse) {
 			},
 		});
 
-		const options = {
+		const options: Mail = {
 			from: process.env.NEXT_PUBLIC_MAIL_USER,
-			to: "RadhiRasho@gmail.com",
+			to: process.env.NEXT_PUBLIC_MAIL_USER_TO,
 			subject: "New contact form submission",
 			html: template,
 			text: template,
