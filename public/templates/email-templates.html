@@ -24,8 +24,7 @@
 
 			h1 {
 				font-size: 28px;
-				margin-top: 0;
-				margin-bottom: 20px;
+				margin: 0 0 20px;
 				color: #333;
 				text-align: center;
 				text-transform: uppercase;
@@ -34,18 +33,16 @@
 
 			h4 {
 				font-size: 18px;
-				margin-top: 10px;
-				margin-bottom: 5px;
+				margin: 10px 0 5px;
 				color: #333;
 				text-transform: uppercase;
 				letter-spacing: 1px;
 			}
 
 			p {
-				margin-top: 0;
-				margin-bottom: 20px;
+				margin: 0 0 20px;
 				color: #333;
-				font-size: 18px;
+				font-size: 14px;
 				line-height: 1.5;
 				text-align: justify;
 				max-width: 100%;
@@ -70,12 +67,10 @@
 	<body>
 		<div class="container">
 			<h1>Contact Form</h1>
-
 			<p>{{message}}</p>
 
-			<h1>Contact Details</h1>
-			<h4>Name: {{name}}</h4>
-			<h4>Email: {{email}}</h4>
+			<p><strong>Name:</strong> {{name}}</p>
+			<p><strong>Email:</strong> {{email}}</p>
 		</div>
 	</body>
 </html>
