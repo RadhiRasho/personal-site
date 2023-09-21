@@ -1,4 +1,4 @@
-import { GoogleResponse } from "@/app/types/google-response";
+import { GoogleResponse } from "@/types/google-response";
 import { NextRequest, NextResponse } from "next/server";
 
 async function verifyCaptcha(token: string) {
