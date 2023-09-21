@@ -1,4 +1,4 @@
-"use c`li`ent";
+"use client";
 
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -10,6 +10,7 @@ import * as z from "zod";
 import { Textarea } from "./ui/textarea";
 
 import CaptchaTest from "./captcha";
+import { NextResponse } from "next/server";
 
 const formSchema = z
 	.object({
@@ -42,14 +43,12 @@ export function ContactForm() {
 		try {
 			const res = await fetch("/api/mail", {
 				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
+				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ ...values }),
 			});
 
 			const response = await res.json();
-
+			console.log(response);
 			setMessageSent(!messageSent);
 		} catch (error) {
 			console.log(error);

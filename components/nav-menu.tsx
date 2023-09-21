@@ -59,16 +59,20 @@ export function NavBar() {
 				<NavigationMenu className="px-4 flex flex-row justify-between">
 					<NavigationMenuList>
 						<NavigationMenuItem>
-							<Button variant="ghost" size="icon" className="hover:bg-transparent hover:text-red-600">
+							<Button
+								variant="ghost"
+								size="icon"
+								className="hover:bg-transparent hover:text-red-600 w-6 flex justify-end"
+							>
 								<Sun
 									size={35}
 									onClick={() => setTheme("dark")}
-									className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+									className="rotate-0 scale-100 transition-all dark:rotate-90 dark:scale-0"
 								/>
 								<Moon
 									size={35}
 									onClick={() => setTheme("light")}
-									className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+									className="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
 								/>
 							</Button>
 						</NavigationMenuItem>
