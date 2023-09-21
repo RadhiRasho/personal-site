@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createTransport } from "nodemailer";
 import { promises as fs } from "fs";
 import path from "path";
-import { Mail } from "@/app/types/mail";
+import { Mail } from "@/types/mail";
 
 export async function POST(req: NextRequest, res: NextResponse) {
 	try {

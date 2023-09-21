@@ -1,4 +1,4 @@
-"use c`li`ent";
+"use client";
 
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -10,6 +10,7 @@ import * as z from "zod";
 import { Textarea } from "./ui/textarea";
 
 import CaptchaTest from "./captcha";
+import { MailResponse } from "@/types/mail";
 
 const formSchema = z
 	.object({
@@ -48,11 +49,15 @@ export function ContactForm() {
 				body: JSON.stringify({ ...values }),
 			});
 
-			const response = await res.json();
+			const response: MailResponse = await res.json();
+
+			if (!response.accepted) {
+				throw new Error("Error sending mail", { cause: response.rejected });
+			}
 
 			setMessageSent(!messageSent);
 		} catch (error) {
-			console.log(error);
+			console.error(error);
 		}
 	}
 
