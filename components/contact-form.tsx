@@ -10,7 +10,7 @@ import * as z from "zod";
 import { Textarea } from "./ui/textarea";
 
 import CaptchaTest from "./captcha";
-import { NextResponse } from "next/server";
+import { MailResponse } from "@/types/mail";
 
 const formSchema = z
 	.object({
@@ -47,11 +47,15 @@ export function ContactForm() {
 				body: JSON.stringify({ ...values }),
 			});
 
-			const response = await res.json();
-			console.log(response);
+			const response: MailResponse = await res.json();
+
+			if (!response.accepted) {
+				throw new Error("Error sending mail", { cause: response.rejected });
+			}
+
 			setMessageSent(!messageSent);
 		} catch (error) {
-			console.log(error);
+			console.error(error);
 		}
 	}
 
@@ -64,7 +68,7 @@ export function ContactForm() {
 			{!captchaSubmitted ? (
 				<CaptchaTest setIsVerified={handleIsVerified} />
 			) : !messageSent ? (
-				<form onSubmit={form.handleSubmit(onSubmit)} className="border rounded-3xl px-10 py-4 space-y-4">
+				<form onSubmit={form.handleSubmit(onSubmit)} className="border rounded-3xl px-5 py-4 space-y-4">
 					<h1>Contact Me</h1>
 					<FormDescription>Leave me a message and I&apos;ll get back to you as soon as I can: </FormDescription>
 					<FormField
