@@ -1,17 +1,16 @@
 "use client";
-
 import ReCAPTCHA from "react-google-recaptcha";
-import { useRef } from "react";
+import { TooltipProvider, TooltipTrigger, Tooltip, TooltipContent } from "./ui/tooltip";
+import Link from "next/link";
 
 type CaptchaTestProps = {
 	setIsVerified: (isVerified: boolean) => void;
 };
 
 export default function CaptchaTest({ setIsVerified }: CaptchaTestProps) {
-	const recaptchaRef = useRef(null);
-
 	async function handleCaptchaSubmission(token: string | null) {
-		// Server function to verify captcha
+		if (!token) return;
+
 		const res = await fetch("/api/utils/captcha", {
 			method: "POST",
 			headers: {
@@ -23,25 +22,35 @@ export default function CaptchaTest({ setIsVerified }: CaptchaTestProps) {
 		try {
 			const { success } = await res.json();
 
-			setIsVerified(success);
+			setIsVerified(!!success);
 		} catch (error) {
-			console.log(error);
+			console.error(error);
 		}
 	}
 
 	return (
 		<>
 			<div className="border rounded-3xl p-10 space-y-8">
-				<h1 className="text-lg">Prove your existance...</h1>
-				<p className="text-xs w-72">
-					I&apos;m sorry, but I have to ask you to prove that you&apos;re not a robot. Please click the checkbox below
-					to verify that you&apos;re a human.
-				</p>
-				<ReCAPTCHA
-					sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-					ref={recaptchaRef}
-					onChange={handleCaptchaSubmission}
-				/>
+				<h1 className="text-lg">
+					<TooltipProvider>
+						<Tooltip>
+							<TooltipTrigger className="border-b-2 hover:border-b-red-500 ">Prove Your Existance...</TooltipTrigger>
+							<TooltipContent side="right" align="center" className="w-80">
+								A reference to one of my favorite games of all times,{" "}
+								<Link
+									className="hover:text-red-500 hover:border-b-red-500 italic border-b-2"
+									target="_blank"
+									href={"https://en.wikipedia.org/wiki/Nier:_Automata"}
+								>
+									Nier: Automata
+								</Link>
+								, where as the player plays through the game their character is asked to prove their existance and
+								whether their efforts means they exist.
+							</TooltipContent>
+						</Tooltip>
+					</TooltipProvider>
+				</h1>
+				<ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} onChange={handleCaptchaSubmission} />
 			</div>
 		</>
 	);

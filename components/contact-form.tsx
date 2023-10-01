@@ -70,7 +70,7 @@ export function ContactForm() {
 			{!captchaSubmitted ? (
 				<CaptchaTest setIsVerified={handleIsVerified} />
 			) : !messageSent ? (
-				<form onSubmit={form.handleSubmit(onSubmit)} className="border rounded-3xl px-10 py-4 space-y-4">
+				<form onSubmit={form.handleSubmit(onSubmit)} className="border rounded-3xl px-5 py-4 space-y-4">
 					<h1>Contact Me</h1>
 					<FormDescription>Leave me a message and I&apos;ll get back to you as soon as I can: </FormDescription>
 					<FormField
