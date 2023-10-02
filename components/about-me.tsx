@@ -7,7 +7,7 @@ import { TechnologiesList } from "./technologies-list";
 
 export function AboutMe() {
 	return (
-		<Accordion defaultValue={"About Me"} collapsible type="single" className="w-4/6">
+		<Accordion defaultValue={"About Me"} collapsible type="single" className="w-4/6 border rounded-lg px-2 mb-4">
 			<AccordionItem value="About Me">
 				<AccordionTrigger className="hover:text-red-500 font-bold focus:text-red-500 focus-within:text-red-500">
 					About Me
