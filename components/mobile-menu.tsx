@@ -28,11 +28,13 @@ export function MobilMenu({}: MobilMenuProps) {
 				>
 					<Sun
 						size={35}
+						strokeWidth={1.75}
 						onClick={() => setTheme("dark")}
 						className="rotate-0 scale-100 transition-transform dark:-rotate-90 dark:scale-0"
 					/>
 					<Moon
 						size={35}
+						strokeWidth={1.75}
 						onClick={() => setTheme("light")}
 						className="absolute rotate-90 scale-0 transition-transform dark:rotate-0 dark:scale-100"
 					/>
@@ -55,7 +57,7 @@ export function MobilMenu({}: MobilMenuProps) {
 									pathname === "/" && "text-red-500 border-b-2 border-b-red-500"
 								}`}
 							>
-								<HomeIcon /> Home
+								<HomeIcon strokeWidth={1.75} size={35} /> Home
 							</Link>
 							<Link
 								onClick={() => setShowMenu(!showMenu)}
@@ -64,7 +66,7 @@ export function MobilMenu({}: MobilMenuProps) {
 									pathname === "/projects" && "text-red-500 border-b-2 border-b-red-500"
 								}`}
 							>
-								<Table2Icon /> Projects
+								<Table2Icon strokeWidth={1.75} size={35} /> Projects
 							</Link>
 							<Link
 								onClick={() => setShowMenu(!showMenu)}
@@ -73,7 +75,7 @@ export function MobilMenu({}: MobilMenuProps) {
 									pathname === "/contact" && "text-red-500 border-b-2 border-b-red-500"
 								}`}
 							>
-								<ContactIcon />
+								<ContactIcon strokeWidth={1.75} size={35} />
 								Contact
 							</Link>
 						</div>
@@ -86,7 +88,7 @@ export function MobilMenu({}: MobilMenuProps) {
 								as="https://github.com/radhirasho"
 								href="https://github.com/radhirasho"
 							>
-								<Github className="hover:text-red-500" />
+								<Github strokeWidth={1.75} size={35} className="hover:text-red-500" />
 								Github
 							</Link>
 							<Link
@@ -94,7 +96,7 @@ export function MobilMenu({}: MobilMenuProps) {
 								as="https://twitter.com/RadhiH1"
 								href="https://twitter.com/RadhiH1"
 							>
-								<Twitter className="hover:text-red-500" />
+								<Twitter strokeWidth={1.75} size={35} className="hover:text-red-500" />
 								X/Twitter
 							</Link>
 							<Link
@@ -102,7 +104,7 @@ export function MobilMenu({}: MobilMenuProps) {
 								as="https://www.linkedin.com/in/radhi-rasho-7827b218a/"
 								href="https://www.linkedin.com/in/radhi-rasho-7827b218a/"
 							>
-								<Linkedin className="hover:text-red-500" />
+								<Linkedin strokeWidth={1.75} size={35} className="hover:text-red-500" />
 								LinkedIn
 							</Link>
 						</div>

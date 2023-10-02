@@ -31,7 +31,7 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 									pathname === "/" && "text-red-500 border-b-4 border-b-red-500"
 								} ${navigationMenuTriggerStyle()} !px-2`}
 							>
-								<HomeIcon size={25} /> Home
+								<HomeIcon strokeWidth={1.75} size={25} /> Home
 							</NavigationMenuLink>
 						</Link>
 					</NavigationMenuItem>
@@ -42,7 +42,7 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 									pathname === "/projects" && "text-red-500 border-b-4 border-b-red-500"
 								} ${navigationMenuTriggerStyle()} !px-2`}
 							>
-								<Table2Icon size={25} /> Projects
+								<Table2Icon strokeWidth={1.75} size={25} /> Projects
 							</NavigationMenuLink>
 						</Link>
 					</NavigationMenuItem>
@@ -53,7 +53,7 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 									pathname === "/contact" && "text-red-500 border-b-4 border-b-red-500"
 								} ${navigationMenuTriggerStyle()} !px-2`}
 							>
-								<ContactIcon size={25} /> Contact
+								<ContactIcon strokeWidth={1.75} size={25} /> Contact
 							</NavigationMenuLink>
 						</Link>
 					</NavigationMenuItem>
@@ -68,11 +68,13 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 							className="hover:bg-transparent hover:text-red-500 w-6 flex justify-end"
 						>
 							<Sun
+								strokeWidth={1.75}
 								size={30}
 								onClick={() => setTheme("dark")}
 								className="rotate-0 scale-100 transition-transform dark:-rotate-90 dark:scale-0"
 							/>
 							<Moon
+								strokeWidth={1.75}
 								size={30}
 								onClick={() => setTheme("light")}
 								className="absolute rotate-90 scale-0 transition-transform dark:rotate-0 dark:scale-100"
@@ -81,12 +83,12 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 					</NavigationMenuItem>
 					<NavigationMenuItem>
 						<Link as="https://github.com/radhirasho" href="https://github.com/radhirasho">
-							<Github size={30} className="hover:text-red-500" />
+							<Github strokeWidth={1.75} size={30} className="hover:text-red-500" />
 						</Link>
 					</NavigationMenuItem>
 					<NavigationMenuItem>
 						<Link as="https://twitter.com/RadhiH1" href="https://twitter.com/RadhiH1">
-							<Twitter size={30} className="hover:text-red-500" />
+							<Twitter strokeWidth={1.75} size={30} className="hover:text-red-500" />
 						</Link>
 					</NavigationMenuItem>
 					<NavigationMenuItem>
@@ -94,7 +96,7 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 							as="https://www.linkedin.com/in/radhi-rasho-7827b218a/"
 							href="https://www.linkedin.com/in/radhi-rasho-7827b218a/"
 						>
-							<Linkedin size={30} className="hover:text-red-500" />
+							<Linkedin strokeWidth={1.75} size={30} className="hover:text-red-500" />
 						</Link>
 					</NavigationMenuItem>
 				</NavigationMenuList>
