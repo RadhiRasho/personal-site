@@ -13,7 +13,6 @@ export function TechnologiesList() {
 							<Image
 								width={50}
 								height={50}
-								loading="lazy"
 								src={"https://skillicons.dev/icons?i=js"}
 								title={"JavaScript"}
 								alt={"JavaScript"}
@@ -21,23 +20,14 @@ export function TechnologiesList() {
 							<Image
 								width={50}
 								height={50}
-								loading="lazy"
 								src={"https://skillicons.dev/icons?i=ts"}
 								title={"TypeScript"}
 								alt={"TypeScript"}
 							/>{" "}
+							<Image width={50} height={50} src={"https://skillicons.dev/icons?i=cs"} title={"C#"} alt={"CSharp"} />{" "}
 							<Image
 								width={50}
 								height={50}
-								loading="lazy"
-								src={"https://skillicons.dev/icons?i=cs"}
-								title={"C#"}
-								alt={"CSharp"}
-							/>{" "}
-							<Image
-								width={50}
-								height={50}
-								loading="lazy"
 								src={"https://skillicons.dev/icons?i=python"}
 								title={"python"}
 								alt={"Python"}
@@ -50,51 +40,56 @@ export function TechnologiesList() {
 							<Image
 								width={50}
 								height={50}
-								loading="lazy"
 								src={"https://skillicons.dev/icons?i=nextjs"}
-								alt={"nextjs"}
+								title={"Next.JS"}
+								alt={"Next.JS"}
 							/>{" "}
 							<Image
 								width={50}
 								height={50}
-								loading="lazy"
-								src={"https://skillicons.dev/icons?i=dotnet"}
-								alt={"dotnet"}
+								src={"https://skillicons.dev/icons?i=react"}
+								title={"React.JS"}
+								alt={"React.JS"}
 							/>{" "}
-							<Image width={50} height={50} loading="lazy" src={"https://skillicons.dev/icons?i=react"} alt={"react"} />{" "}
 							<Image
 								width={50}
 								height={50}
-								loading="lazy"
 								src={"https://skillicons.dev/icons?i=angular"}
-								alt={"angular"}
+								title={"Angular.JS"}
+								alt={"Angular.JS"}
 							/>{" "}
 							<Image
 								width={50}
 								height={50}
-								loading="lazy"
 								src={"https://skillicons.dev/icons?i=express"}
-								alt={"express"}
+								title={"Express.JS"}
+								alt={"Express.JS"}
 							/>{" "}
 						</div>
 					</div>
 					<div className="sm:border-r border-r-gray-500">
 						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">Markup</h2>
 						<div className="grid grid-flow-row grid-cols-6 gap-2">
-							<Image width={50} height={50} loading="lazy" src={"https://skillicons.dev/icons?i=html"} alt={"HTML"} />{" "}
-							<Image width={50} height={50} loading="lazy" src={"https://skillicons.dev/icons?i=md"} alt={"MarkDown"} />{" "}
+							<Image width={50} height={50} src={"https://skillicons.dev/icons?i=html"} title={"HTML"} alt={"HTML"} />{" "}
+							<Image
+								width={50}
+								height={50}
+								src={"https://skillicons.dev/icons?i=md"}
+								title={"MarkDown"}
+								alt={"MarkDown"}
+							/>{" "}
 						</div>
 					</div>
 					<div>
 						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">Syling </h2>
 						<div className="grid grid-flow-row items-center grid-cols-4 gap-2">
-							<Image width={50} height={50} loading="lazy" src={"https://skillicons.dev/icons?i=css"} alt={"CSS"} />{" "}
-							<Image width={50} height={50} loading="lazy" src={"https://skillicons.dev/icons?i=sass"} alt={"SASS"} />{" "}
+							<Image width={50} height={50} src={"https://skillicons.dev/icons?i=css"} title={"CSS"} alt={"CSS"} />{" "}
+							<Image width={50} height={50} src={"https://skillicons.dev/icons?i=sass"} title={"SASS"} alt={"SASS"} />{" "}
 							<Image
 								width={50}
 								height={50}
-								loading="lazy"
 								src={"https://skillicons.dev/icons?i=tailwindcss"}
+								title={"tailwindcss"}
 								alt={"tailwindcss"}
 							/>{" "}
 						</div>
@@ -106,19 +101,11 @@ export function TechnologiesList() {
 							<Image
 								width={50}
 								height={50}
-								loading="lazy"
 								src={"https://skillicons.dev/icons?i=nodejs"}
 								title={"Node.JS"}
 								alt={"NodeJS"}
 							/>{" "}
-							<Image
-								width={50}
-								height={50}
-								loading="lazy"
-								src={"https://skillicons.dev/icons?i=dotnet"}
-								title={".NET"}
-								alt={".NET"}
-							/>{" "}
+							<Image width={50} height={50} src={"https://skillicons.dev/icons?i=dotnet"} title={".NET"} alt={".NET"} />{" "}
 						</div>
 					</div>
 					<div>
@@ -127,39 +114,32 @@ export function TechnologiesList() {
 							<Image
 								width={50}
 								height={50}
-								loading="lazy"
 								src={"https://skillicons.dev/icons?i=vscode"}
+								title={"VS Code"}
 								alt={"VS Code"}
 							/>{" "}
 							<Image
 								width={50}
 								height={50}
-								loading="lazy"
 								src={"https://skillicons.dev/icons?i=visualstudio"}
+								title={"Visual Studio"}
 								alt={"Visual Studio"}
 							/>{" "}
 							<Image
 								width={50}
 								height={50}
-								loading="lazy"
 								src={"https://skillicons.dev/icons?i=github"}
+								title={"GitHub"}
 								alt={"GitHub"}
 							/>{" "}
 							<Image
 								width={50}
 								height={50}
-								loading="lazy"
 								src={"https://skillicons.dev/icons?i=docker"}
+								title={"Docker"}
 								alt={"Docker"}
 							/>{" "}
-							<Image
-								width={50}
-								height={50}
-								loading="lazy"
-								src={"https://skillicons.dev/icons?i=docker"}
-								alt={"Docker"}
-							/>{" "}
-							<Image width={50} height={50} loading="lazy" src={"https://skillicons.dev/icons?i=git"} alt={"Git"} />{" "}
+							<Image width={50} height={50} src={"https://skillicons.dev/icons?i=git"} title={"Git"} alt={"Git"} />{" "}
 						</div>
 					</div>
 					<div className="sm:border-r border-r-gray-500">
@@ -168,24 +148,24 @@ export function TechnologiesList() {
 							<Image
 								width={50}
 								height={50}
-								loading="lazy"
 								className="bg-[#242938] h-9 px-1 rounded-md"
 								src={WindowsIcon}
+								title={"Windows"}
 								alt={"Windows"}
 							/>{" "}
 							<Image
 								width={50}
 								height={50}
-								loading="lazy"
 								src={"https://skillicons.dev/icons?i=linux"}
-								alt={"Visual Studio"}
+								title={"Linux"}
+								alt={"Linux"}
 							/>{" "}
 							<Image
 								width={50}
 								height={50}
-								loading="lazy"
 								className="bg-[#242938] h-9 px-1 rounded-md"
 								src={AppleIcon}
+								title={"Mac OS"}
 								alt={"Mac OS"}
 							/>{" "}
 						</div>
@@ -196,8 +176,8 @@ export function TechnologiesList() {
 							<Image
 								width={50}
 								height={50}
-								loading="lazy"
 								src={"https://skillicons.dev/icons?i=azure"}
+								title="Azure Cloud"
 								alt={"Azure Cloud"}
 							/>{" "}
 						</div>
@@ -208,22 +188,22 @@ export function TechnologiesList() {
 							<Image
 								width={50}
 								height={50}
-								loading="lazy"
 								src={"https://skillicons.dev/icons?i=mongo"}
+								title={"Mongo DB"}
 								alt={"Mongo DB"}
 							/>{" "}
 							<Image
 								width={50}
 								height={50}
-								loading="lazy"
 								src={"https://skillicons.dev/icons?i=postgres"}
+								title={"PostgreSQL"}
 								alt={"PostgreSQL"}
 							/>{" "}
 							<Image
 								width={50}
 								height={50}
-								loading="lazy"
 								src={"https://skillicons.dev/icons?i=mysql"}
+								title={"My SQL"}
 								alt={"My SQL"}
 							/>{" "}
 						</div>
@@ -231,16 +211,16 @@ export function TechnologiesList() {
 					<div>
 						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">Learning...</h2>
 						<div className="grid grid-flow-row grid-cols-4 gap-2 justify-between items-center">
-							<Image width={50} height={50} loading="lazy" src={"https://skillicons.dev/icons?i=go"} alt={"GoLang"} />{" "}
-							<Image width={50} height={50} loading="lazy" src={"https://skillicons.dev/icons?i=rust"} alt={"Rust"} />{" "}
+							<Image width={50} height={50} src={"https://skillicons.dev/icons?i=go"} title={"GoLang"} alt={"GoLang"} />{" "}
+							<Image width={50} height={50} src={"https://skillicons.dev/icons?i=rust"} title={"Rust"} alt={"Rust"} />{" "}
 							<Image
 								width={50}
 								height={50}
-								loading="lazy"
 								src={"https://skillicons.dev/icons?i=svelte"}
+								title={"Svelte"}
 								alt={"Svelte"}
 							/>{" "}
-							<Image width={50} height={50} loading="lazy" src={"https://skillicons.dev/icons?i=cpp"} alt={"C++"} />{" "}
+							<Image width={50} height={50} src={"https://skillicons.dev/icons?i=cpp"} title={"C++"} alt={"C++"} />{" "}
 						</div>
 					</div>
 				</div>

@@ -85,6 +85,7 @@ export function MobilMenu({}: MobilMenuProps) {
 						<div className="space-y-1 flex flex-col justify-evenly flex-grow-0">
 							<Link
 								className="flex justify-start gap-3 px-1 items-center"
+								target="_blank"
 								as="https://github.com/radhirasho"
 								href="https://github.com/radhirasho"
 							>
@@ -93,6 +94,7 @@ export function MobilMenu({}: MobilMenuProps) {
 							</Link>
 							<Link
 								className="flex justify-start gap-3 px-1 items-center"
+								target="_blank"
 								as="https://twitter.com/RadhiH1"
 								href="https://twitter.com/RadhiH1"
 							>
@@ -101,6 +103,7 @@ export function MobilMenu({}: MobilMenuProps) {
 							</Link>
 							<Link
 								className="flex justify-start gap-3 px-1 items-center"
+								target="_blank"
 								as="https://www.linkedin.com/in/radhi-rasho-7827b218a/"
 								href="https://www.linkedin.com/in/radhi-rasho-7827b218a/"
 							>

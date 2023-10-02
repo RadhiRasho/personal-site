@@ -82,17 +82,18 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 						</Button>
 					</NavigationMenuItem>
 					<NavigationMenuItem>
-						<Link as="https://github.com/radhirasho" href="https://github.com/radhirasho">
+						<Link target="_blank" as="https://github.com/radhirasho" href="https://github.com/radhirasho">
 							<Github strokeWidth={1.75} size={30} className="hover:text-red-500" />
 						</Link>
 					</NavigationMenuItem>
 					<NavigationMenuItem>
-						<Link as="https://twitter.com/RadhiH1" href="https://twitter.com/RadhiH1">
+						<Link target="_blank" as="https://twitter.com/RadhiH1" href="https://twitter.com/RadhiH1">
 							<Twitter strokeWidth={1.75} size={30} className="hover:text-red-500" />
 						</Link>
 					</NavigationMenuItem>
 					<NavigationMenuItem>
 						<Link
+							target="_blank"
 							as="https://www.linkedin.com/in/radhi-rasho-7827b218a/"
 							href="https://www.linkedin.com/in/radhi-rasho-7827b218a/"
 						>
