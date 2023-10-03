@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import WindowsIcon from "@/public/windows.svg";
 import AppleIcon from "@/public/apple.svg";
@@ -14,22 +16,28 @@ export function TechnologiesList() {
 								width={50}
 								height={50}
 								src={"https://skillicons.dev/icons?i=js"}
-								title={"JavaScript"}
+								title={"JavaScript: 5 Years"}
 								alt={"JavaScript"}
 							/>{" "}
 							<Image
 								width={50}
 								height={50}
 								src={"https://skillicons.dev/icons?i=ts"}
-								title={"TypeScript"}
+								title={"TypeScript: 2 Years"}
 								alt={"TypeScript"}
 							/>{" "}
-							<Image width={50} height={50} src={"https://skillicons.dev/icons?i=cs"} title={"C#"} alt={"CSharp"} />{" "}
+							<Image
+								width={50}
+								height={50}
+								src={"https://skillicons.dev/icons?i=cs"}
+								title={"C#: 4 Years"}
+								alt={"CSharp"}
+							/>{" "}
 							<Image
 								width={50}
 								height={50}
 								src={"https://skillicons.dev/icons?i=python"}
-								title={"python"}
+								title={"Python: 1 Year"}
 								alt={"Python"}
 							/>{" "}
 						</div>
@@ -41,41 +49,54 @@ export function TechnologiesList() {
 								width={50}
 								height={50}
 								src={"https://skillicons.dev/icons?i=nextjs"}
-								title={"Next.JS"}
+								title={"Next.JS: 1 Year"}
 								alt={"Next.JS"}
 							/>{" "}
 							<Image
 								width={50}
 								height={50}
 								src={"https://skillicons.dev/icons?i=react"}
-								title={"React.JS"}
+								title={"React.JS: 4 Years"}
 								alt={"React.JS"}
 							/>{" "}
 							<Image
 								width={50}
 								height={50}
 								src={"https://skillicons.dev/icons?i=angular"}
-								title={"Angular.JS"}
+								title={"Angular.JS: 1 Year"}
 								alt={"Angular.JS"}
 							/>{" "}
 							<Image
 								width={50}
 								height={50}
 								src={"https://skillicons.dev/icons?i=express"}
-								title={"Express.JS"}
+								title={"Express.JS: 3 Years"}
 								alt={"Express.JS"}
+							/>{" "}
+							<Image
+								width={50}
+								height={50}
+								src={"https://skillicons.dev/icons?i=bootstrap"}
+								title={"Bootstrap: 1 Year"}
+								alt={"Bootstrap"}
 							/>{" "}
 						</div>
 					</div>
 					<div className="sm:border-r border-r-gray-500">
 						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">Markup</h2>
-						<div className="grid grid-flow-row grid-cols-6 gap-2">
-							<Image width={50} height={50} src={"https://skillicons.dev/icons?i=html"} title={"HTML"} alt={"HTML"} />{" "}
+						<div className="grid grid-flow-row grid-cols-4 gap-2">
+							<Image
+								width={50}
+								height={50}
+								src={"https://skillicons.dev/icons?i=html"}
+								title={"HTML: 6 Years"}
+								alt={"HTML"}
+							/>{" "}
 							<Image
 								width={50}
 								height={50}
 								src={"https://skillicons.dev/icons?i=md"}
-								title={"MarkDown"}
+								title={"MarkDown: 3 Years"}
 								alt={"MarkDown"}
 							/>{" "}
 						</div>
@@ -89,7 +110,7 @@ export function TechnologiesList() {
 								width={50}
 								height={50}
 								src={"https://skillicons.dev/icons?i=tailwindcss"}
-								title={"tailwindcss"}
+								title={"Tailwind CSS: 2 Years"}
 								alt={"tailwindcss"}
 							/>{" "}
 						</div>
@@ -102,7 +123,7 @@ export function TechnologiesList() {
 								width={50}
 								height={50}
 								src={"https://skillicons.dev/icons?i=nodejs"}
-								title={"Node.JS"}
+								title={"Node.JS: 3 Years"}
 								alt={"NodeJS"}
 							/>{" "}
 							<Image width={50} height={50} src={"https://skillicons.dev/icons?i=dotnet"} title={".NET"} alt={".NET"} />{" "}
@@ -115,31 +136,52 @@ export function TechnologiesList() {
 								width={50}
 								height={50}
 								src={"https://skillicons.dev/icons?i=vscode"}
-								title={"VS Code"}
+								title={"VS Code: 5 Years"}
 								alt={"VS Code"}
 							/>{" "}
 							<Image
 								width={50}
 								height={50}
 								src={"https://skillicons.dev/icons?i=visualstudio"}
-								title={"Visual Studio"}
+								title={"Visual Studio: 4 Years"}
 								alt={"Visual Studio"}
 							/>{" "}
 							<Image
 								width={50}
 								height={50}
 								src={"https://skillicons.dev/icons?i=github"}
-								title={"GitHub"}
+								title={"GitHub: 3 Years"}
 								alt={"GitHub"}
 							/>{" "}
 							<Image
 								width={50}
 								height={50}
 								src={"https://skillicons.dev/icons?i=docker"}
-								title={"Docker"}
+								title={"Docker: 2 Years"}
 								alt={"Docker"}
 							/>{" "}
 							<Image width={50} height={50} src={"https://skillicons.dev/icons?i=git"} title={"Git"} alt={"Git"} />{" "}
+							<Image
+								width={50}
+								height={50}
+								src={"https://skillicons.dev/icons?i=babel"}
+								title={"Babel: 2 Years"}
+								alt={"Babel"}
+							/>{" "}
+							<Image
+								width={50}
+								height={50}
+								src={"https://skillicons.dev/icons?i=webpack"}
+								title={"Webpack: 2 Years"}
+								alt={"Webpack"}
+							/>{" "}
+							<Image
+								width={50}
+								height={50}
+								src={"https://skillicons.dev/icons?i=vercel"}
+								title={"Vercel: 6 Months"}
+								alt={"Vercel"}
+							/>{" "}
 						</div>
 					</div>
 					<div className="sm:border-r border-r-gray-500">
@@ -150,14 +192,14 @@ export function TechnologiesList() {
 								height={50}
 								className="bg-[#242938] h-9 px-1 rounded-md"
 								src={WindowsIcon}
-								title={"Windows"}
+								title={"Windows: 7 Years"}
 								alt={"Windows"}
 							/>{" "}
 							<Image
 								width={50}
 								height={50}
 								src={"https://skillicons.dev/icons?i=linux"}
-								title={"Linux"}
+								title={"Linux: 2 Years"}
 								alt={"Linux"}
 							/>{" "}
 							<Image
@@ -165,7 +207,7 @@ export function TechnologiesList() {
 								height={50}
 								className="bg-[#242938] h-9 px-1 rounded-md"
 								src={AppleIcon}
-								title={"Mac OS"}
+								title={"Mac OS: 3 Years"}
 								alt={"Mac OS"}
 							/>{" "}
 						</div>
@@ -177,7 +219,7 @@ export function TechnologiesList() {
 								width={50}
 								height={50}
 								src={"https://skillicons.dev/icons?i=azure"}
-								title="Azure Cloud"
+								title="Azure Cloud Services: 1 Year"
 								alt={"Azure Cloud"}
 							/>{" "}
 						</div>
@@ -189,38 +231,82 @@ export function TechnologiesList() {
 								width={50}
 								height={50}
 								src={"https://skillicons.dev/icons?i=mongo"}
-								title={"Mongo DB"}
+								title={"Mongo DB: 1 Year"}
 								alt={"Mongo DB"}
 							/>{" "}
 							<Image
 								width={50}
 								height={50}
 								src={"https://skillicons.dev/icons?i=postgres"}
-								title={"PostgreSQL"}
+								title={"PostgreSQL: 2 Years"}
 								alt={"PostgreSQL"}
 							/>{" "}
 							<Image
 								width={50}
 								height={50}
 								src={"https://skillicons.dev/icons?i=mysql"}
-								title={"My SQL"}
-								alt={"My SQL"}
+								title={"MySQL: 3 Years"}
+								alt={"MySQL"}
+							/>{" "}
+							<Image
+								width={50}
+								height={50}
+								src={"https://skillicons.dev/icons?i=sequelize"}
+								title={"Sequelize ORM: 2 Years"}
+								alt={"Sequelize ORM"}
+							/>{" "}
+							<Image
+								width={50}
+								height={50}
+								src={"https://skillicons.dev/icons?i=redis"}
+								title={"Redis: 3 Years"}
+								alt={"Redis"}
 							/>{" "}
 						</div>
 					</div>
 					<div>
 						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">Learning...</h2>
 						<div className="grid grid-flow-row grid-cols-4 gap-2 justify-between items-center">
-							<Image width={50} height={50} src={"https://skillicons.dev/icons?i=go"} title={"GoLang"} alt={"GoLang"} />{" "}
-							<Image width={50} height={50} src={"https://skillicons.dev/icons?i=rust"} title={"Rust"} alt={"Rust"} />{" "}
+							<Image
+								width={50}
+								height={50}
+								src={"https://skillicons.dev/icons?i=go"}
+								title="GoLang: Learning..."
+								alt={"GoLang"}
+							/>{" "}
+							<Image
+								width={50}
+								height={50}
+								src={"https://skillicons.dev/icons?i=rust"}
+								title="Rust: Learning..."
+								alt={"Rust"}
+							/>{" "}
 							<Image
 								width={50}
 								height={50}
 								src={"https://skillicons.dev/icons?i=svelte"}
-								title={"Svelte"}
+								title="Svelte: Learning..."
 								alt={"Svelte"}
 							/>{" "}
-							<Image width={50} height={50} src={"https://skillicons.dev/icons?i=cpp"} title={"C++"} alt={"C++"} />{" "}
+							<Image
+								width={50}
+								height={50}
+								src={"https://skillicons.dev/icons?i=cpp"}
+								title="C++: Learning..."
+								alt={"C++"}
+							/>{" "}
+						</div>
+					</div>
+					<div className="sm:border-r border-gray-500">
+						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">Testing Frameworks</h2>
+						<div className="grid grid-flow-row grid-cols-4 gap-2 justify-between items-center">
+							<Image
+								width={50}
+								height={50}
+								src={"https://skillicons.dev/icons?i=jest"}
+								title={"Jest: 2 Years"}
+								alt={"Jest"}
+							/>{" "}
 						</div>
 					</div>
 				</div>

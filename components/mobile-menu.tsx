@@ -42,9 +42,10 @@ export function MobilMenu({}: MobilMenuProps) {
 			</div>
 			<div
 				className={`${
-					showMenu ? "animate-in slide-in-from-left" : "animate-out slide-out-to-left z-[-99]"
+					showMenu
+						? "animate-in slide-in-from-left transition-all ease-in-out"
+						: "animate-out slide-out-to-left transition-all ease-in-out collapse"
 				} bg-secondary w-screen min-h-full pl-10 space-y-4 absolute z-[50]`}
-				style={{ opacity: showMenu ? 1 : 0 }}
 			>
 				<div className="flex flex-col justify-between">
 					<div className=" py-2">
