@@ -35,10 +35,10 @@ export default function CaptchaTest({ setIsVerified }: CaptchaTestProps) {
 					<TooltipProvider>
 						<Tooltip>
 							<TooltipTrigger className="border-b-2 hover:border-b-red-500 ">Prove Your Existance...</TooltipTrigger>
-							<TooltipContent side="right" align="center" className="w-80">
-								A reference to one of my favorite games of all times,{" "}
+							<TooltipContent align="center" className="w-80">
+								A reference to one of my favorite games of all times,&nbsp;
 								<Link
-									className="hover:text-red-500 hover:border-b-red-500 italic border-b-2"
+									className="hover:text-red-600 hover:border-b-red-500 italic border-b-2"
 									target="_blank"
 									href={"https://en.wikipedia.org/wiki/Nier:_Automata"}
 								>

@@ -20,7 +20,7 @@ export function AboutMe() {
 			</div>
 			<Accordion defaultValue={"About Me"} collapsible type="single" className="w-10/12 border rounded-lg px-2 mb-4">
 				<AccordionItem value="About Me">
-					<AccordionTrigger className="hover:text-red-500 font-bold focus:text-red-500 focus-within:text-red-500">
+					<AccordionTrigger className="hover:text-red-600 font-bold focus:text-red-600 focus-within:text-red-600">
 						About Me
 					</AccordionTrigger>
 					<AccordionContent>
@@ -31,13 +31,13 @@ export function AboutMe() {
 							me grow as a developer.
 							<br />
 							<br />
-							I&apos;m currently working at{" "}
-							<Link className="underline dark:text-gray-200 hover:text-red-500" href="https://www.sandhills.com/">
-								Sandhills Global
-							</Link>{" "}
-							as a Full Stack Software Engineer. I have a Associates Degree in Computer Science from{" "}
-							<Link className="underline dark:text-gray-200 hover:text-red-500" href="https://www.southeast.edu/">
-								Southeast Community College
+							I&apos;m currently working at&nbsp;
+							<Link className="dark:text-gray-200 hover:text-red-600" href="https://www.sandhills.com/">
+								<span className="underline hover:text-red-600">Sandhills Global</span>
+							</Link>
+							&nbsp; as a Full Stack Software Engineer. I have a Associates Degree in Computer Science from&nbsp;
+							<Link className="dark:text-gray-200 hover:text-red-600" href="https://www.southeast.edu/">
+								<span className="underline hover:text-red-600">Southeast Community College</span>
 							</Link>
 							.
 							<br />
@@ -46,25 +46,25 @@ export function AboutMe() {
 							working out, or spending time with friends and family.
 							<br />
 							<br />
-							Feel free to check out my{" "}
-							<Link className="underline dark:text-gray-200 hover:text-red-500" href="/projects">
-								projects
-							</Link>{" "}
-							or{" "}
-							<Link className="underline dark:text-gray-200 hover:text-red-500" href="/contact">
-								contact me
-							</Link>{" "}
-							if you&apos;d like to get in touch.
+							Feel free to check out my&nbsp;
+							<Link className="dark:text-gray-200 hover:text-red-600" href="/projects">
+								<span className="underline hover:text-red-600">projects</span>
+							</Link>
+							&nbsp; or&nbsp;
+							<Link className="dark:text-gray-200 hover:text-red-600" href="/contact">
+								<span className="underline hover:text-red-600">contact me</span>
+							</Link>
+							&nbsp; if you&apos;d like to get in touch.
 						</p>
 					</AccordionContent>
 				</AccordionItem>
 				<AccordionItem value="Professional Experience">
-					<AccordionTrigger className="hover:text-red-500 font-bold focus:text-red-500 focus-within:text-red-500">
+					<AccordionTrigger className="hover:text-red-600 font-bold focus:text-red-600 focus-within:text-red-600">
 						Professional Experience
 					</AccordionTrigger>
 					<AccordionContent className="">
 						<div className="flex flex-col gap-2 dark:text-gray-300">
-							<div className="text-md font-bold underline hover:text-red-500">
+							<div className="text-md font-bold underline hover:text-red-600">
 								<Link as="https://www.sandhills.com/" href="https://www.sandhills.com/">
 									Sandhills Global
 								</Link>
@@ -83,17 +83,19 @@ export function AboutMe() {
 								During my time at Sandhills Global, I&apos;ve had the opportunity to work on two significant projects:
 							</div>
 							<div className="dark:text-gray-300">
-								<Link className="text-sm font-bold  underline hover:text-red-500" href={"https://www.fr8star.com"}>
+								<Link className="text-sm font-bold  underline hover:text-red-600" href={"https://www.fr8star.com"}>
 									FR8Star
-								</Link>{" "}
+								</Link>
+								&nbsp;
 								<span className="text-xs">
 									- JavaScript, React.JS, MobX, C#, .NET, Ant Design, Node.JS, PostgreSQL, Docker, Redis
 								</span>
 								<br />
 								<br />
-								<Link className="text-sm font-bold  underline hover:text-red-500" href={"https://www.gocurrency.com/"}>
+								<Link className="text-sm font-bold  underline hover:text-red-600" href={"https://www.gocurrency.com/"}>
 									GoCurrency
-								</Link>{" "}
+								</Link>
+								&nbsp;
 								<span className="text-xs">
 									- JavaScript, Typescript, C#, .NET, Next.JS, Node.JS, SASS, Mongo DB, Redis, Express.JS, Azure DevOps,
 									Docker, Github Actions
@@ -103,7 +105,7 @@ export function AboutMe() {
 					</AccordionContent>
 				</AccordionItem>
 				<AccordionItem value="Technologies">
-					<AccordionTrigger className="hover:text-red-500 font-bold focus:text-red-500 focus-within:text-red-500">
+					<AccordionTrigger className="hover:text-red-600 font-bold focus:text-red-600 focus-within:text-red-600">
 						Technologies
 					</AccordionTrigger>
 					<AccordionContent className="hover:text-white">

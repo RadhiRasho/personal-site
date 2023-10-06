@@ -54,8 +54,8 @@ export function MobilMenu({}: MobilMenuProps) {
 							<Link
 								onClick={() => setShowMenu(!showMenu)}
 								href={"/"}
-								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center justify-start ${
-									pathname === "/" && "text-red-500 border-b-2 border-b-red-500"
+								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start ${
+									pathname === "/" && "text-red-600 border-b-2 border-b-red-500 pb-1"
 								}`}
 							>
 								<HomeIcon strokeWidth={1.75} size={35} /> Home
@@ -63,8 +63,8 @@ export function MobilMenu({}: MobilMenuProps) {
 							<Link
 								onClick={() => setShowMenu(!showMenu)}
 								href={"/projects"}
-								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center justify-start ${
-									pathname === "/projects" && "text-red-500 border-b-2 border-b-red-500"
+								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start ${
+									pathname === "/projects" && "text-red-600 border-b-2 border-b-red-500 pb-1"
 								}`}
 							>
 								<Table2Icon strokeWidth={1.75} size={35} /> Projects
@@ -72,8 +72,8 @@ export function MobilMenu({}: MobilMenuProps) {
 							<Link
 								onClick={() => setShowMenu(!showMenu)}
 								href={"/contact"}
-								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center justify-start ${
-									pathname === "/contact" && "text-red-500 border-b-2 border-b-red-500"
+								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start ${
+									pathname === "/contact" && "text-red-600 border-b-2 border-b-red-500 pb-1"
 								}`}
 							>
 								<ContactIcon strokeWidth={1.75} size={35} />
@@ -85,7 +85,7 @@ export function MobilMenu({}: MobilMenuProps) {
 						<h4 className="mb-2 font-semibold tracking-tight">Socials</h4>
 						<div className="space-y-1 flex flex-col justify-evenly flex-grow-0">
 							<Link
-								className="flex justify-start gap-3 px-1 items-center"
+								className="flex justify-start gap-3 hover:text-red-500 px-1 items-center"
 								target="_blank"
 								as="https://github.com/radhirasho"
 								href="https://github.com/radhirasho"
@@ -94,7 +94,7 @@ export function MobilMenu({}: MobilMenuProps) {
 								Github
 							</Link>
 							<Link
-								className="flex justify-start gap-3 px-1 items-center"
+								className="flex justify-start gap-3 hover:text-red-500 px-1 items-center"
 								target="_blank"
 								as="https://twitter.com/RadhiH1"
 								href="https://twitter.com/RadhiH1"
@@ -103,7 +103,7 @@ export function MobilMenu({}: MobilMenuProps) {
 								X/Twitter
 							</Link>
 							<Link
-								className="flex justify-start gap-3 px-1 items-center"
+								className="flex justify-start gap-3 hover:text-red-500 px-1 items-center"
 								target="_blank"
 								as="https://www.linkedin.com/in/radhi-rasho-7827b218a/"
 								href="https://www.linkedin.com/in/radhi-rasho-7827b218a/"
