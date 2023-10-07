@@ -73,7 +73,7 @@ export function AboutMe() {
 					<AccordionTrigger className="hover:text-red-600 font-bold focus:text-red-600 focus-within:text-red-600">
 						Professional Experience
 					</AccordionTrigger>
-					<AccordionContent className="">
+					<AccordionContent>
 						<div className="flex flex-col gap-2 dark:text-gray-300">
 							<div className="text-md font-bold underline hover:text-red-600">
 								<Link as="https://www.sandhills.com/" target="_blank" href="https://www.sandhills.com/">
