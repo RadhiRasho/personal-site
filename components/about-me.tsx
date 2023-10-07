@@ -38,11 +38,11 @@ export function AboutMe() {
 							<br />
 							<br />
 							I&apos;m currently working at&nbsp;
-							<Link className="dark:text-gray-200 hover:text-red-600" href="https://www.sandhills.com/">
+							<Link className="dark:text-gray-200 hover:text-red-600" target="_blank" href="https://www.sandhills.com/">
 								<span className="underline hover:text-red-600">Sandhills Global</span>
 							</Link>
 							&nbsp; as a Full Stack Software Engineer. I have a Associates Degree in Computer Science from&nbsp;
-							<Link className="dark:text-gray-200 hover:text-red-600" href="https://www.southeast.edu/">
+							<Link className="dark:text-gray-200 hover:text-red-600" target="_blank" href="https://www.southeast.edu/">
 								<span className="underline hover:text-red-600">Southeast Community College</span>
 							</Link>
 							.

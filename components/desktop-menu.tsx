@@ -25,7 +25,7 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 			<NavigationMenu className="px-0 flex min-w-screen flex-col">
 				<NavigationMenuList>
 					<NavigationMenuItem>
-						<Link href="/" legacyBehavior passHref>
+						<Link href="/" as="/" legacyBehavior passHref>
 							<NavigationMenuLink
 								className={`hover:text-red-500 focus:text-red-500 flex justify-start gap-3 ${
 									pathname === "/" && "text-red-500 border-b-4 border-b-red-500"
@@ -36,7 +36,7 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 						</Link>
 					</NavigationMenuItem>
 					<NavigationMenuItem>
-						<Link href="/projects" legacyBehavior passHref>
+						<Link href="/projects" as="/projects" legacyBehavior passHref>
 							<NavigationMenuLink
 								className={`hover:text-red-500 focus:text-red-500 flex justify-start gap-3 ${
 									pathname === "/projects" && "text-red-500 border-b-4 border-b-red-500"
@@ -47,7 +47,7 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 						</Link>
 					</NavigationMenuItem>
 					<NavigationMenuItem>
-						<Link href="/contact" legacyBehavior passHref>
+						<Link href="/contact" as="/contact" legacyBehavior passHref>
 							<NavigationMenuLink
 								className={`hover:text-red-500 focus:text-red-500 flex justify-start gap-3 ${
 									pathname === "/contact" && "text-red-500 border-b-4 border-b-red-500"
