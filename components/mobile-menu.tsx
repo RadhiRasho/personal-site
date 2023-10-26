@@ -28,11 +28,13 @@ export function MobilMenu({}: MobilMenuProps) {
 				>
 					<Sun
 						size={35}
+						strokeWidth={1.75}
 						onClick={() => setTheme("dark")}
 						className="rotate-0 scale-100 transition-transform dark:-rotate-90 dark:scale-0"
 					/>
 					<Moon
 						size={35}
+						strokeWidth={1.75}
 						onClick={() => setTheme("light")}
 						className="absolute rotate-90 scale-0 transition-transform dark:rotate-0 dark:scale-100"
 					/>
@@ -40,9 +42,10 @@ export function MobilMenu({}: MobilMenuProps) {
 			</div>
 			<div
 				className={`${
-					showMenu ? "animate-in slide-in-from-left" : "animate-out slide-out-to-left z-[-99]"
+					showMenu
+						? "animate-in slide-in-from-left transition-all ease-in-out"
+						: "animate-out slide-out-to-left transition-all ease-in-out collapse"
 				} bg-secondary w-screen min-h-full pl-10 space-y-4 absolute z-[50]`}
-				style={{ opacity: showMenu ? 1 : 0 }}
 			>
 				<div className="flex flex-col justify-between">
 					<div className=" py-2">
@@ -51,29 +54,29 @@ export function MobilMenu({}: MobilMenuProps) {
 							<Link
 								onClick={() => setShowMenu(!showMenu)}
 								href={"/"}
-								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center justify-start ${
-									pathname === "/" && "text-red-500 border-b-2 border-b-red-500"
+								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start ${
+									pathname === "/" && "text-red-600 border-b-2 border-b-red-500 pb-1"
 								}`}
 							>
-								<HomeIcon /> Home
+								<HomeIcon strokeWidth={1.75} size={35} /> Home
 							</Link>
 							<Link
 								onClick={() => setShowMenu(!showMenu)}
 								href={"/projects"}
-								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center justify-start ${
-									pathname === "/projects" && "text-red-500 border-b-2 border-b-red-500"
+								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start ${
+									pathname === "/projects" && "text-red-600 border-b-2 border-b-red-500 pb-1"
 								}`}
 							>
-								<Table2Icon /> Projects
+								<Table2Icon strokeWidth={1.75} size={35} /> Projects
 							</Link>
 							<Link
 								onClick={() => setShowMenu(!showMenu)}
 								href={"/contact"}
-								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center justify-start ${
-									pathname === "/contact" && "text-red-500 border-b-2 border-b-red-500"
+								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start ${
+									pathname === "/contact" && "text-red-600 border-b-2 border-b-red-500 pb-1"
 								}`}
 							>
-								<ContactIcon />
+								<ContactIcon strokeWidth={1.75} size={35} />
 								Contact
 							</Link>
 						</div>
@@ -82,27 +85,30 @@ export function MobilMenu({}: MobilMenuProps) {
 						<h4 className="mb-2 font-semibold tracking-tight">Socials</h4>
 						<div className="space-y-1 flex flex-col justify-evenly flex-grow-0">
 							<Link
-								className="flex justify-start gap-3 px-1 items-center"
+								className="flex justify-start gap-3 hover:text-red-500 px-1 items-center"
+								target="_blank"
 								as="https://github.com/radhirasho"
 								href="https://github.com/radhirasho"
 							>
-								<Github className="hover:text-red-500" />
+								<Github strokeWidth={1.75} size={35} className="hover:text-red-500" />
 								Github
 							</Link>
 							<Link
-								className="flex justify-start gap-3 px-1 items-center"
+								className="flex justify-start gap-3 hover:text-red-500 px-1 items-center"
+								target="_blank"
 								as="https://twitter.com/RadhiH1"
 								href="https://twitter.com/RadhiH1"
 							>
-								<Twitter className="hover:text-red-500" />
+								<Twitter strokeWidth={1.75} size={35} className="hover:text-red-500" />
 								X/Twitter
 							</Link>
 							<Link
-								className="flex justify-start gap-3 px-1 items-center"
+								className="flex justify-start gap-3 hover:text-red-500 px-1 items-center"
+								target="_blank"
 								as="https://www.linkedin.com/in/radhi-rasho-7827b218a/"
 								href="https://www.linkedin.com/in/radhi-rasho-7827b218a/"
 							>
-								<Linkedin className="hover:text-red-500" />
+								<Linkedin strokeWidth={1.75} size={35} className="hover:text-red-500" />
 								LinkedIn
 							</Link>
 						</div>
