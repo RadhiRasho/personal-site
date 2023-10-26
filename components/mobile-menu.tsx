@@ -42,9 +42,7 @@ export function MobilMenu({}: MobilMenuProps) {
 			</div>
 			<div
 				className={`${
-					showMenu
-						? "animate-in slide-in-from-left transition-all ease-in-out"
-						: "animate-out slide-out-to-left transition-all ease-in-out collapse"
+					showMenu ? "animate-in slide-in-from-left" : "animate-out slide-out-to-left transition-all ease-out collapse"
 				} bg-secondary w-screen min-h-full pl-10 space-y-4 absolute z-[50]`}
 			>
 				<div className="flex flex-col justify-between">
@@ -55,7 +53,7 @@ export function MobilMenu({}: MobilMenuProps) {
 								onClick={() => setShowMenu(!showMenu)}
 								href={"/"}
 								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start ${
-									pathname === "/" && "text-red-600 border-b-2 border-b-red-500 pb-1"
+									pathname === "/" && "text-red-500 border-b-2 border-b-red-500 pb-1"
 								}`}
 							>
 								<HomeIcon strokeWidth={1.75} size={35} /> Home
@@ -64,7 +62,7 @@ export function MobilMenu({}: MobilMenuProps) {
 								onClick={() => setShowMenu(!showMenu)}
 								href={"/projects"}
 								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start ${
-									pathname === "/projects" && "text-red-600 border-b-2 border-b-red-500 pb-1"
+									pathname === "/projects" && "text-red-500 border-b-2 border-b-red-500 pb-1"
 								}`}
 							>
 								<Table2Icon strokeWidth={1.75} size={35} /> Projects
@@ -73,7 +71,7 @@ export function MobilMenu({}: MobilMenuProps) {
 								onClick={() => setShowMenu(!showMenu)}
 								href={"/contact"}
 								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start ${
-									pathname === "/contact" && "text-red-600 border-b-2 border-b-red-500 pb-1"
+									pathname === "/contact" && "text-red-500 border-b-2 border-b-red-500 pb-1"
 								}`}
 							>
 								<ContactIcon strokeWidth={1.75} size={35} />

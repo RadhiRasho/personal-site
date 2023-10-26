@@ -33,12 +33,12 @@ export default function CaptchaTest({ setIsVerified }: CaptchaTestProps) {
 			<div className="border rounded-3xl p-10 space-y-8">
 				<h1 className="text-lg">
 					<TooltipProvider>
-						<Tooltip>
-							<TooltipTrigger className="border-b-2 hover:border-b-red-500 ">Prove Your Existance...</TooltipTrigger>
-							<TooltipContent align="center" className="w-80">
+						<Tooltip delayDuration={500}>
+							<TooltipTrigger className="border-b-2 hover:border-b-red-500">Prove Your Existance...</TooltipTrigger>
+							<TooltipContent className="w-80">
 								A reference to one of my favorite games of all times,&nbsp;
 								<Link
-									className="hover:text-red-600 hover:border-b-red-500 italic border-b-2"
+									className="hover:text-red-500 hover:border-b-red-500 italic border-b-2"
 									target="_blank"
 									href={"https://en.wikipedia.org/wiki/Nier:_Automata"}
 								>
