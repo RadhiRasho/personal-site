@@ -69,6 +69,13 @@ export function TechnologiesList() {
 							<Image
 								width={50}
 								height={50}
+								src={"https://skillicons.dev/icons?i=electron"}
+								title={"Electron: 2 Months"}
+								alt={"Electron"}
+							/>
+							<Image
+								width={50}
+								height={50}
 								src={"https://skillicons.dev/icons?i=angular"}
 								title={"Angular.JS: 1 Year"}
 								alt={"Angular.JS"}
@@ -109,7 +116,7 @@ export function TechnologiesList() {
 						</div>
 					</div>
 					<div>
-						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">Syling </h2>
+						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">Styling </h2>
 						<div className="grid grid-flow-row items-center grid-cols-4 lg:grid-cols-8 gap-2">
 							<Image width={50} height={50} src={"https://skillicons.dev/icons?i=css"} title={"CSS"} alt={"CSS"} />
 							<Image width={50} height={50} src={"https://skillicons.dev/icons?i=sass"} title={"SASS"} alt={"SASS"} />
