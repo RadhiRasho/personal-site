@@ -12,7 +12,7 @@ export default function Projects() {
 			href: "https://github.com/radhirasho/personal-site",
 		},
 		{
-			title: "Meme Sender",
+			title: "Daily Meme",
 			description:
 				"Small project that I did to simply grab a meme from the publically avaliable API by Dev Daksan on GitHub and sends it via Email at a scheduled time everyday. It creates a system tray icon on Windows mainly with a few options that you can run such as sending a meme on demand, or changing the time of the scheduled meme.",
 			tags: ["Python", "GitHub", "Windows", "System Tray"],
