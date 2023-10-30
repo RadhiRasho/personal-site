@@ -26,7 +26,7 @@ export function Project({ title, description, image, href, tags }: ProjectProps)
 					) : (
 						<p className="text-lg font-bold">{title}</p>
 					)}
-					<p className="text-md w-10/12">{description}</p>
+					<p className="text-md w-9/12">{description}</p>
 					<br />
 					<div className="w-fit">
 						<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-1">
