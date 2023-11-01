@@ -3,9 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "./ui/badge";
-import { Project } from "@/types/project";
+import { Project as ProjectType } from "@/types/project";
 
-export function Project({ title, description, image, href, tags, disclosure }: Project) {
+export function Project({ title, description, image, href, tags, disclosure }: ProjectType) {
 	return (
 		<div className="flex justify-between overflow-hidden rounded-xl w-auto h-full border-2 dark:border-white border-black">
 			<div className="flex w-full h-full justify-between gap-2">
@@ -20,7 +20,7 @@ export function Project({ title, description, image, href, tags, disclosure }: P
 						)}
 						<p className="text-xs w-full">{description}</p>
 					</div>
-					<div className="flex flex-col w-full gap-y-2">
+					<div className="w-full">
 						<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-[0.15rem]">
 							{tags?.map((tag, index) => (
 								<Badge className="flex justify-center text-center" key={index}>
@@ -28,11 +28,6 @@ export function Project({ title, description, image, href, tags, disclosure }: P
 								</Badge>
 							))}
 						</div>
-						{disclosure && (
-							<div className="flex flex-row items-center middle justify-between">
-								<p className="!text-[12px] text-center" dangerouslySetInnerHTML={{ __html: disclosure }}></p>
-							</div>
-						)}
 					</div>
 				</div>
 				{image && (

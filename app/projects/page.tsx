@@ -1,6 +1,6 @@
 import { Project } from "@/components/project";
 import MySite from "@/public/radhi-rasho.dev.jpeg";
-import DailyMeme from "@/public/Daily-Meme.png";
+import DailyMeme from "@/public/DailyMeme.png";
 import { Project as ProjectType } from "@/types/project";
 
 export default function Projects() {
@@ -20,8 +20,6 @@ export default function Projects() {
 			tags: ["Python", "GitHub", "Windows", "System Tray"],
 			image: DailyMeme,
 			href: "https://github.com/radhirasho/DailyMeme",
-			disclosure:
-				"<strong class='text-[12px]'>Disclosure:</strong> Vector Illustration by <a class='text-[12px] font-bold hover:text-red-500' target='_blank' href='https://vectorified.com/download-image#meme-icon-31.png'>Vectorified</a> Under CC BY-NC 4.0 Licence",
 		},
 	];
 	return (

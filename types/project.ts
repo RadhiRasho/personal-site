@@ -6,5 +6,4 @@ export type Project = {
 	image?: StaticImageData;
 	href?: string;
 	tags?: string[];
-	disclosure?: string;
 };
