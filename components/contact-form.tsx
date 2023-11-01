@@ -44,7 +44,7 @@ export function ContactForm() {
 			const res = await fetch("/api/mail", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ ...values }),
+				body: JSON.stringify({ ...values, captcha: captchaSubmitted }),
 			});
 
 			const response: MailResponse = await res.json();

@@ -1,4 +1,3 @@
-"use client";
 import ReCAPTCHA from "react-google-recaptcha";
 import { TooltipProvider, TooltipTrigger, Tooltip, TooltipContent } from "./ui/tooltip";
 import Link from "next/link";

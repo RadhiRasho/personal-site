@@ -6,7 +6,9 @@ import { Mail } from "@/types/mail";
 
 export async function POST(req: NextRequest, res: NextResponse) {
 	try {
-		const { email, name, message } = await req.json();
+		const { email, name, message, captcha } = await req.json();
+
+		if (!captcha) return NextResponse.json({ error: "Captcha is required" }, { status: 400 });
 
 		const template = await formatTemplate(email, name, message);
 
