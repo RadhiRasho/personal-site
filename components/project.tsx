@@ -3,9 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "./ui/badge";
-import { Project as ProjectType } from "@/types/project";
+import { Project } from "@/types/project";
 
-export function Project({ title, description, image, href, tags, disclosure }: ProjectType) {
+export function Project({ title, description, image, href, tags }: Project) {
 	return (
 		<div className="flex justify-between overflow-hidden rounded-xl w-auto h-full border-2 dark:border-white border-black">
 			<div className="flex w-full h-full justify-between gap-2">
