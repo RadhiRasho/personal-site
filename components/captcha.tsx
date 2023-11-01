@@ -31,14 +31,14 @@ export default function CaptchaTest({ setIsVerified }: CaptchaTestProps) {
 	return (
 		<>
 			<div className="border rounded-3xl p-10 space-y-8">
-				<h1 className="text-lg">
+				<div className="text-sm flex justify-center">
 					<TooltipProvider>
 						<Tooltip delayDuration={500}>
 							<TooltipTrigger className="border-b-2 hover:border-b-red-500">Prove Your Existance...</TooltipTrigger>
-							<TooltipContent className="w-80">
+							<TooltipContent className="w-96 text-xs">
 								A reference to one of my favorite games of all times,&nbsp;
 								<Link
-									className="hover:text-red-500 hover:border-b-red-500 italic border-b-2"
+									className="hover:text-red-500 hover:border-b-red-500 text-xs italic border-b-2"
 									target="_blank"
 									href={"https://en.wikipedia.org/wiki/Nier:_Automata"}
 								>
@@ -49,7 +49,7 @@ export default function CaptchaTest({ setIsVerified }: CaptchaTestProps) {
 							</TooltipContent>
 						</Tooltip>
 					</TooltipProvider>
-				</h1>
+				</div>
 				<ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} onChange={handleCaptchaSubmission} />
 			</div>
 		</>

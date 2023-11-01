@@ -4,13 +4,13 @@ import Link from "next/link";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 import Image from "next/image";
 import { TechnologiesList } from "./technologies-list";
-import RadhiRasho from "@/public/Radhi-Rasho.jpg";
+import RadhiRasho from "@/public/Radhi-Rasho-pro.jpg";
 
 export function AboutMe() {
 	return (
 		<>
 			<div className="flex sm:flex-row flex-col min-h-fit justify-between gap-5 mb-4 bg-gradient-conic">
-				<Image className="rounded-full w-72" loading="lazy" alt="Radhi Rasho" src={RadhiRasho} />
+				<Image className="rounded-full w-64" priority alt="Radhi Rasho" src={RadhiRasho} />
 				<div className="flex flex-col items-center justify-center gap-1">
 					<h1 className="text-3xl font-bold">Radhi Rasho</h1>
 					<h2 className="text-xl font-semibold bg-gradient-to-r from-blue-600 to-red-600 dark:from-red-600 dark:to-blue-600 bg-clip-text text-transparent">
@@ -30,7 +30,7 @@ export function AboutMe() {
 						About Me
 					</AccordionTrigger>
 					<AccordionContent>
-						<p className="dark:text-gray-300">
+						<p className="dark:text-gray-300 text-sm">
 							Hello, I am Radhi Rasho, a full stack software engineer who enjoys crafting web applications that solve
 							real-world problems. I have a curious mind and a thirst for knowledge, so I never stop exploring new
 							technologies and learning new skills. I thrive on challenges that push me out of my comfort zone and help
@@ -73,9 +73,9 @@ export function AboutMe() {
 					<AccordionTrigger className="hover:text-red-500 font-bold focus:text-red-500 focus-within:text-red-500">
 						Professional Experience
 					</AccordionTrigger>
-					<AccordionContent>
+					<AccordionContent className="text-sm">
 						<div className="flex flex-col gap-2 dark:text-gray-300">
-							<div className="text-md font-bold underline hover:text-red-500">
+							<div className="text-sm font-bold underline hover:text-red-500">
 								<Link as="https://www.sandhills.com/" target="_blank" href="https://www.sandhills.com/">
 									Sandhills Global
 								</Link>
@@ -86,7 +86,7 @@ export function AboutMe() {
 								Software Engineer Intern
 								<span className="text-xs dark:text-gray-300 text-gray-900"> - 2020 to 2021</span>
 							</div>
-							<div className="dark:text-gray-300">
+							<div className="dark:text-gray-300 text-sm">
 								I first started off as an intern at Sandhills Global in Summer of 2020, where I worked on a small
 								projects that allowed me to learn the ropes of the company&apos;s development process. After my
 								internship, I was offered a full time position as a Software Engineer.
@@ -94,7 +94,7 @@ export function AboutMe() {
 								<br />
 								During my time at Sandhills Global, I&apos;ve had the opportunity to work on two significant projects:
 							</div>
-							<div className="dark:text-gray-300">
+							<div className="dark:text-gray-300 text-sm">
 								<Link
 									className="font-bold  underline hover:text-red-500"
 									target="_blank"

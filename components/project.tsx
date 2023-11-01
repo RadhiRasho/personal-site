@@ -1,41 +1,38 @@
-import Image, { StaticImageData } from "next/image";
+"use client";
+
+import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "./ui/badge";
+import { Project } from "@/types/project";
 
-type ProjectProps = {
-	title: string;
-	description: string;
-	image?: StaticImageData;
-	href?: string;
-	tags?: string[];
-};
-
-export function Project({ title, description, image, href, tags }: ProjectProps) {
+export function Project({ title, description, image, href, tags, disclosure }: Project) {
 	return (
-		<div className="flex justify-between overflow-hidden transition-all duration-75 delay-0 rounded-xl w-[95vw] xl:w-[75vw] h-fit mb-2 border-2 dark:border-white border-black">
-			<div className="flex relative w-full justify-between gap-2">
-				<div
-					className={`flex flex-col items-center md:items-start w-full h-fit z-50 md:bg-gradient-to-r dark:from-primary-foreground from-white ${
-						image ? "from-[68%]" : "from-100%"
-					} p-2`}
-				>
-					{href ? (
-						<Link href={href} className="text-lg font-bold underline hover:text-red-500">
-							{title}
-						</Link>
-					) : (
-						<p className="text-lg font-bold">{title}</p>
-					)}
-					<p className="text-md w-9/12">{description}</p>
-					<br />
-					<div className="w-fit">
-						<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-1">
+		<div className="flex justify-between overflow-hidden rounded-xl w-auto h-full border-2 dark:border-white border-black">
+			<div className="flex w-full h-full justify-between gap-2">
+				<div className="flex flex-col justify-between items-center md:items-start w-full h-full p-2 gap-2">
+					<div className="flex flex-col justify-between items-center w-full md:items-start">
+						{href ? (
+							<Link href={href} target="_blank" className="text-sm font-bold underline hover:text-red-500">
+								{title}
+							</Link>
+						) : (
+							<p className="text-xs font-bold">{title}</p>
+						)}
+						<p className="text-xs w-full">{description}</p>
+					</div>
+					<div className="flex flex-col w-full gap-y-2">
+						<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-[0.15rem]">
 							{tags?.map((tag, index) => (
-								<Badge className="flex justify-center !text-xs" key={index}>
+								<Badge className="flex justify-center text-center" key={index}>
 									{tag}
 								</Badge>
 							))}
 						</div>
+						{disclosure && (
+							<div className="flex flex-row items-center middle justify-between">
+								<p className="!text-[12px] text-center" dangerouslySetInnerHTML={{ __html: disclosure }}></p>
+							</div>
+						)}
 					</div>
 				</div>
 				{image && (
@@ -43,7 +40,7 @@ export function Project({ title, description, image, href, tags }: ProjectProps)
 						src={image}
 						alt={title}
 						priority
-						className="hidden dark:bg-primary md:flex w-3/6 lg:w-2/6 h-full absolute right-0"
+						className="hidden hover:bg-fixed md:flex w-auto max-w-[30%] scale-105 min-h-[100%] h-full object-center object-cover"
 					/>
 				)}
 			</div>

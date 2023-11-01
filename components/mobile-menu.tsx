@@ -22,19 +22,23 @@ export function MobilMenu({}: MobilMenuProps) {
 					onClick={() => setShowMenu(!showMenu)}
 				/>
 				<Button
+					aria-label="Toggle Dark Mode"
+					title="Toggle Dark Mode"
 					variant="ghost"
 					size="icon"
-					className="hover:bg-transparent hover:text-red-500 flex mr-1 justify-end w-6 h-"
+					className="hover:bg-transparent hover:text-red-500 flex mr-1 justify-end w-6"
 				>
 					<Sun
 						size={35}
 						strokeWidth={1.75}
 						onClick={() => setTheme("dark")}
+						aria-label="Toggle Light Mode"
 						className="rotate-0 scale-100 transition-transform dark:-rotate-90 dark:scale-0"
 					/>
 					<Moon
 						size={35}
 						strokeWidth={1.75}
+						aria-label="Toggle Dark Mode"
 						onClick={() => setTheme("light")}
 						className="absolute rotate-90 scale-0 transition-transform dark:rotate-0 dark:scale-100"
 					/>
@@ -52,7 +56,7 @@ export function MobilMenu({}: MobilMenuProps) {
 							<Link
 								onClick={() => setShowMenu(!showMenu)}
 								href={"/"}
-								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start ${
+								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start font-bold text-md ${
 									pathname === "/" && "text-red-500 border-b-2 border-b-red-500 pb-1"
 								}`}
 							>
@@ -61,7 +65,7 @@ export function MobilMenu({}: MobilMenuProps) {
 							<Link
 								onClick={() => setShowMenu(!showMenu)}
 								href={"/projects"}
-								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start ${
+								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start font-bold text-md ${
 									pathname === "/projects" && "text-red-500 border-b-2 border-b-red-500 pb-1"
 								}`}
 							>
@@ -70,7 +74,7 @@ export function MobilMenu({}: MobilMenuProps) {
 							<Link
 								onClick={() => setShowMenu(!showMenu)}
 								href={"/contact"}
-								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start ${
+								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start font-bold text-md ${
 									pathname === "/contact" && "text-red-500 border-b-2 border-b-red-500 pb-1"
 								}`}
 							>
@@ -87,8 +91,15 @@ export function MobilMenu({}: MobilMenuProps) {
 								target="_blank"
 								as="https://github.com/radhirasho"
 								href="https://github.com/radhirasho"
+								aria-label="Go to my Github profile"
+								title="Go to my Github profile"
 							>
-								<Github strokeWidth={1.75} size={35} className="hover:text-red-500" />
+								<Github
+									aria-label="Go to my Github profile"
+									strokeWidth={1.75}
+									size={35}
+									className="hover:text-red-500"
+								/>
 								Github
 							</Link>
 							<Link
@@ -96,8 +107,15 @@ export function MobilMenu({}: MobilMenuProps) {
 								target="_blank"
 								as="https://twitter.com/RadhiH1"
 								href="https://twitter.com/RadhiH1"
+								aria-label="Go to my Twitter profile"
+								title="Go to my Twitter profile"
 							>
-								<Twitter strokeWidth={1.75} size={35} className="hover:text-red-500" />
+								<Twitter
+									aria-label="Go to my Twitter profile"
+									strokeWidth={1.75}
+									size={35}
+									className="hover:text-red-500"
+								/>
 								X/Twitter
 							</Link>
 							<Link
@@ -105,8 +123,15 @@ export function MobilMenu({}: MobilMenuProps) {
 								target="_blank"
 								as="https://www.linkedin.com/in/radhi-rasho-7827b218a/"
 								href="https://www.linkedin.com/in/radhi-rasho-7827b218a/"
+								aria-label="Go to my LinkedIn profile"
+								title="Go to my LinkedIn profile"
 							>
-								<Linkedin strokeWidth={1.75} size={35} className="hover:text-red-500" />
+								<Linkedin
+									aria-label="Go to my LinkedIn profile"
+									strokeWidth={1.75}
+									size={35}
+									className="hover:text-red-500"
+								/>
 								LinkedIn
 							</Link>
 						</div>
