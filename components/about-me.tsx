@@ -39,11 +39,11 @@ export function AboutMe() {
 							<br />
 							I&apos;m currently working at&nbsp;
 							<Link className="dark:text-gray-200 hover:text-red-500" target="_blank" href="https://www.sandhills.com/">
-								<span className="underline hover:text-red-500">Sandhills Global</span>
+								<span className="underline text-sm hover:text-red-500">Sandhills Global</span>
 							</Link>
 							&nbsp; as a Full Stack Software Engineer. I have a Associates Degree in Computer Science from&nbsp;
 							<Link className="dark:text-gray-200 hover:text-red-500" target="_blank" href="https://www.southeast.edu/">
-								<span className="underline hover:text-red-500">Southeast Community College</span>
+								<span className="underline text-sm hover:text-red-500">Southeast Community College</span>
 							</Link>
 							.
 							<br />
@@ -59,11 +59,11 @@ export function AboutMe() {
 							<br />
 							Feel free to check out my&nbsp;
 							<Link className="dark:text-gray-200 hover:text-red-500" href="/projects">
-								<span className="underline hover:text-red-500">projects</span>
+								<span className="underline text-sm hover:text-red-500">projects</span>
 							</Link>
 							&nbsp; or&nbsp;
 							<Link className="dark:text-gray-200 hover:text-red-500" href="/contact">
-								<span className="underline hover:text-red-500">contact me</span>
+								<span className="underline text-sm hover:text-red-500">contact me</span>
 							</Link>
 							&nbsp; if you&apos;d like to get in touch.
 						</p>
@@ -75,7 +75,7 @@ export function AboutMe() {
 					</AccordionTrigger>
 					<AccordionContent className="text-sm">
 						<div className="flex flex-col gap-2 dark:text-gray-300">
-							<div className="text-sm font-bold underline hover:text-red-500">
+							<div className="text-sm font-semibold underline hover:text-red-500">
 								<Link as="https://www.sandhills.com/" target="_blank" href="https://www.sandhills.com/">
 									Sandhills Global
 								</Link>
@@ -96,7 +96,7 @@ export function AboutMe() {
 							</div>
 							<div className="dark:text-gray-300 text-sm">
 								<Link
-									className="font-bold  underline hover:text-red-500"
+									className="font-semibold  underline text-sm hover:text-red-500"
 									target="_blank"
 									href={"https://www.fr8star.com"}
 								>
@@ -109,7 +109,7 @@ export function AboutMe() {
 								<br />
 								<br />
 								<Link
-									className="font-bold  underline hover:text-red-500"
+									className="font-semibold  underline text-sm hover:text-red-500"
 									target="_blank"
 									href={"https://www.gocurrency.com/"}
 								>
