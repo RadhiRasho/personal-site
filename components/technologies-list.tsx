@@ -76,13 +76,6 @@ export function TechnologiesList() {
 							<Image
 								width={50}
 								height={50}
-								src={"https://skillicons.dev/icons?i=angular"}
-								title={"Angular.JS: 1 Year"}
-								alt={"Angular.JS"}
-							/>
-							<Image
-								width={50}
-								height={50}
 								src={"https://skillicons.dev/icons?i=express"}
 								title={"Express.JS: 3 Years"}
 								alt={"Express.JS"}
