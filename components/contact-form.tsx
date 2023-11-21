@@ -44,7 +44,7 @@ export function ContactForm() {
 			const res = await fetch("/api/mail", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ ...values }),
+				body: JSON.stringify({ ...values, captcha: captchaSubmitted }),
 			});
 
 			const response: MailResponse = await res.json();
@@ -68,19 +68,24 @@ export function ContactForm() {
 			{!captchaSubmitted ? (
 				<CaptchaTest setIsVerified={handleIsVerified} />
 			) : !messageSent ? (
-				<form onSubmit={form.handleSubmit(onSubmit)} className="border rounded-3xl px-5 py-4 space-y-4">
-					<h1>Contact Me</h1>
-					<FormDescription>Leave me a message and I&apos;ll get back to you as soon as I can: </FormDescription>
+				<form
+					onSubmit={form.handleSubmit(onSubmit)}
+					className="border-2 rounded-3xl w-fit px-5 py-2 space-y-2 mx-2 mb-2"
+				>
+					<div className="text-md">Contact Me</div>
+					<FormDescription className="text-xs">
+						Leave me a message and I&apos;ll get back to you as soon as I can:{" "}
+					</FormDescription>
 					<FormField
 						control={form.control}
 						name="name"
 						render={({ field }) => (
 							<FormItem>
-								<FormLabel>Name</FormLabel>
+								<FormLabel className="text-xs">Name</FormLabel>
 								<FormControl>
-									<Input placeholder="Radhi Rasho" {...field} />
+									<Input className="text-xs" placeholder="Radhi Rasho" {...field} />
 								</FormControl>
-								<FormMessage />
+								<FormMessage className="text-xs" />
 							</FormItem>
 						)}
 					/>
@@ -89,11 +94,11 @@ export function ContactForm() {
 						name="email"
 						render={({ field }) => (
 							<FormItem>
-								<FormLabel>Email</FormLabel>
+								<FormLabel className="text-xs">Email</FormLabel>
 								<FormControl>
-									<Input placeholder="example@email.com" {...field} />
+									<Input className="text-xs" placeholder="example@email.com" {...field} />
 								</FormControl>
-								<FormMessage />
+								<FormMessage className="text-xs" />
 							</FormItem>
 						)}
 					/>
@@ -102,19 +107,21 @@ export function ContactForm() {
 						name="message"
 						render={({ field }) => (
 							<FormItem>
-								<FormLabel>Message</FormLabel>
+								<FormLabel className="text-xs">Message</FormLabel>
 								<FormControl>
-									<Textarea rows={4} placeholder="Hello There..." {...field} />
+									<Textarea rows={4} className="text-xs" placeholder="Hello There..." {...field} />
 								</FormControl>
-								<FormMessage />
+								<FormMessage className="text-xs" />
 							</FormItem>
 						)}
 					/>
-
-					<Button type="submit">Submit</Button>
+					<br />
+					<Button className="text-xs px-4" type="submit">
+						Submit
+					</Button>
 				</form>
 			) : (
-				<div className="border rounded-3xl p-10 space-y-8">Thank you for contacting us.</div>
+				<div className="border rounded-3xl p-10 space-y-8 text-xs">Thank you for contacting us.</div>
 			)}
 		</Form>
 	);

@@ -21,13 +21,13 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 	const { setTheme } = useTheme();
 
 	return (
-		<div className={`hidden sm:flex flex-row justify-between`}>
+		<div className="hidden sm:flex flex-row justify-between">
 			<NavigationMenu className="px-0 flex min-w-screen flex-col">
 				<NavigationMenuList>
 					<NavigationMenuItem>
 						<Link href="/" as="/" legacyBehavior passHref>
 							<NavigationMenuLink
-								className={`hover:text-red-500 focus:text-red-500 flex justify-start gap-3 ${
+								className={`hover:text-red-500 focus:text-red-500 flex justify-start gap-3 text-xs ${
 									pathname === "/" && "text-red-500 border-b-4 border-b-red-500"
 								} ${navigationMenuTriggerStyle()}`}
 							>
@@ -38,7 +38,7 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 					<NavigationMenuItem>
 						<Link href="/projects" as="/projects" legacyBehavior passHref>
 							<NavigationMenuLink
-								className={`hover:text-red-500 focus:text-red-500 flex justify-start gap-3 ${
+								className={`hover:text-red-500 focus:text-red-500 flex justify-start gap-3 text-xs ${
 									pathname === "/projects" && "text-red-500 border-b-4 border-b-red-500"
 								} ${navigationMenuTriggerStyle()}`}
 							>
@@ -49,7 +49,7 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 					<NavigationMenuItem>
 						<Link href="/contact" as="/contact" legacyBehavior passHref>
 							<NavigationMenuLink
-								className={`hover:text-red-500 focus:text-red-500 flex justify-start gap-3 ${
+								className={`hover:text-red-500 focus:text-red-500 flex justify-start gap-3 text-xs ${
 									pathname === "/contact" && "text-red-500 border-b-4 border-b-red-500"
 								} ${navigationMenuTriggerStyle()}`}
 							>
@@ -65,7 +65,8 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 						<Button
 							variant="ghost"
 							size="icon"
-							className="hover:bg-transparent hover:text-red-500 w-6 flex justify-end"
+							aria-label="Toggle Dark Mode"
+							className="hover:bg-transparent hover:text-red-500 text-xs w-6 flex justify-end"
 						>
 							<Sun
 								strokeWidth={1.75}
@@ -82,22 +83,33 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 						</Button>
 					</NavigationMenuItem>
 					<NavigationMenuItem>
-						<Link target="_blank" as="https://github.com/radhirasho" href="https://github.com/radhirasho">
-							<Github strokeWidth={1.75} size={30} className="hover:text-red-500" />
-						</Link>
-					</NavigationMenuItem>
-					<NavigationMenuItem>
-						<Link target="_blank" as="https://twitter.com/RadhiH1" href="https://twitter.com/RadhiH1">
-							<Twitter strokeWidth={1.75} size={30} className="hover:text-red-500" />
+						<Link
+							aria-label="Go to my Github profile"
+							target="_blank"
+							as="https://github.com/radhirasho"
+							href="https://github.com/radhirasho"
+						>
+							<Github strokeWidth={1.75} size={30} className="hover:text-red-500 text-xs" />
 						</Link>
 					</NavigationMenuItem>
 					<NavigationMenuItem>
 						<Link
+							aria-label="Go to my X/Twitter profile"
+							target="_blank"
+							as="https://twitter.com/RadhiH1"
+							href="https://twitter.com/RadhiH1"
+						>
+							<Twitter strokeWidth={1.75} size={30} className="hover:text-red-500 text-xs" />
+						</Link>
+					</NavigationMenuItem>
+					<NavigationMenuItem>
+						<Link
+							aria-label="Go to my LinkedIn profile"
 							target="_blank"
 							as="https://www.linkedin.com/in/radhi-rasho-7827b218a/"
 							href="https://www.linkedin.com/in/radhi-rasho-7827b218a/"
 						>
-							<Linkedin strokeWidth={1.75} size={30} className="hover:text-red-500" />
+							<Linkedin strokeWidth={1.75} size={30} className="hover:text-red-500 text-xs" />
 						</Link>
 					</NavigationMenuItem>
 				</NavigationMenuList>
