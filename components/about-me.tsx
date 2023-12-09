@@ -5,17 +5,40 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./
 import Image from "next/image";
 import { TechnologiesList } from "./technologies-list";
 import RadhiRasho from "@/public/Radhi-Rasho-pro.jpg";
+import TypeEffect, { Options } from "typewriter-effect";
+import { useMemo } from "react";
 
 export function AboutMe() {
+	const words = useMemo<string[]>(() => {
+		return [
+			'Web Developer',
+			'Front End Developer',
+			'Back End Developer',
+			'Software Engineer',
+		]
+	}, []);
+
 	return (
 		<>
 			<div className="flex sm:flex-row flex-col min-h-fit justify-between gap-5 mb-4 bg-gradient-conic">
 				<Image className="rounded-full w-64" priority alt="Radhi Rasho" src={RadhiRasho} />
 				<div className="flex flex-col items-center justify-center gap-1">
 					<h1 className="text-3xl font-bold">Radhi Rasho</h1>
-					<h2 className="text-xl font-semibold bg-gradient-to-r from-blue-600 to-red-600 dark:from-red-600 dark:to-blue-600 bg-clip-text text-transparent">
-						Software Engineer
-					</h2>
+					<TypeEffect
+						options={{
+							strings: words,
+							autoStart: true,
+							deleteSpeed: 50,
+							delay: 50,
+							pauseFor: 5000,
+							cursor: "_",
+							devMode: false,
+							loop: true,
+							skipAddStyles: true,
+							wrapperClassName: "text-md font-bold bg-gradient-to-r from-blue-600 to-red-600 dark:from-red-600 dark:to-blue-600 bg-clip-text text-transparent",
+							cursorClassName: "text-xs font-bold text-blue-500",
+						} as Partial<Options> & { pauseFor: number }}
+					/>
 				</div>
 			</div>
 			<Accordion
