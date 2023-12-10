@@ -11,18 +11,19 @@ import { useMemo } from "react";
 export function AboutMe() {
 	const words = useMemo<string[]>(() => {
 		return [
-			'Web Developer',
-			'Front End Developer',
-			'Back End Developer',
-			'Software Engineer',
+			"Software Engineer",
+			"Web Developer",
+			"Full Stack Engineer",
+			"Localhost:3000/Coding",
+			"git commit -m 'Hello World'",
 		]
 	}, []);
 
 	return (
 		<>
-			<div className="flex sm:flex-row flex-col min-h-fit justify-between gap-5 mb-4 bg-gradient-conic">
-				<Image className="rounded-full w-64" priority alt="Radhi Rasho" src={RadhiRasho} />
-				<div className="flex flex-col items-center justify-center gap-1">
+			<div className="flex sm:flex-row flex-col min-h-fit w-10/12 justify-between gap-5 mb-4 bg-gradient-conic">
+				<Image className="rounded-full w-56" priority alt="Radhi Rasho" src={RadhiRasho} />
+				<div className="flex flex-col w-56 items-center justify-center gap-2">
 					<h1 className="text-3xl font-bold">Radhi Rasho</h1>
 					<TypeEffect
 						options={{
@@ -30,12 +31,12 @@ export function AboutMe() {
 							autoStart: true,
 							deleteSpeed: 50,
 							delay: 50,
-							pauseFor: 5000,
+							pauseFor: 3500,
 							cursor: "_",
 							devMode: false,
 							loop: true,
 							skipAddStyles: true,
-							wrapperClassName: "text-md font-bold bg-gradient-to-r from-blue-600 to-red-600 dark:from-red-600 dark:to-blue-600 bg-clip-text text-transparent",
+							wrapperClassName: "text-base/loose font-bold bg-gradient-to-r from-blue-600 to-red-600 dark:from-red-600 dark:to-blue-600 bg-clip-text text-transparent",
 							cursorClassName: "text-xs font-bold text-blue-500",
 						} as Partial<Options> & { pauseFor: number }}
 					/>
