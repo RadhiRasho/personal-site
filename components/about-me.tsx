@@ -61,11 +61,11 @@ export function AboutMe() {
 							me grow as a developer.
 							<br />
 							<br />
-							I&apos;m currently working at&nbsp;
+							I&apos;m Full Stack Software Engineer currently working at&nbsp;
 							<Link className="dark:text-gray-200 hover:text-red-500" target="_blank" href="https://www.sandhills.com/">
 								<span className="underline text-sm hover:text-red-500">Sandhills Global</span>
 							</Link>
-							&nbsp; as a Full Stack Software Engineer. I have a Associates Degree in Computer Science from&nbsp;
+							&nbsp;. I have a Associates Degree in Computer Science from&nbsp;
 							<Link className="dark:text-gray-200 hover:text-red-500" target="_blank" href="https://www.southeast.edu/">
 								<span className="underline text-sm hover:text-red-500">Southeast Community College</span>
 							</Link>
