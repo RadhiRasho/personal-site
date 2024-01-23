@@ -61,7 +61,7 @@ export function AboutMe() {
 							me grow as a developer.
 							<br />
 							<br />
-							I&apos;m Full Stack Software Engineer currently working at&nbsp;
+							I&apos;m a Full Stack Software Engineer currently working at&nbsp;
 							<Link className="dark:text-gray-200 hover:text-red-500" target="_blank" href="https://www.sandhills.com/">
 								<span className="underline text-sm hover:text-red-500">Sandhills Global</span>
 							</Link>
