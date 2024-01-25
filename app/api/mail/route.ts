@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createTransport } from "nodemailer";
-import { promises as fs } from "fs";
+import { readFile } from "fs/promises";
 import path from "path";
 import { Mail } from "@/types/mail";
 
@@ -43,7 +43,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
 async function formatTemplate(email: string, name: string, message: string): Promise<string> {
 	const pathToTemplate = path.resolve("public/templates", "email-templates.html");
 
-	const file = await fs.readFile(pathToTemplate, "utf8");
+	const file = await readFile(pathToTemplate, "utf8");
 
 	return file
 		.replace(/{{email}}/g, email)

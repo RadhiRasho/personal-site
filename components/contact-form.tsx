@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { Textarea } from "./ui/textarea";
@@ -39,6 +39,16 @@ export function ContactForm() {
 	const [messageSent, setMessageSent] = useState(false);
 	const [captchaSubmitted, setCaptchaSubmitted] = useState(false);
 
+	useEffect(() => {
+		if (window !== undefined) {
+			const messageSent = sessionStorage.getItem("messageSent");
+
+			if (messageSent) {
+				setMessageSent(true);
+			}
+		}
+	}, []);
+
 	async function onSubmit(values: z.infer<typeof formSchema>) {
 		try {
 			const res = await fetch("/api/mail", {
@@ -54,6 +64,7 @@ export function ContactForm() {
 			}
 
 			setMessageSent(!messageSent);
+			sessionStorage.setItem("messageSent", "true");
 		} catch (error) {
 			console.error(error);
 		}
@@ -121,7 +132,7 @@ export function ContactForm() {
 					</Button>
 				</form>
 			) : (
-				<div className="border rounded-3xl p-10 space-y-8 text-xs">Thank you for contacting us.</div>
+				<div className="border rounded-3xl p-10 space-y-8 text-xs">Thank you for contacting me.</div>
 			)}
 		</Form>
 	);

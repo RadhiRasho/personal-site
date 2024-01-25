@@ -3,6 +3,7 @@
 import Image from "next/image";
 import WindowsIcon from "@/public/windows.svg";
 import AppleIcon from "@/public/apple.svg";
+import HonoIcon from '@/public/hono-logo.svg';
 
 export function TechnologiesList() {
 	return (
@@ -83,6 +84,14 @@ export function TechnologiesList() {
 							<Image
 								width={50}
 								height={50}
+								src={HonoIcon}
+								className="bg-[#242938] h-[14mm] w-[14mm]  p-1 rounded-md"
+								title={"Hono: 2 Months"}
+								alt={"Hono"}
+							/>
+							<Image
+								width={50}
+								height={50}
 								src={"https://skillicons.dev/icons?i=bootstrap"}
 								title={"Bootstrap: 1 Year"}
 								alt={"Bootstrap"}
@@ -132,6 +141,13 @@ export function TechnologiesList() {
 								src={"https://skillicons.dev/icons?i=nodejs"}
 								title={"Node.JS: 3 Years"}
 								alt={"NodeJS"}
+							/>
+							<Image
+								width={50}
+								height={50}
+								src={"https://skillicons.dev/icons?i=bun"}
+								title={"Bun: 5 Months"}
+								alt={"BunJS"}
 							/>
 							<Image width={50} height={50} src={"https://skillicons.dev/icons?i=dotnet"} title={".NET"} alt={".NET"} />
 						</div>

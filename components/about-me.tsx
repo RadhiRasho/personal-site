@@ -21,7 +21,7 @@ export function AboutMe() {
 
 	return (
 		<>
-			<div className="flex sm:flex-row flex-col min-h-fit w-10/12 justify-between gap-5 mb-4 bg-gradient-conic">
+			<div className="flex sm:flex-row flex-col min-h-fit w-10/12 items-center justify-evenly gap-5 mb-4 bg-gradient-conic">
 				<Image className="rounded-full w-56" priority alt="Radhi Rasho" src={RadhiRasho} />
 				<div className="flex flex-col w-56 items-center justify-center gap-2">
 					<h1 className="text-3xl font-bold">Radhi Rasho</h1>
@@ -61,7 +61,7 @@ export function AboutMe() {
 							me grow as a developer.
 							<br />
 							<br />
-							I&apos;m a Full Stack Software Engineer currently working at&nbsp;
+							I&apos;m currently working at&nbsp;
 							<Link className="dark:text-gray-200 hover:text-red-500" target="_blank" href="https://www.sandhills.com/">
 								<span className="underline text-sm hover:text-red-500">Sandhills Global</span>
 							</Link>
@@ -105,9 +105,9 @@ export function AboutMe() {
 								</Link>
 							</div>
 							<div className="text-xs italic font-semibold dark:text-gray-300">
-								Software Engineer<span className="text-xs dark:text-gray-300 text-gray-900"> - 2021 to Present</span>
+								Software Developer<span className="text-xs dark:text-gray-300 text-gray-900"> - 2021 to Present</span>
 								<br />
-								Software Engineer Intern
+								Software Developer Intern
 								<span className="text-xs dark:text-gray-300 text-gray-900"> - 2020 to 2021</span>
 							</div>
 							<div className="dark:text-gray-300 text-sm">
