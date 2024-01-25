@@ -4,19 +4,20 @@
 		"enabled": true
 	},
 	"files": {
-		"include": [
-			"**/*.ts"
-		],
-		"ignore": [
-			"**/node_modules/*",
-			"**/.vscode/*"
-		]
+		"include": ["**/*.ts"],
+		"ignore": ["**/node_modules/*", "**/.vscode/*"]
 	},
 	"linter": {
 		"enabled": true,
 		"rules": {
 			"recommended": true
-		}
+		},
+		"ignore": [
+			"**/node_modules/*",
+			"**/.vscode/*",
+			"**/.next/*",
+			"**/components/ui/*"
+		]
 	},
 	"formatter": {
 		"enabled": true,

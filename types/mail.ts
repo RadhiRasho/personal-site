@@ -8,7 +8,7 @@ export type Mail = {
 
 export type MailResponse = {
 	accepted: string[];
-	rejected: any[];
+	rejected: unknown[];
 	ehlo: string[];
 	envelopeTime: number;
 	messageTime: number;
