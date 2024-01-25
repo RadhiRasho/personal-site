@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "lint": "next lint",
+    "lint": "biome lint --apply . && biome format --write .",
     "refresh": "npm ci"
   },
   "dependencies": {
