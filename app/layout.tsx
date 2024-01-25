@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ReactNode } from "react";
 import { NavBar } from "@/components/nav-menu";
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: Props) {
 					<NavBar />
 					{children}
 				</ThemeProvider>
+				<SpeedInsights />
 			</body>
 		</html>
 	);
