@@ -1,12 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import { createTransport } from "nodemailer";
 import { readFile } from "fs/promises";
 import path from "path";
-import { Mail } from "@/types/mail";
-
-export function middleware(request: NextRequest) {
-	const req = request.headers;
-}
+import type { Mail } from "@/types/mail";
 
 export async function POST(req: NextRequest, res: NextResponse) {
 	const { email, name, message, captcha } = await req.json();
