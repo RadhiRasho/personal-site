@@ -2,21 +2,17 @@ import { GoogleResponse } from "@/types/google-response";
 import { NextRequest, NextResponse } from "next/server";
 
 async function verifyCaptcha(token: string) {
-	try {
-		const res = await fetch(
-			`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${token}`
-		);
+	const res = await fetch(
+		`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${token}`,
+	);
 
-		const google_response: GoogleResponse = await res.json();
+	const google_response: GoogleResponse = await res.json();
 
-		if (google_response.success === true) {
-			return google_response.success;
-		} else {
-			throw new Error("Failed Captcha");
-		}
-	} catch (error) {
-		throw error;
+	if (google_response.success === true) {
+		return google_response.success;
 	}
+
+	throw new Error("Failed Captcha");
 }
 
 export async function POST(req: NextRequest, _: NextResponse) {

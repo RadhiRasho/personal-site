@@ -55,7 +55,7 @@ export function AboutMe() {
 					</AccordionTrigger>
 					<AccordionContent>
 						<p className="dark:text-gray-300 text-sm">
-							Hello, I am Radhi Rasho, a full stack software engineer who enjoys crafting web applications that solve
+							Hello, I am Radhi Rasho, a Full Stack Software Engineer who enjoys crafting web applications that solve
 							real-world problems. I have a curious mind and a thirst for knowledge, so I never stop exploring new
 							technologies and learning new skills. I thrive on challenges that push me out of my comfort zone and help
 							me grow as a developer.

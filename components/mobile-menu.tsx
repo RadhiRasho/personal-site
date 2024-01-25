@@ -9,7 +9,7 @@ interface MobilMenuProps {
 	className?: string;
 }
 
-export function MobilMenu({}: MobilMenuProps) {
+export function MobilMenu({ }: MobilMenuProps) {
 	const pathname = usePathname();
 	const { setTheme } = useTheme();
 	const [showMenu, setShowMenu] = useState(false);
@@ -45,9 +45,8 @@ export function MobilMenu({}: MobilMenuProps) {
 				</Button>
 			</div>
 			<div
-				className={`${
-					showMenu ? "animate-in slide-in-from-left" : "animate-out slide-out-to-left transition-all ease-out collapse"
-				} bg-secondary w-screen min-h-full pl-10 space-y-4 absolute z-[50]`}
+				className={`${showMenu ? "animate-in slide-in-from-left" : "animate-out slide-out-to-left transition-all ease-out collapse"
+					} bg-secondary w-screen min-h-full pl-10 space-y-4 absolute z-[50]`}
 			>
 				<div className="flex flex-col justify-between">
 					<div className=" py-2">
@@ -56,27 +55,24 @@ export function MobilMenu({}: MobilMenuProps) {
 							<Link
 								onClick={() => setShowMenu(!showMenu)}
 								href={"/"}
-								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start font-bold text-md ${
-									pathname === "/" && "text-red-500 border-b-2 border-b-red-500 pb-1"
-								}`}
+								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start font-bold text-md ${pathname === "/" && "text-red-500 border-b-2 border-b-red-500 pb-1"
+									}`}
 							>
 								<HomeIcon strokeWidth={1.75} size={35} /> Home
 							</Link>
 							<Link
 								onClick={() => setShowMenu(!showMenu)}
 								href={"/projects"}
-								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start font-bold text-md ${
-									pathname === "/projects" && "text-red-500 border-b-2 border-b-red-500 pb-1"
-								}`}
+								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start font-bold text-md ${pathname === "/projects" && "text-red-500 border-b-2 border-b-red-500 pb-1"
+									}`}
 							>
 								<Table2Icon strokeWidth={1.75} size={35} /> Projects
 							</Link>
 							<Link
 								onClick={() => setShowMenu(!showMenu)}
 								href={"/contact"}
-								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start font-bold text-md ${
-									pathname === "/contact" && "text-red-500 border-b-2 border-b-red-500 pb-1"
-								}`}
+								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start font-bold text-md ${pathname === "/contact" && "text-red-500 border-b-2 border-b-red-500 pb-1"
+									}`}
 							>
 								<ContactIcon strokeWidth={1.75} size={35} />
 								Contact

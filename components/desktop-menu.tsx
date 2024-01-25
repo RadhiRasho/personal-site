@@ -27,9 +27,8 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 					<NavigationMenuItem>
 						<Link href="/" as="/" legacyBehavior passHref>
 							<NavigationMenuLink
-								className={`hover:text-red-500 focus:text-red-500 flex justify-start gap-3 text-xs ${
-									pathname === "/" && "text-red-500 border-b-4 border-b-red-500"
-								} ${navigationMenuTriggerStyle()}`}
+								className={`hover:text-red-500 focus:text-red-500 flex justify-start gap-3 text-xs ${pathname === "/" && "text-red-500 border-b-4 border-b-red-500"
+									} ${navigationMenuTriggerStyle()}`}
 							>
 								<HomeIcon strokeWidth={1.75} size={25} /> Home
 							</NavigationMenuLink>
@@ -38,9 +37,8 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 					<NavigationMenuItem>
 						<Link href="/projects" as="/projects" legacyBehavior passHref>
 							<NavigationMenuLink
-								className={`hover:text-red-500 focus:text-red-500 flex justify-start gap-3 text-xs ${
-									pathname === "/projects" && "text-red-500 border-b-4 border-b-red-500"
-								} ${navigationMenuTriggerStyle()}`}
+								className={`hover:text-red-500 focus:text-red-500 flex justify-start gap-3 text-xs ${pathname === "/projects" && "text-red-500 border-b-4 border-b-red-500"
+									} ${navigationMenuTriggerStyle()}`}
 							>
 								<Table2Icon strokeWidth={1.75} size={25} /> Projects
 							</NavigationMenuLink>
@@ -49,9 +47,8 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 					<NavigationMenuItem>
 						<Link href="/contact" as="/contact" legacyBehavior passHref>
 							<NavigationMenuLink
-								className={`hover:text-red-500 focus:text-red-500 flex justify-start gap-3 text-xs ${
-									pathname === "/contact" && "text-red-500 border-b-4 border-b-red-500"
-								} ${navigationMenuTriggerStyle()}`}
+								className={`hover:text-red-500 focus:text-red-500 flex justify-start gap-3 text-xs ${pathname === "/contact" && "text-red-500 border-b-4 border-b-red-500"
+									} ${navigationMenuTriggerStyle()}`}
 							>
 								<ContactIcon strokeWidth={1.75} size={25} /> Contact
 							</NavigationMenuLink>
