@@ -1,15 +1,23 @@
 import { Project } from "@/components/project";
 import MySite from "@/public/radhi-rasho.dev.jpeg";
 import DailyMeme from "@/public/DailyMeme.png";
-import { Project as ProjectType } from "@/types/project";
+import { ProjectProps } from "@/types/project";
 
 export default function Projects() {
-	const projects: ProjectType[] = [
+	const projects: ProjectProps[] = [
 		{
 			title: "Personal Site",
 			description:
 				"This is what you are viewing currently, a project to show off stuff I like to do, and stuff I've built over time.",
-			tags: ["Next.js", "Vercel", "GitHub", "Node.js", "React", "TailwindCSS", "TypeScript"],
+			tags: [
+				"Next.js",
+				"Vercel",
+				"GitHub",
+				"Node.js",
+				"React",
+				"TailwindCSS",
+				"TypeScript",
+			],
 			image: MySite,
 			href: "https://github.com/radhirasho/personal-site",
 		},
@@ -26,7 +34,7 @@ export default function Projects() {
 		<main className="flex min-h-full flex-col items-center mt-4 mx-2 justify-between">
 			<div className="grid  xl:grid-cols-2 gap-2 translation-all">
 				{projects.map((project, index) => (
-					<Project key={index} {...project} />
+					<Project key={`${project.title}-${index}`} {...project} />
 				))}
 			</div>
 		</main>

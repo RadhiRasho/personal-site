@@ -6,17 +6,22 @@ import {
 	NavigationMenuList,
 	navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { ContactIcon, Github, HomeIcon, Linkedin, Moon, Sun, Table2Icon, Twitter } from "lucide-react";
+import {
+	ContactIcon,
+	Github,
+	HomeIcon,
+	Linkedin,
+	Moon,
+	Sun,
+	Table2Icon,
+	Twitter,
+} from "lucide-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
-interface DesktopMenuProps {
-	className?: string;
-}
-
-export function DesktopMenu({ className }: DesktopMenuProps) {
+export function DesktopMenu() {
 	const pathname = usePathname();
 	const { setTheme } = useTheme();
 
@@ -27,8 +32,10 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 					<NavigationMenuItem>
 						<Link href="/" as="/" legacyBehavior passHref>
 							<NavigationMenuLink
-								className={`hover:text-red-500 focus:text-red-500 flex justify-start gap-3 text-xs ${pathname === "/" && "text-red-500 border-b-4 border-b-red-500"
-									} ${navigationMenuTriggerStyle()}`}
+								className={`dark:hover:text-red-500 dark:focus:text-red-500 focus:text-red-800 flex justify-start gap-3 text-xs ${
+									pathname === "/" &&
+									"text-red-800 dark:text-red-500 border-b-4 border-b-red-800 dark:border-b-red-500"
+								} ${navigationMenuTriggerStyle()}`}
 							>
 								<HomeIcon strokeWidth={1.75} size={25} /> Home
 							</NavigationMenuLink>
@@ -37,8 +44,10 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 					<NavigationMenuItem>
 						<Link href="/projects" as="/projects" legacyBehavior passHref>
 							<NavigationMenuLink
-								className={`hover:text-red-500 focus:text-red-500 flex justify-start gap-3 text-xs ${pathname === "/projects" && "text-red-500 border-b-4 border-b-red-500"
-									} ${navigationMenuTriggerStyle()}`}
+								className={`dark:hover:text-red-500 dark:focus:text-red-500 focus:text-red-800 flex justify-start gap-3 text-xs ${
+									pathname === "/projects" &&
+									"text-red-800 dark:text-red-500 border-b-4 border-b-red-800 dark:border-b-red-500"
+								} ${navigationMenuTriggerStyle()}`}
 							>
 								<Table2Icon strokeWidth={1.75} size={25} /> Projects
 							</NavigationMenuLink>
@@ -47,8 +56,10 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 					<NavigationMenuItem>
 						<Link href="/contact" as="/contact" legacyBehavior passHref>
 							<NavigationMenuLink
-								className={`hover:text-red-500 focus:text-red-500 flex justify-start gap-3 text-xs ${pathname === "/contact" && "text-red-500 border-b-4 border-b-red-500"
-									} ${navigationMenuTriggerStyle()}`}
+								className={`dark:hover:text-red-500 dark:focus:text-red-500 focus:text-red-800 flex justify-start gap-3 text-xs ${
+									pathname === "/contact" &&
+									"text-red-800 dark:text-red-500 border-b-4 border-b-red-800 dark:border-b-red-500"
+								} ${navigationMenuTriggerStyle()}`}
 							>
 								<ContactIcon strokeWidth={1.75} size={25} /> Contact
 							</NavigationMenuLink>
@@ -86,7 +97,11 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 							as="https://github.com/radhirasho"
 							href="https://github.com/radhirasho"
 						>
-							<Github strokeWidth={1.75} size={30} className="hover:text-red-500 text-xs" />
+							<Github
+								strokeWidth={1.75}
+								size={30}
+								className="hover:text-red-500 text-xs"
+							/>
 						</Link>
 					</NavigationMenuItem>
 					<NavigationMenuItem>
@@ -96,7 +111,11 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 							as="https://twitter.com/RadhiH1"
 							href="https://twitter.com/RadhiH1"
 						>
-							<Twitter strokeWidth={1.75} size={30} className="hover:text-red-500 text-xs" />
+							<Twitter
+								strokeWidth={1.75}
+								size={30}
+								className="hover:text-red-500 text-xs"
+							/>
 						</Link>
 					</NavigationMenuItem>
 					<NavigationMenuItem>
@@ -106,7 +125,11 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
 							as="https://www.linkedin.com/in/radhi-rasho-7827b218a/"
 							href="https://www.linkedin.com/in/radhi-rasho-7827b218a/"
 						>
-							<Linkedin strokeWidth={1.75} size={30} className="hover:text-red-500 text-xs" />
+							<Linkedin
+								strokeWidth={1.75}
+								size={30}
+								className="hover:text-red-500 text-xs"
+							/>
 						</Link>
 					</NavigationMenuItem>
 				</NavigationMenuList>

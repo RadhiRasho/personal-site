@@ -1,14 +1,21 @@
 "use client";
 
 import Link from "next/link";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
+import {
+	Accordion,
+	AccordionContent,
+	AccordionItem,
+	AccordionTrigger,
+} from "./ui/accordion";
 import Image from "next/image";
 import { TechnologiesList } from "./technologies-list";
 import RadhiRasho from "@/public/Radhi-Rasho-pro.jpg";
 import TypeEffect, { Options } from "typewriter-effect";
 import { useMemo } from "react";
+import { useTheme } from "next-themes";
 
 export function AboutMe() {
+	const { theme } = useTheme();
 	const words = useMemo<string[]>(() => {
 		return [
 			"Software Engineer",
@@ -16,29 +23,39 @@ export function AboutMe() {
 			"Full Stack Engineer",
 			"Localhost:3000/Coding",
 			"git commit -m 'Hello World'",
-		]
+		];
 	}, []);
 
 	return (
 		<>
 			<div className="flex sm:flex-row flex-col min-h-fit w-10/12 items-center justify-evenly gap-5 mb-4 bg-gradient-conic">
-				<Image className="rounded-full w-56" priority alt="Radhi Rasho" src={RadhiRasho} />
+				<Image
+					className="rounded-full w-56"
+					priority
+					alt="Radhi Rasho"
+					src={RadhiRasho}
+				/>
 				<div className="flex flex-col w-56 items-center justify-center gap-2">
 					<h1 className="text-3xl font-bold">Radhi Rasho</h1>
 					<TypeEffect
-						options={{
-							strings: words,
-							autoStart: true,
-							deleteSpeed: 50,
-							delay: 50,
-							pauseFor: 3500,
-							cursor: "_",
-							devMode: false,
-							loop: true,
-							skipAddStyles: true,
-							wrapperClassName: "text-base/loose font-bold bg-gradient-to-r from-blue-600 to-red-600 dark:from-red-600 dark:to-blue-600 bg-clip-text text-transparent",
-							cursorClassName: "text-xs font-bold text-blue-500",
-						} as Partial<Options> & { pauseFor: number }}
+						options={
+							{
+								strings: words,
+								autoStart: true,
+								deleteSpeed: 50,
+								delay: 50,
+								pauseFor: 3500,
+								cursor: "_",
+								devMode: false,
+								loop: true,
+								skipAddStyles: true,
+								wrapperClassName:
+									"text-base/loose font-bold bg-gradient-to-r from-blue-600 to-red-600 dark:from-red-600 dark:to-blue-600 bg-clip-text text-transparent",
+								cursorClassName: `text-xs font-bold ${
+									theme === "dark" ? "text-blue-500" : "text-red-500"
+								}`,
+							} as Partial<Options> & { pauseFor: number }
+						}
 					/>
 				</div>
 			</div>
@@ -55,30 +72,44 @@ export function AboutMe() {
 					</AccordionTrigger>
 					<AccordionContent>
 						<p className="dark:text-gray-300 text-sm">
-							Hello, I am Radhi Rasho, a Full Stack Software Engineer who enjoys crafting web applications that solve
-							real-world problems. I have a curious mind and a thirst for knowledge, so I never stop exploring new
-							technologies and learning new skills. I thrive on challenges that push me out of my comfort zone and help
-							me grow as a developer.
+							Hello, I am Radhi Rasho, a Full Stack Software Engineer who enjoys
+							crafting web applications that solve real-world problems. I have a
+							curious mind and a thirst for knowledge, so I never stop exploring new
+							technologies and learning new skills. I thrive on challenges that push me
+							out of my comfort zone and help me grow as a developer.
 							<br />
 							<br />
 							I&apos;m currently working at&nbsp;
-							<Link className="dark:text-gray-200 hover:text-red-500" target="_blank" href="https://www.sandhills.com/">
-								<span className="underline text-sm hover:text-red-500">Sandhills Global</span>
+							<Link
+								className="dark:text-gray-200 hover:text-red-500"
+								target="_blank"
+								href="https://www.sandhills.com/"
+							>
+								<span className="underline text-sm hover:text-red-500">
+									Sandhills Global
+								</span>
 							</Link>
 							&nbsp;. I have a Associates Degree in Computer Science from&nbsp;
-							<Link className="dark:text-gray-200 hover:text-red-500" target="_blank" href="https://www.southeast.edu/">
-								<span className="underline text-sm hover:text-red-500">Southeast Community College</span>
+							<Link
+								className="dark:text-gray-200 hover:text-red-500"
+								target="_blank"
+								href="https://www.southeast.edu/"
+							>
+								<span className="underline text-sm hover:text-red-500">
+									Southeast Community College
+								</span>
 							</Link>
 							.
 							<br />
 							<br />
-							When I&apos;m not coding, I&apos;m usually playing video games, watching anime, listening to music,
-							working out, or spending time with friends and family.
+							When I&apos;m not coding, I&apos;m usually playing video games, watching
+							anime, listening to music, working out, or spending time with friends and
+							family.
 							<br />
 							<br />
-							In my free time, I like working on computers, such as building custom PC&apos;s, or repairing already
-							built ones with new components. I find it interested how different parts work together, to do amazing
-							things.
+							In my free time, I like working on computers, such as building custom
+							PC&apos;s, or repairing already built ones with new components. I find it
+							interested how different parts work together, to do amazing things.
 							<br />
 							<br />
 							Feel free to check out my&nbsp;
@@ -100,23 +131,36 @@ export function AboutMe() {
 					<AccordionContent className="text-sm">
 						<div className="flex flex-col gap-2 dark:text-gray-300">
 							<div className="text-sm font-semibold underline hover:text-red-500">
-								<Link as="https://www.sandhills.com/" target="_blank" href="https://www.sandhills.com/">
+								<Link
+									as="https://www.sandhills.com/"
+									target="_blank"
+									href="https://www.sandhills.com/"
+								>
 									Sandhills Global
 								</Link>
 							</div>
 							<div className="text-xs italic font-semibold dark:text-gray-300">
-								Software Developer<span className="text-xs dark:text-gray-300 text-gray-900"> - 2021 to Present</span>
+								Software Developer
+								<span className="text-xs dark:text-gray-300 text-gray-900">
+									{" "}
+									- 2021 to Present
+								</span>
 								<br />
 								Software Developer Intern
-								<span className="text-xs dark:text-gray-300 text-gray-900"> - 2020 to 2021</span>
+								<span className="text-xs dark:text-gray-300 text-gray-900">
+									{" "}
+									- 2020 to 2021
+								</span>
 							</div>
 							<div className="dark:text-gray-300 text-sm">
-								I first started off as an intern at Sandhills Global in Summer of 2020, where I worked on a small
-								projects that allowed me to learn the ropes of the company&apos;s development process. After my
-								internship, I was offered a full time position as a Software Engineer.
+								I first started off as an intern at Sandhills Global in Summer of 2020,
+								where I worked on a small projects that allowed me to learn the ropes of
+								the company&apos;s development process. After my internship, I was
+								offered a full time position as a Software Developer.
 								<br />
 								<br />
-								During my time at Sandhills Global, I&apos;ve had the opportunity to work on two significant projects:
+								During my time at Sandhills Global, I&apos;ve had the opportunity to
+								work on two significant projects:
 							</div>
 							<div className="dark:text-gray-300 text-sm">
 								<Link
@@ -128,7 +172,8 @@ export function AboutMe() {
 								</Link>
 								&nbsp;
 								<span className="text-xs">
-									- JavaScript, React.JS, MobX, C#, .NET, Ant Design, Node.JS, PostgreSQL, Docker, Redis
+									- JavaScript, React.JS, MobX, C#, .NET, Ant Design, Node.JS,
+									PostgreSQL, Docker, Redis
 								</span>
 								<br />
 								<br />
@@ -141,8 +186,8 @@ export function AboutMe() {
 								</Link>
 								&nbsp;
 								<span className="text-xs">
-									- JavaScript, Typescript, C#, .NET, Next.JS, Node.JS, SASS, Mongo DB, Redis, Express.JS, Azure DevOps,
-									Docker, Github Actions
+									- JavaScript, Typescript, C#, .NET, Next.JS, Node.JS, SASS, Mongo DB,
+									Redis, Express.JS, Azure DevOps, Docker, Github Actions
 								</span>
 							</div>
 						</div>

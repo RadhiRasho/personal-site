@@ -3,16 +3,26 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "./ui/badge";
-import { Project } from "@/types/project";
+import { ProjectProps } from "@/types/project";
 
-export function Project({ title, description, image, href, tags }: Project) {
+export function Project({
+	title,
+	description,
+	image,
+	href,
+	tags,
+}: ProjectProps) {
 	return (
 		<div className="flex justify-between overflow-hidden rounded-xl w-auto h-full border-4 dark:border-white border-black">
 			<div className="flex w-full h-full justify-between gap-2">
 				<div className="flex flex-col justify-between items-center md:items-start w-full h-full p-2 gap-2">
 					<div className="flex flex-col justify-between items-center w-full md:items-start">
 						{href ? (
-							<Link href={href} target="_blank" className="text-sm font-bold underline hover:text-red-500">
+							<Link
+								href={href}
+								target="_blank"
+								className="text-sm font-bold underline hover:text-red-500"
+							>
 								{title}
 							</Link>
 						) : (
@@ -22,8 +32,8 @@ export function Project({ title, description, image, href, tags }: Project) {
 					</div>
 					<div className="w-full">
 						<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-[0.15rem]">
-							{tags?.map((tag, index) => (
-								<Badge className="flex justify-center text-center" key={index}>
+							{tags?.map((tag) => (
+								<Badge className="flex justify-center text-center" key={tag}>
 									{tag}
 								</Badge>
 							))}

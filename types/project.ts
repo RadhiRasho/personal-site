@@ -1,6 +1,6 @@
 import type { StaticImageData } from "next/image";
 
-export type Project = {
+export type ProjectProps = {
 	title: string;
 	description: string;
 	image?: StaticImageData;

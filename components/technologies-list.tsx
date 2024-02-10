@@ -3,7 +3,7 @@
 import Image from "next/image";
 import WindowsIcon from "@/public/windows.svg";
 import AppleIcon from "@/public/apple.svg";
-import HonoIcon from '@/public/hono-logo.svg';
+import HonoIcon from "@/public/hono-logo.svg";
 
 export function TechnologiesList() {
 	return (
@@ -11,7 +11,9 @@ export function TechnologiesList() {
 			<div className="flex flex-col gap-2">
 				<div className="grid sm:grid-cols-2 grid-cols-1 gap-x-4 gap-y-2">
 					<div className="sm:border-r border-r-gray-500">
-						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">Programming</h2>
+						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">
+							Programming
+						</h2>
 						<div className="grid grid-flow-row grid-cols-4 lg:grid-cols-8 gap-2">
 							<Image
 								width={50}
@@ -44,7 +46,9 @@ export function TechnologiesList() {
 						</div>
 					</div>
 					<div>
-						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">Frameworks</h2>
+						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">
+							Frameworks
+						</h2>
 						<div className="grid grid-flow-row grid-cols-4 lg:grid-cols-8 gap-2">
 							<Image
 								width={50}
@@ -99,7 +103,9 @@ export function TechnologiesList() {
 						</div>
 					</div>
 					<div className="sm:border-r border-r-gray-500">
-						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">Markup</h2>
+						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">
+							Markup
+						</h2>
 						<div className="grid grid-flow-row grid-cols-4 lg:grid-cols-8 gap-2">
 							<Image
 								width={50}
@@ -118,10 +124,24 @@ export function TechnologiesList() {
 						</div>
 					</div>
 					<div>
-						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">Styling </h2>
+						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">
+							Styling{" "}
+						</h2>
 						<div className="grid grid-flow-row items-center grid-cols-4 lg:grid-cols-8 gap-2">
-							<Image width={50} height={50} src={"https://skillicons.dev/icons?i=css"} title={"CSS"} alt={"CSS"} />
-							<Image width={50} height={50} src={"https://skillicons.dev/icons?i=sass"} title={"SASS"} alt={"SASS"} />
+							<Image
+								width={50}
+								height={50}
+								src={"https://skillicons.dev/icons?i=css"}
+								title={"CSS"}
+								alt={"CSS"}
+							/>
+							<Image
+								width={50}
+								height={50}
+								src={"https://skillicons.dev/icons?i=sass"}
+								title={"SASS"}
+								alt={"SASS"}
+							/>
 							<Image
 								width={50}
 								height={50}
@@ -133,7 +153,9 @@ export function TechnologiesList() {
 					</div>
 
 					<div className="sm:border-r border-gray-500">
-						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">Runtimes</h2>
+						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">
+							Runtimes
+						</h2>
 						<div className="grid grid-flow-row grid-cols-4 lg:grid-cols-8 gap-2">
 							<Image
 								width={50}
@@ -149,11 +171,19 @@ export function TechnologiesList() {
 								title={"Bun: 5 Months"}
 								alt={"BunJS"}
 							/>
-							<Image width={50} height={50} src={"https://skillicons.dev/icons?i=dotnet"} title={".NET"} alt={".NET"} />
+							<Image
+								width={50}
+								height={50}
+								src={"https://skillicons.dev/icons?i=dotnet"}
+								title={".NET"}
+								alt={".NET"}
+							/>
 						</div>
 					</div>
 					<div>
-						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">Developer Tools</h2>
+						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">
+							Developer Tools
+						</h2>
 						<div className="grid grid-flow-row grid-cols-4 lg:grid-cols-8 gap-2">
 							<Image
 								width={50}
@@ -183,7 +213,13 @@ export function TechnologiesList() {
 								title={"Docker: 2 Years"}
 								alt={"Docker"}
 							/>
-							<Image width={50} height={50} src={"https://skillicons.dev/icons?i=git"} title={"Git"} alt={"Git"} />
+							<Image
+								width={50}
+								height={50}
+								src={"https://skillicons.dev/icons?i=git"}
+								title={"Git"}
+								alt={"Git"}
+							/>
 							<Image
 								width={50}
 								height={50}
@@ -208,7 +244,9 @@ export function TechnologiesList() {
 						</div>
 					</div>
 					<div className="sm:border-r border-r-gray-500">
-						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">Operating Systems</h2>
+						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">
+							Operating Systems
+						</h2>
 						<div className="grid grid-flow-row grid-cols-4 lg:grid-cols-8 gap-2 justify-between items-center">
 							<Image
 								width={50}
@@ -236,7 +274,9 @@ export function TechnologiesList() {
 						</div>
 					</div>
 					<div>
-						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">Cloud</h2>
+						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">
+							Cloud
+						</h2>
 						<div className="grid grid-flow-row grid-cols-4 lg:grid-cols-8 gap-2 justify-between items-center">
 							<Image
 								width={50}
@@ -248,7 +288,9 @@ export function TechnologiesList() {
 						</div>
 					</div>
 					<div className="sm:border-r border-gray-500">
-						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">SQL & NoSQL</h2>
+						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">
+							SQL & NoSQL
+						</h2>
 						<div className="grid grid-flow-row grid-cols-4 lg:grid-cols-8 gap-2 justify-between items-center">
 							<Image
 								width={50}
@@ -288,7 +330,9 @@ export function TechnologiesList() {
 						</div>
 					</div>
 					<div>
-						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">Learning...</h2>
+						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">
+							Learning...
+						</h2>
 						<div className="grid grid-flow-row grid-cols-4 lg:grid-cols-8 gap-2 justify-between items-center">
 							<Image
 								width={50}
@@ -314,7 +358,9 @@ export function TechnologiesList() {
 						</div>
 					</div>
 					<div className="sm:border-r border-gray-500">
-						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">Testing Frameworks</h2>
+						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">
+							Testing Frameworks
+						</h2>
 						<div className="grid grid-flow-row grid-cols-4 lg:grid-cols-8 gap-2 justify-between items-center">
 							<Image
 								width={50}

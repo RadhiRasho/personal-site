@@ -1,7 +1,15 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+	Form,
+	FormControl,
+	FormDescription,
+	FormField,
+	FormItem,
+	FormLabel,
+	FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect, useState } from "react";
@@ -14,15 +22,21 @@ import { MailResponse } from "@/types/mail";
 
 const formSchema = z
 	.object({
-		name: z.string().min(2, { message: "Must be at least 2 characters" }).max(50, {
-			message: "Must be less than 50 characters",
-		}),
+		name: z
+			.string()
+			.min(2, { message: "Must be at least 2 characters" })
+			.max(50, {
+				message: "Must be less than 50 characters",
+			}),
 		email: z.string().email("Must be a valid email address").max(50, {
 			message: "Must be less than 50 characters long",
 		}),
-		message: z.string().min(20, { message: "Must be longer than 20 characters" }).max(280, {
-			message: "Must No Longer than 280 characters (X/Twitter reference)",
-		}),
+		message: z
+			.string()
+			.min(20, { message: "Must be longer than 20 characters" })
+			.max(280, {
+				message: "Must No Longer than 280 characters (X/Twitter reference)",
+			}),
 	})
 	.required();
 
@@ -107,7 +121,11 @@ export function ContactForm() {
 							<FormItem>
 								<FormLabel className="text-xs">Email</FormLabel>
 								<FormControl>
-									<Input className="text-xs" placeholder="example@email.com" {...field} />
+									<Input
+										className="text-xs"
+										placeholder="example@email.com"
+										{...field}
+									/>
 								</FormControl>
 								<FormMessage className="text-xs" />
 							</FormItem>
@@ -120,7 +138,12 @@ export function ContactForm() {
 							<FormItem>
 								<FormLabel className="text-xs">Message</FormLabel>
 								<FormControl>
-									<Textarea rows={4} className="text-xs" placeholder="Hello There..." {...field} />
+									<Textarea
+										rows={4}
+										className="text-xs"
+										placeholder="Hello There..."
+										{...field}
+									/>
 								</FormControl>
 								<FormMessage className="text-xs" />
 							</FormItem>
@@ -132,7 +155,9 @@ export function ContactForm() {
 					</Button>
 				</form>
 			) : (
-				<div className="border rounded-3xl p-10 space-y-8 text-xs">Thank you for contacting me.</div>
+				<div className="border rounded-3xl p-10 space-y-8 text-xs">
+					Thank you for contacting me.
+				</div>
 			)}
 		</Form>
 	);

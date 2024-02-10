@@ -1,5 +1,10 @@
 import ReCAPTCHA from "react-google-recaptcha";
-import { TooltipProvider, TooltipTrigger, Tooltip, TooltipContent } from "./ui/tooltip";
+import {
+	TooltipProvider,
+	TooltipTrigger,
+	Tooltip,
+	TooltipContent,
+} from "./ui/tooltip";
 import Link from "next/link";
 
 type CaptchaTestProps = {
@@ -33,7 +38,9 @@ export default function CaptchaTest({ setIsVerified }: CaptchaTestProps) {
 					<div className="text-sm flex justify-center">
 						<TooltipProvider>
 							<Tooltip delayDuration={500}>
-								<TooltipTrigger className="border-b-2 hover:border-b-red-500">Prove Your Existence...</TooltipTrigger>
+								<TooltipTrigger className="border-b-2 hover:border-b-red-500">
+									Prove Your Existence...
+								</TooltipTrigger>
 								<TooltipContent className="w-96 text-xs">
 									A reference to one of my favorite games of all times,&nbsp;
 									<Link
@@ -43,13 +50,16 @@ export default function CaptchaTest({ setIsVerified }: CaptchaTestProps) {
 									>
 										Nier: Automata
 									</Link>
-									, where as the player plays through the game their character is asked to prove their existence and
-									whether their efforts means they exist.
+									, where as the player plays through the game their character is asked
+									to prove their existence and whether their efforts means they exist.
 								</TooltipContent>
 							</Tooltip>
 						</TooltipProvider>
 					</div>
-					<ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} onChange={handleCaptchaSubmission} />
+					<ReCAPTCHA
+						sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+						onChange={handleCaptchaSubmission}
+					/>
 				</div>
 			</>
 		);

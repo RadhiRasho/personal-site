@@ -1,22 +1,30 @@
 import Link from "next/link";
-import { ContactIcon, Github, HomeIcon, Linkedin, MenuIcon, Moon, Sun, Table2Icon, Twitter } from "lucide-react";
+import {
+	ContactIcon,
+	Github,
+	HomeIcon,
+	Linkedin,
+	MenuIcon,
+	Moon,
+	Sun,
+	Table2Icon,
+	Twitter,
+} from "lucide-react";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { Button } from "./ui/button";
 import { useTheme } from "next-themes";
 
-interface MobilMenuProps {
-	className?: string;
-}
-
-export function MobilMenu({ }: MobilMenuProps) {
+export function MobilMenu() {
 	const pathname = usePathname();
 	const { setTheme } = useTheme();
 	const [showMenu, setShowMenu] = useState(false);
 
 	return (
 		<div className="sm:hidden h-10 mb-2 min-h-full">
-			<div className={`absolute z-[100] flex justify-between align-baseline w-full`}>
+			<div
+				className={"absolute z-[100] flex justify-between align-baseline w-full"}
+			>
 				<MenuIcon
 					className={`w-8 h-8 ${showMenu && "bg-red-500 rounded-br-lg"}`}
 					onClick={() => setShowMenu(!showMenu)}
@@ -45,34 +53,44 @@ export function MobilMenu({ }: MobilMenuProps) {
 				</Button>
 			</div>
 			<div
-				className={`${showMenu ? "animate-in slide-in-from-left" : "animate-out slide-out-to-left transition-all ease-out collapse"
-					} bg-secondary w-screen min-h-full pl-10 space-y-4 absolute z-[50]`}
+				className={`${
+					showMenu
+						? "animate-in slide-in-from-left"
+						: "animate-out slide-out-to-left transition-all ease-out collapse"
+				} bg-secondary w-screen min-h-full pl-10 space-y-4 absolute z-[50]`}
 			>
 				<div className="flex flex-col justify-between">
 					<div className=" py-2">
-						<h2 className="px-2 mb-2 text-lg font-semibold tracking-tight">Navigation Menu</h2>
+						<h2 className="px-2 mb-2 text-lg font-semibold tracking-tight">
+							Navigation Menu
+						</h2>
 						<div className="space-y-1 flex flex-col">
 							<Link
 								onClick={() => setShowMenu(!showMenu)}
 								href={"/"}
-								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start font-bold text-md ${pathname === "/" && "text-red-500 border-b-2 border-b-red-500 pb-1"
-									}`}
+								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start font-bold text-md ${
+									pathname === "/" && "text-red-500 border-b-2 border-b-red-500 pb-1"
+								}`}
 							>
 								<HomeIcon strokeWidth={1.75} size={35} /> Home
 							</Link>
 							<Link
 								onClick={() => setShowMenu(!showMenu)}
 								href={"/projects"}
-								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start font-bold text-md ${pathname === "/projects" && "text-red-500 border-b-2 border-b-red-500 pb-1"
-									}`}
+								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start font-bold text-md ${
+									pathname === "/projects" &&
+									"text-red-500 border-b-2 border-b-red-500 pb-1"
+								}`}
 							>
 								<Table2Icon strokeWidth={1.75} size={35} /> Projects
 							</Link>
 							<Link
 								onClick={() => setShowMenu(!showMenu)}
 								href={"/contact"}
-								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start font-bold text-md ${pathname === "/contact" && "text-red-500 border-b-2 border-b-red-500 pb-1"
-									}`}
+								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start font-bold text-md ${
+									pathname === "/contact" &&
+									"text-red-500 border-b-2 border-b-red-500 pb-1"
+								}`}
 							>
 								<ContactIcon strokeWidth={1.75} size={35} />
 								Contact
