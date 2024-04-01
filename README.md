@@ -18,7 +18,7 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-This project uses [Tailwind Css](https://tailwindcss.com/) for styling and uses [Shadcn UI](https://ui.shadcn.com/) for components that you can manupulate by modifying yourself in `./components/ui`, git it a try, it's honestly one of the best component libraries I've seen so far, and part of that is because you can modify them however you want.
+This project uses [Tailwind Css](https://tailwindcss.com/) for styling and uses [Shadcn UI](https://ui.shadcn.com/) for components that you can manupulate by modifying yourself in `./components/ui`, give it a try, it's honestly one of the best component libraries I've seen so far, and part of that is because you can modify them however you want.
 
 ## Deploy on Vercel
 
