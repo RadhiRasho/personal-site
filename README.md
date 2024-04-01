@@ -9,7 +9,7 @@ I built this site using [Next.js](https://nextjs.org/) as a sort of hub for all 
 First, run the development server using:
 
 ```bash
-yarn dev
+bun dev
 ```
 
 This should let you know that the project is running at [http://localhost:3000](http://localhost:3000).
