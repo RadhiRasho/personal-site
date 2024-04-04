@@ -1,7 +1,8 @@
 import { Project } from "@/components/project";
 import MySite from "@/public/radhi-rasho.dev.jpeg";
 import DailyMeme from "@/public/DailyMeme.png";
-import { ProjectProps } from "@/types/project";
+import TodoCLI from "@/public/Todo-CLI.png";
+import type { ProjectProps } from "@/types/project";
 
 export default function Projects() {
 	const projects: ProjectProps[] = [
@@ -28,6 +29,14 @@ export default function Projects() {
 			tags: ["Python", "GitHub", "Windows", "System Tray"],
 			image: DailyMeme,
 			href: "https://github.com/radhirasho/DailyMeme",
+		},
+		{
+			title: "Todo CLI",
+			description:
+				"Simple Todo CLI tool where you can add, delete, list and prioritize your tasks in a cli. Can be ran on both windows and linux, but I have yet to add auto addition to PATH, will be working on that next",
+			tags: ["Go", "SQLite"],
+			image: TodoCLI,
+			href: "https://github.com/radhirasho/todo-cli",
 		},
 	];
 	return (
