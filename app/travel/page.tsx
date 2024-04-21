@@ -40,7 +40,7 @@ export default function Travel() {
 				{ location: [40.815, -96.68], size: 0.03 }, // Lincoln, NE, Home
 				{ location: [25.792, -80.135], size: 0.03 }, // Miami, FL
 				{ location: [52.52, 13.405], size: 0.03 }, // Berlin, Germany
-				{ location: [52.283, 8.917], size: 0.03 }, // Minden, Germany (Wo mein herz ist jetzt)
+				{ location: [52.283, 8.917], size: 0.03 }, // Minden, Germany (V28gbWVpbiBoZXJ6IGlzdCBqZXR6dA==)
 				{ location: [52.375, 9.732], size: 0.03 }, // Hannover, Germany
 				{ location: [50.937, 6.96], size: 0.03 }, // Cologne, Germany
 				{ location: [36.314, 41.862], size: 0.03 }, // Sinjar, Iraq
