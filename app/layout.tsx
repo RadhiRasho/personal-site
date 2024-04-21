@@ -1,6 +1,7 @@
 import { NavBar } from "@/components/nav-menu";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import type { ReactNode } from "react";
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: Props) {
 					{children}
 				</ThemeProvider>
 				<SpeedInsights />
+				<Analytics />
 			</body>
 		</html>
 	);
