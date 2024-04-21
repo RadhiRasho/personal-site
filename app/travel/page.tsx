@@ -57,7 +57,7 @@ export default function Travel() {
 
 	return (
 		<main className="flex flex-col justify-center items-center">
-			<canvas ref={canvasRef} style={{ height: 895, width: 950 }} />
+			<canvas ref={canvasRef} style={{ height: 990, width: 950 }} />
 		</main>
 	);
 }
