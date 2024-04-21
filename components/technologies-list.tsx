@@ -65,6 +65,12 @@ export function TechnologiesList() {
 							<Image
 								width={50}
 								height={50}
+								src={"https://skillicons.dev/icons?i=astro"}
+								alt={"Astro"}
+							/>
+							<Image
+								width={50}
+								height={50}
 								src={"https://skillicons.dev/icons?i=react"}
 								alt={"React.JS"}
 							/>
@@ -90,8 +96,9 @@ export function TechnologiesList() {
 							<Image
 								width={50}
 								height={50}
-								src={"https://skillicons.dev/icons?i=bootstrap"}
-								alt={"Bootstrap"}
+								src={"https://skillicons.dev/icons?i=elysia"}
+								className="bg-[#242938] h-[14mm] w-[14mm]  p-1 rounded-md"
+								alt={"Elysia.JS"}
 							/>
 						</div>
 					</div>
@@ -116,7 +123,7 @@ export function TechnologiesList() {
 					</div>
 					<div>
 						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">
-							Styling{" "}
+							Styling
 						</h2>
 						<div className="grid grid-flow-row items-center grid-cols-4 lg:grid-cols-8 gap-2">
 							<Image
@@ -191,6 +198,12 @@ export function TechnologiesList() {
 							<Image
 								width={50}
 								height={50}
+								src={"https://skillicons.dev/icons?i=bitbucket"}
+								alt={"BitBucket"}
+							/>
+							<Image
+								width={50}
+								height={50}
 								src={"https://skillicons.dev/icons?i=docker"}
 								alt={"Docker"}
 							/>
@@ -203,14 +216,14 @@ export function TechnologiesList() {
 							<Image
 								width={50}
 								height={50}
-								src={"https://skillicons.dev/icons?i=babel"}
-								alt={"Babel"}
+								src={"https://skillicons.dev/icons?i=npm"}
+								alt={"NPM"}
 							/>
 							<Image
 								width={50}
 								height={50}
-								src={"https://skillicons.dev/icons?i=webpack"}
-								alt={"Webpack"}
+								src={"https://skillicons.dev/icons?i=yarn"}
+								alt={"Yarn"}
 							/>
 							<Image
 								width={50}

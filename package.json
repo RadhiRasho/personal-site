@@ -38,6 +38,7 @@
     "autoprefixer": "10.4.16",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "cobe": "^0.6.3",
     "cookies-next": "^4.0.0",
     "eslint": "8.52.0",
     "eslint-config-next": "14.0.1",
@@ -46,19 +47,24 @@
     "next-themes": "^0.2.1",
     "nodemailer": "^6.9.7",
     "postcss": "^8.4.31",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-google-recaptcha": "^3.1.0",
     "react-hook-form": "^7.47.0",
     "sharp": "^0.32.6",
     "tailwind-merge": "^2.0.0",
-    "tailwindcss": "3.3.5",
+    "tailwindcss": "^3.3.5",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "5.2.2",
+    "typescript": "^5.2.2",
     "typewriter-effect": "^2.21.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/react-google-recaptcha": "^2.1.7"
-  }
+  },
+  "trustedDependencies": [
+    "@biomejs/biome",
+    "@vercel/speed-insights",
+    "sharp"
+  ]
 }
