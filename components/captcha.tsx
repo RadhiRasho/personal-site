@@ -1,11 +1,11 @@
+import Link from "next/link";
 import ReCAPTCHA from "react-google-recaptcha";
 import {
-	TooltipProvider,
-	TooltipTrigger,
 	Tooltip,
 	TooltipContent,
+	TooltipProvider,
+	TooltipTrigger,
 } from "./ui/tooltip";
-import Link from "next/link";
 
 type CaptchaTestProps = {
 	setIsVerified: (isVerified: boolean) => void;

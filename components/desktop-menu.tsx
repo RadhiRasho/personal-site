@@ -1,4 +1,5 @@
 "use client";
+import { Button } from "@/components/ui/button";
 import {
 	NavigationMenu,
 	NavigationMenuItem,
@@ -19,7 +20,6 @@ import {
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Button } from "@/components/ui/button";
 
 export function DesktopMenu() {
 	const pathname = usePathname();

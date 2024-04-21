@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
 	ContactIcon,
 	Github,
@@ -10,10 +9,11 @@ import {
 	Table2Icon,
 	Twitter,
 } from "lucide-react";
-import { useState } from "react";
-import { usePathname } from "next/navigation";
-import { Button } from "./ui/button";
 import { useTheme } from "next-themes";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { Button } from "./ui/button";
 
 export function MobilMenu() {
 	const pathname = usePathname();

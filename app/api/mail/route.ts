@@ -1,8 +1,8 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
+import type { Mail } from "@/types/mail";
 import { type NextRequest, NextResponse } from "next/server";
 import { createTransport } from "nodemailer";
-import { readFile } from "fs/promises";
-import path from "path";
-import type { Mail } from "@/types/mail";
 
 export async function POST(req: NextRequest, res: NextResponse) {
 	const { email, name, message, captcha } = await req.json();

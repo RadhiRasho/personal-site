@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import createGlobe, { type COBEOptions } from "cobe";
+import { useEffect, useRef } from "react";
 
 function randomColor(): [number, number, number] {
 	return [Math.random(), Math.random(), Math.random()];

@@ -17,8 +17,8 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { Textarea } from "./ui/textarea";
 
+import type { MailResponse } from "@/types/mail";
 import CaptchaTest from "./captcha";
-import { MailResponse } from "@/types/mail";
 
 const formSchema = z
 	.object({

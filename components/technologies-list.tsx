@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import HonoIcon from "@/public/hono-logo.svg";
+import Image from "next/image";
 
 export function TechnologiesList() {
 	return (

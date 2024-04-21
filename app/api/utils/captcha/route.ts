@@ -1,5 +1,5 @@
-import { GoogleResponse } from "@/types/google-response";
-import { NextRequest, NextResponse } from "next/server";
+import type { GoogleResponse } from "@/types/google-response";
+import { type NextRequest, NextResponse } from "next/server";
 
 async function verifyCaptcha(token: string) {
 	const res = await fetch(

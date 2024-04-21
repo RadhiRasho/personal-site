@@ -1,18 +1,18 @@
 "use client";
 
+import RadhiRasho from "@/public/Radhi-Rasho-pro.jpg";
+import { useTheme } from "next-themes";
+import Image from "next/image";
 import Link from "next/link";
+import { useMemo } from "react";
+import TypeEffect, { type Options } from "typewriter-effect";
+import { TechnologiesList } from "./technologies-list";
 import {
 	Accordion,
 	AccordionContent,
 	AccordionItem,
 	AccordionTrigger,
 } from "./ui/accordion";
-import Image from "next/image";
-import { TechnologiesList } from "./technologies-list";
-import RadhiRasho from "@/public/Radhi-Rasho-pro.jpg";
-import TypeEffect, { Options } from "typewriter-effect";
-import { useMemo } from "react";
-import { useTheme } from "next-themes";
 
 export function AboutMe() {
 	const { theme } = useTheme();

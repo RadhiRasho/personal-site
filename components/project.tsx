@@ -1,9 +1,9 @@
 "use client";
 
+import type { ProjectProps } from "@/types/project";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "./ui/badge";
-import { ProjectProps } from "@/types/project";
 
 export function Project({
 	title,

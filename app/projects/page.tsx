@@ -1,7 +1,7 @@
 import { Project } from "@/components/project";
-import MySite from "@/public/radhi-rasho.dev.jpeg";
 import DailyMeme from "@/public/DailyMeme.png";
 import TodoCLI from "@/public/Todo-CLI.png";
+import MySite from "@/public/radhi-rasho.dev.jpeg";
 import type { ProjectProps } from "@/types/project";
 
 export default function Projects() {
