@@ -44,6 +44,8 @@ export function Project({
 					<Image
 						src={image}
 						alt={title}
+						width={400}
+						height={300}
 						priority
 						className="hidden hover:bg-fixed md:flex w-auto max-w-[30%] scale-105 min-h-[100%] h-full object-center object-cover"
 					/>
