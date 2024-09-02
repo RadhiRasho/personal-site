@@ -23,7 +23,9 @@ export function MobilMenu() {
 	return (
 		<div className="sm:hidden h-10 mb-2 min-h-full">
 			<div
-				className={"absolute z-[100] flex justify-between align-baseline w-full"}
+				className={
+					"absolute z-[100] flex justify-between align-baseline w-full"
+				}
 			>
 				<MenuIcon
 					className={`w-8 h-8 ${showMenu && "bg-red-500 rounded-br-lg"}`}
@@ -69,7 +71,8 @@ export function MobilMenu() {
 								onClick={() => setShowMenu(!showMenu)}
 								href={"/"}
 								className={`w-fit rounded-b-lg flex gap-3 px-1 items-center hover:text-red-500 justify-start font-bold text-md ${
-									pathname === "/" && "text-red-500 border-b-2 border-b-red-500 pb-1"
+									pathname === "/" &&
+									"text-red-500 border-b-2 border-b-red-500 pb-1"
 								}`}
 							>
 								<HomeIcon strokeWidth={1.75} size={35} /> Home

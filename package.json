@@ -6,7 +6,8 @@
 		"dev": "next dev",
 		"build": "next build",
 		"lint": "next lint",
-		"format": "biome check --write ."
+		"format": "biome check --write .",
+		"check": "biome check"
 	},
 	"dependencies": {
 		"@hookform/resolvers": "^3.9.0",
@@ -63,9 +64,5 @@
 		"eslint": "8.57.0",
 		"eslint-config-next": "14.2.7"
 	},
-	"trustedDependencies": [
-		"@biomejs/biome",
-		"@vercel/speed-insights",
-		"sharp"
-	]
+	"trustedDependencies": ["@biomejs/biome", "@vercel/speed-insights", "sharp"]
 }

@@ -74,9 +74,10 @@ export function AboutMe() {
 						<p className="dark:text-gray-300 text-sm">
 							Hello, I am Radhi Rasho, a Full Stack Software Engineer who enjoys
 							crafting web applications that solve real-world problems. I have a
-							curious mind and a thirst for knowledge, so I never stop exploring new
-							technologies and learning new skills. I thrive on challenges that push me
-							out of my comfort zone and help me grow as a developer.
+							curious mind and a thirst for knowledge, so I never stop exploring
+							new technologies and learning new skills. I thrive on challenges
+							that push me out of my comfort zone and help me grow as a
+							developer.
 							<br />
 							<br />
 							I&apos;m currently working at&nbsp;
@@ -102,23 +103,34 @@ export function AboutMe() {
 							.
 							<br />
 							<br />
-							When I&apos;m not coding, I&apos;m usually playing video games, watching
-							anime, listening to music, working out, or spending time with friends and
-							family.
+							When I&apos;m not coding, I&apos;m usually playing video games,
+							watching anime, listening to music, working out, or spending time
+							with friends and family.
 							<br />
 							<br />
-							In my free time, I like working on computers, such as building custom
-							PC&apos;s, or repairing already built ones with new components. I find it
-							interested how different parts work together, to do amazing things.
+							In my free time, I like working on computers, such as building
+							custom PC&apos;s, or repairing already built ones with new
+							components. I find it interested how different parts work
+							together, to do amazing things.
 							<br />
 							<br />
 							Feel free to check out my&nbsp;
-							<Link className="dark:text-gray-200 hover:text-red-500" href="/projects">
-								<span className="underline text-sm hover:text-red-500">projects</span>
+							<Link
+								className="dark:text-gray-200 hover:text-red-500"
+								href="/projects"
+							>
+								<span className="underline text-sm hover:text-red-500">
+									projects
+								</span>
 							</Link>
 							&nbsp; or&nbsp;
-							<Link className="dark:text-gray-200 hover:text-red-500" href="/contact">
-								<span className="underline text-sm hover:text-red-500">contact me</span>
+							<Link
+								className="dark:text-gray-200 hover:text-red-500"
+								href="/contact"
+							>
+								<span className="underline text-sm hover:text-red-500">
+									contact me
+								</span>
 							</Link>
 							&nbsp; if you&apos;d like to get in touch.
 						</p>
@@ -153,14 +165,15 @@ export function AboutMe() {
 								</span>
 							</div>
 							<div className="dark:text-gray-300 text-sm">
-								I first started off as an intern at Sandhills Global in Summer of 2020,
-								where I worked on a small projects that allowed me to learn the ropes of
-								the company&apos;s development process. After my internship, I was
-								offered a full time position as a Software Developer.
+								I first started off as an intern at Sandhills Global in Summer
+								of 2020, where I worked on a small projects that allowed me to
+								learn the ropes of the company&apos;s development process. After
+								my internship, I was offered a full time position as a Software
+								Developer.
 								<br />
 								<br />
-								During my time at Sandhills Global, I&apos;ve had the opportunity to
-								work on two significant projects:
+								During my time at Sandhills Global, I&apos;ve had the
+								opportunity to work on two significant projects:
 							</div>
 							<div className="dark:text-gray-300 text-sm">
 								<Link
@@ -186,8 +199,9 @@ export function AboutMe() {
 								</Link>
 								&nbsp;
 								<span className="text-xs">
-									- JavaScript, Typescript, C#, .NET, Next.JS, Node.JS, SASS, Mongo DB,
-									Redis, Express.JS, Azure DevOps, Docker, Github Actions
+									- JavaScript, Typescript, C#, .NET, Next.JS, Node.JS, SASS,
+									Mongo DB, Redis, Express.JS, Azure DevOps, Docker, Github
+									Actions
 								</span>
 							</div>
 						</div>

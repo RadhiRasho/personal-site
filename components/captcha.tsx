@@ -50,8 +50,9 @@ export default function CaptchaTest({ setIsVerified }: CaptchaTestProps) {
 									>
 										Nier: Automata
 									</Link>
-									, where as the player plays through the game their character is asked
-									to prove their existence and whether their efforts means they exist.
+									, where as the player plays through the game their character
+									is asked to prove their existence and whether their efforts
+									means they exist.
 								</TooltipContent>
 							</Tooltip>
 						</TooltipProvider>

@@ -108,7 +108,11 @@ export function ContactForm() {
 							<FormItem>
 								<FormLabel className="text-xs">Name</FormLabel>
 								<FormControl>
-									<Input className="text-xs" placeholder="Radhi Rasho" {...field} />
+									<Input
+										className="text-xs"
+										placeholder="Radhi Rasho"
+										{...field}
+									/>
 								</FormControl>
 								<FormMessage className="text-xs" />
 							</FormItem>
