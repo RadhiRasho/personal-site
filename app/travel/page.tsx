@@ -26,8 +26,8 @@ export default function Travel() {
 		const globe = createGlobe(canvasRef?.current, {
 			...randomizeColors(),
 			devicePixelRatio: 2,
-			width: 950 * 2,
-			height: 950 * 2,
+			width: 800 * 2,
+			height: 800 * 2,
 			phi: 0,
 			theta: 0.3,
 			dark: 1,
@@ -48,7 +48,7 @@ export default function Travel() {
 			],
 			onRender: (state) => {
 				state.phi = phi;
-				phi += 0.005;
+				phi += 0.00000005;
 			},
 		});
 
@@ -56,8 +56,8 @@ export default function Travel() {
 	}, []);
 
 	return (
-		<main className="flex flex-col justify-center items-center">
-			<canvas ref={canvasRef} style={{ height: 990, width: 950 }} />
+		<main className="flex flex-col justify-center items-center h-full">
+			<canvas ref={canvasRef} style={{ height: "100vh", width: "90vw" }} />
 		</main>
 	);
 }
