@@ -37,45 +37,24 @@
 		"cobe": "^0.6.3",
 		"cookies-next": "^4.3.0",
 		"lucide-react": "^0.438.0",
-<<<<<<< Updated upstream
-		"next": "^14.2.10",
-		"next-themes": "^0.3.0",
-		"nodemailer": "^6.9.15",
-		"postcss": "^8.4.45",
-=======
 		"next": "^14.2.21",
 		"next-themes": "^0.3.0",
 		"nodemailer": "^6.9.16",
 		"postcss": "^8.4.49",
->>>>>>> Stashed changes
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"react-google-recaptcha": "^3.1.0",
 		"react-hook-form": "^7.54.2",
 		"sharp": "^0.33.5",
-<<<<<<< Updated upstream
-		"tailwind-merge": "^2.5.2",
-		"tailwindcss": "^3.4.11",
-		"tailwindcss-animate": "^1.0.7",
-		"typescript": "^5.6.2",
-=======
 		"tailwind-merge": "^2.6.0",
 		"tailwindcss": "^3.4.17",
 		"tailwindcss-animate": "^1.0.7",
 		"typescript": "^5.7.2",
->>>>>>> Stashed changes
 		"typewriter-effect": "^2.21.0",
 		"zod": "^3.24.1"
 	},
 	"devDependencies": {
 		"@types/react-google-recaptcha": "^2.1.9",
-<<<<<<< Updated upstream
-		"@types/node": "^22.5.4",
-		"@types/nodemailer": "^6.4.15",
-		"@types/react": "^18.3.5",
-		"@types/react-dom": "^18.3.0",
-		"@biomejs/biome": "^1.9.0"
-=======
 		"@types/node": "^22.10.2",
 		"@types/nodemailer": "^6.4.17",
 		"@types/react": "^18.3.18",
@@ -83,7 +62,6 @@
 		"@biomejs/biome": "^1.9.4",
 		"eslint": "8.57.0",
 		"eslint-config-next": "14.2.7"
->>>>>>> Stashed changes
 	},
 	"trustedDependencies": ["@biomejs/biome", "@vercel/speed-insights", "sharp"]
 }
