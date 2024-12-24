@@ -46,7 +46,7 @@ export default function Globe() {
                 dark: 1,
                 offset: [10, 50],
                 diffuse: 1.2,
-                mapSamples: 100000,
+                mapSamples: 80000,
                 mapBrightness: 6,
                 opacity: 0.7,
                 markers: [
