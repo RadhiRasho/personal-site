@@ -19,7 +19,7 @@ export default function Home() {
     }, []);
 
     return (
-        <main className="min-h-screen h-full w-full min-w-screen flex items-center justify-between ">
+        <main className="min-h-screen h-full w-full min-w-screen flex items-center justify-between">
             <div className="fixed top-28 -right-64 -z-10">
                 <Globe />
             </div>

@@ -1,5 +1,5 @@
 import createGlobe, { type COBEOptions } from "cobe";
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 function randomColor(): [number, number, number] {
     return [1, Math.random(), Math.random() * 0.5]; // Red hue with random green and blue components
@@ -8,7 +8,7 @@ function randomColor(): [number, number, number] {
 function randomizeColors(): COBEOptions {
     return {
         baseColor: randomColor(),
-        markerColor: [1, 1, 1],
+        markerColor: randomColor(),
         glowColor: randomColor(),
     } as COBEOptions;
 }
@@ -46,7 +46,7 @@ export default function Globe() {
                 dark: 1,
                 offset: [10, 50],
                 diffuse: 1.2,
-                mapSamples: 20000,
+                mapSamples: 100000,
                 mapBrightness: 6,
                 opacity: 0.7,
                 markers: [
