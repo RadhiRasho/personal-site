@@ -63,6 +63,9 @@ const config: Config = {
 				md: "calc(var(--radius) - 2px)",
 				sm: "calc(var(--radius) - 4px)",
 			},
+			backgroundSize: {
+				"300%": "300%",
+			},
 			keyframes: {
 				"accordion-down": {
 					from: { height: "0" },
@@ -72,10 +75,20 @@ const config: Config = {
 					from: { height: "var(--radix-accordion-content-height)" },
 					to: { height: "0" },
 				},
+				gradient: {
+					"0%, 100%": {
+						"background-position": "0% 50%",
+					},
+					"50%": {
+						"background-position": "100% 50%",
+					},
+				},
 			},
 			animation: {
 				"accordion-down": "accordion-down 0.2s ease-out",
 				"accordion-up": "accordion-up 0.2s ease-out",
+				gradient: "gradient 8s ease infinite",
+				text: "text 5s ease infinite",
 			},
 		},
 	},

@@ -1,6 +1,5 @@
 "use client";
 
-import RadhiRasho from "@/public/Radhi-Rasho-pro.jpg";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
@@ -30,10 +29,12 @@ export function AboutMe() {
 		<>
 			<div className="flex sm:flex-row flex-col min-h-fit w-10/12 items-center justify-evenly gap-5 mb-4 bg-gradient-conic">
 				<Image
-					className="rounded-full w-56"
+					className="rounded-full w-auto h-auto"
 					priority
 					alt="Radhi Rasho"
-					src={RadhiRasho}
+					width={400}
+					height={400}
+					src={'/Radhi-Rasho-pro.jpg'}
 				/>
 				<div className="flex flex-col w-56 items-center justify-center gap-2">
 					<h1 className="text-3xl font-bold">Radhi Rasho</h1>
@@ -51,9 +52,8 @@ export function AboutMe() {
 								skipAddStyles: true,
 								wrapperClassName:
 									"text-base/loose font-bold bg-gradient-to-r from-blue-600 to-red-600 dark:from-red-600 dark:to-blue-600 bg-clip-text text-transparent",
-								cursorClassName: `text-xs font-bold ${
-									theme === "dark" ? "text-blue-500" : "text-red-500"
-								}`,
+								cursorClassName: `text-xs font-bold ${theme === "dark" ? "text-blue-500" : "text-red-500"
+									}`,
 							} as Partial<Options> & { pauseFor: number }
 						}
 					/>

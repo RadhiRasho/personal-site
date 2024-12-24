@@ -9,6 +9,7 @@ const nextConfig = {
 		],
 		dangerouslyAllowSVG: true,
 	},
+	transpilePackages: ["three"],
 };
 
 export default nextConfig;
