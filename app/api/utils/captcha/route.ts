@@ -2,8 +2,12 @@ import type { GoogleResponse } from "@/types/google-response";
 import { type NextRequest, NextResponse } from "next/server";
 
 async function verifyCaptcha(token: string) {
+	const url: string = "https://www.google.com/recaptcha/api/siteverify";
 	const res = await fetch(
-		`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${token}`,
+		`${url}?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
+		{
+			method: "POST",
+		},
 	);
 
 	const google_response: GoogleResponse = await res.json();
