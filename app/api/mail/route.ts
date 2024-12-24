@@ -4,7 +4,7 @@ import type { Mail } from "@/types/mail";
 import { type NextRequest, NextResponse } from "next/server";
 import { createTransport } from "nodemailer";
 
-export async function POST(req: NextRequest, res: NextResponse) {
+export async function POST(req: NextRequest) {
 	const { email, name, message, captcha } = await req.json();
 
 	if (!captcha)

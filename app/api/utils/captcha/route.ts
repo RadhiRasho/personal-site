@@ -15,7 +15,7 @@ async function verifyCaptcha(token: string) {
 	throw new Error("Failed Captcha");
 }
 
-export async function POST(req: NextRequest, _: NextResponse) {
+export async function POST(req: NextRequest) {
 	try {
 		const { token } = await req.json();
 		const success = await verifyCaptcha(token);
