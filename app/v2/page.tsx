@@ -3,6 +3,7 @@
 import Globe from "@/components/Globe";
 import { Socials } from "@/components/Socials";
 import Float from "@/components/fancy/float";
+import ScrambleIn from "@/components/fancy/scramblein";
 import Typewriter from "@/components/fancy/typewriter";
 import Image from "next/image";
 import { useMemo } from "react";
@@ -37,16 +38,22 @@ export default function Home() {
 								/>
 							</div>
 						</Float>
-						<h1 className="flex justify-between gap-1 items-end text-xl font-bold">
+						<h1 className="flex justify-between gap-1 items-baseline text-xl font-bold">
 							Hi, I'm
-							<span className="text-3xl font-black font-serif bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 animate-text bg-clip-text text-transparent bg-300% motion-safe:animate-gradient">
-								Radhi Rasho
-							</span>
+							<ScrambleIn
+								text="Radhi Rasho"
+								className="text-3xl font-black font-serif bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 animate-text bg-clip-text text-transparent bg-300% motion-safe:animate-gradient"
+								scrambleSpeed={50}
+								scrambledLetterCount={5}
+								scrambledClassName="text-3xl font-black font-serif bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 animate-text bg-clip-text text-transparent bg-300% motion-safe:animate-gradient"
+								characters="RadhiRasho"
+								autoStart={true}
+							/>
 						</h1>
 						<Typewriter
 							text={words}
 							speed={70}
-							className="text-base/loose font-bold bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent"
+							className="text-base/loose font-bold bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 bg-clip-text text-transparent"
 							waitTime={3500}
 							deleteSpeed={40}
 							cursorChar="_"
