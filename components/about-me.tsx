@@ -1,6 +1,5 @@
 "use client";
 
-import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo } from "react";
@@ -14,7 +13,6 @@ import {
 } from "./ui/accordion";
 
 export function AboutMe() {
-	const { theme } = useTheme();
 	const words = useMemo<string[]>(() => {
 		return [
 			"Software Engineer",
