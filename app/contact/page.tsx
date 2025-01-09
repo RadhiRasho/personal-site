@@ -14,7 +14,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect, useState } from "react";
-import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3'
+import {
+	GoogleReCaptchaProvider,
+	useGoogleReCaptcha,
+} from "react-google-recaptcha-v3";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
@@ -82,7 +85,6 @@ export default function Contact() {
 				body: JSON.stringify({ token: captchaToken }),
 			});
 
-
 			const { success: captchaSubmitted } = await captchaRes.json();
 
 			if (!captchaSubmitted) {
@@ -127,7 +129,8 @@ export default function Contact() {
 						>
 							<div className="text-md">Contact Me</div>
 							<FormDescription className="text-xs">
-								Leave me a message and I&apos;ll get back to you as soon as I can:{" "}
+								Leave me a message and I&apos;ll get back to you as soon as I
+								can:{" "}
 							</FormDescription>
 							<FormField
 								control={form.control}

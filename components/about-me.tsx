@@ -4,7 +4,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo } from "react";
-import TypeEffect, { type Options } from "typewriter-effect";
+import Typewriter from "./fancy/typewriter";
 import { TechnologiesList } from "./technologies-list";
 import {
 	Accordion,
@@ -34,28 +34,18 @@ export function AboutMe() {
 					alt="Radhi Rasho"
 					width={400}
 					height={400}
-					src={'/Radhi-Rasho-pro.jpg'}
+					src={"/Radhi-Rasho-pro.jpg"}
 				/>
 				<div className="flex flex-col w-56 items-center justify-center gap-2">
-					<h1 className="text-3xl font-bold">Radhi Rasho</h1>
-					<TypeEffect
-						options={
-							{
-								strings: words,
-								autoStart: true,
-								deleteSpeed: 50,
-								delay: 50,
-								pauseFor: 3500,
-								cursor: "_",
-								devMode: false,
-								loop: true,
-								skipAddStyles: true,
-								wrapperClassName:
-									"text-base/loose font-bold bg-gradient-to-r from-blue-600 to-red-600 dark:from-red-600 dark:to-blue-600 bg-clip-text text-transparent",
-								cursorClassName: `text-xs font-bold ${theme === "dark" ? "text-blue-500" : "text-red-500"
-									}`,
-							} as Partial<Options> & { pauseFor: number }
-						}
+					<h1 className="text-3xl font-bold font-serif">Radhi Rasho</h1>
+					<Typewriter
+						text={words}
+						speed={70}
+						className="text-base/loose font-bold bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent"
+						waitTime={3500}
+						deleteSpeed={40}
+						cursorChar="_"
+						cursorClassName={"text-xs font-bold text-red-500"}
 					/>
 				</div>
 			</div>
