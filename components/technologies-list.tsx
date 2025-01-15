@@ -7,12 +7,12 @@ export function TechnologiesList() {
 	return (
 		<div className="flex flex-col gap-2 text-gray-400">
 			<div className="flex flex-col gap-2">
-				<div className="grid sm:grid-cols-2 grid-cols-1 gap-x-4 gap-y-2">
-					<div className="sm:border-r border-r-gray-500">
-						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">
+				<div className="grid grid-cols-1 gap-x-4 gap-y-2 sm:grid-cols-2">
+					<div className="border-r-gray-500 sm:border-r">
+						<h2 className="font-bold text-gray-800 text-sm dark:text-gray-300">
 							Programming
 						</h2>
-						<div className="grid grid-flow-row grid-cols-4 lg:grid-cols-8 gap-2">
+						<div className="grid grid-flow-row grid-cols-4 gap-2 lg:grid-cols-8">
 							<Image
 								width={50}
 								height={50}
@@ -46,10 +46,10 @@ export function TechnologiesList() {
 						</div>
 					</div>
 					<div>
-						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">
+						<h2 className="font-bold text-gray-800 text-sm dark:text-gray-300">
 							Frameworks
 						</h2>
-						<div className="grid grid-flow-row grid-cols-4 lg:grid-cols-8 gap-2">
+						<div className="grid grid-flow-row grid-cols-4 gap-2 lg:grid-cols-8">
 							<Image
 								width={50}
 								height={50}
@@ -90,23 +90,23 @@ export function TechnologiesList() {
 								width={50}
 								height={50}
 								src={HonoIcon}
-								className="bg-[#242938] h-[14mm] w-[14mm]  p-1 rounded-md"
+								className="h-[14mm] w-[14mm] rounded-md bg-[#242938] p-1"
 								alt={"Hono"}
 							/>
 							<Image
 								width={50}
 								height={50}
 								src={"https://skillicons.dev/icons?i=elysia"}
-								className="bg-[#242938] h-[14mm] w-[14mm]  p-1 rounded-md"
+								className="h-[14mm] w-[14mm] rounded-md bg-[#242938] p-1"
 								alt={"Elysia.JS"}
 							/>
 						</div>
 					</div>
-					<div className="sm:border-r border-r-gray-500">
-						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">
+					<div className="border-r-gray-500 sm:border-r">
+						<h2 className="font-bold text-gray-800 text-sm dark:text-gray-300">
 							Markup
 						</h2>
-						<div className="grid grid-flow-row grid-cols-4 lg:grid-cols-8 gap-2">
+						<div className="grid grid-flow-row grid-cols-4 gap-2 lg:grid-cols-8">
 							<Image
 								width={50}
 								height={50}
@@ -122,10 +122,10 @@ export function TechnologiesList() {
 						</div>
 					</div>
 					<div>
-						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">
+						<h2 className="font-bold text-gray-800 text-sm dark:text-gray-300">
 							Styling
 						</h2>
-						<div className="grid grid-flow-row items-center grid-cols-4 lg:grid-cols-8 gap-2">
+						<div className="grid grid-flow-row grid-cols-4 items-center gap-2 lg:grid-cols-8">
 							<Image
 								width={50}
 								height={50}
@@ -147,11 +147,11 @@ export function TechnologiesList() {
 						</div>
 					</div>
 
-					<div className="sm:border-r border-gray-500">
-						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">
+					<div className="border-gray-500 sm:border-r">
+						<h2 className="font-bold text-gray-800 text-sm dark:text-gray-300">
 							Runtimes
 						</h2>
-						<div className="grid grid-flow-row grid-cols-4 lg:grid-cols-8 gap-2">
+						<div className="grid grid-flow-row grid-cols-4 gap-2 lg:grid-cols-8">
 							<Image
 								width={50}
 								height={50}
@@ -173,10 +173,10 @@ export function TechnologiesList() {
 						</div>
 					</div>
 					<div>
-						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">
+						<h2 className="font-bold text-gray-800 text-sm dark:text-gray-300">
 							Developer Tools
 						</h2>
-						<div className="grid grid-flow-row grid-cols-4 lg:grid-cols-8 gap-2">
+						<div className="grid grid-flow-row grid-cols-4 gap-2 lg:grid-cols-8">
 							<Image
 								width={50}
 								height={50}
@@ -233,11 +233,11 @@ export function TechnologiesList() {
 							/>
 						</div>
 					</div>
-					<div className="sm:border-r border-r-gray-500">
-						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">
+					<div className="border-r-gray-500 sm:border-r">
+						<h2 className="font-bold text-gray-800 text-sm dark:text-gray-300">
 							Operating Systems
 						</h2>
-						<div className="grid grid-flow-row grid-cols-4 lg:grid-cols-8 gap-2 justify-between items-center">
+						<div className="grid grid-flow-row grid-cols-4 items-center justify-between gap-2 lg:grid-cols-8">
 							<Image
 								width={50}
 								height={50}
@@ -259,10 +259,10 @@ export function TechnologiesList() {
 						</div>
 					</div>
 					<div>
-						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">
+						<h2 className="font-bold text-gray-800 text-sm dark:text-gray-300">
 							Cloud
 						</h2>
-						<div className="grid grid-flow-row grid-cols-4 lg:grid-cols-8 gap-2 justify-between items-center">
+						<div className="grid grid-flow-row grid-cols-4 items-center justify-between gap-2 lg:grid-cols-8">
 							<Image
 								width={50}
 								height={50}
@@ -271,11 +271,11 @@ export function TechnologiesList() {
 							/>
 						</div>
 					</div>
-					<div className="sm:border-r border-gray-500">
-						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">
+					<div className="border-gray-500 sm:border-r">
+						<h2 className="font-bold text-gray-800 text-sm dark:text-gray-300">
 							SQL & NoSQL
 						</h2>
-						<div className="grid grid-flow-row grid-cols-4 lg:grid-cols-8 gap-2 justify-between items-center">
+						<div className="grid grid-flow-row grid-cols-4 items-center justify-between gap-2 lg:grid-cols-8">
 							<Image
 								width={50}
 								height={50}
@@ -315,10 +315,10 @@ export function TechnologiesList() {
 						</div>
 					</div>
 					<div>
-						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">
+						<h2 className="font-bold text-gray-800 text-sm dark:text-gray-300">
 							Learning...
 						</h2>
-						<div className="grid grid-flow-row grid-cols-4 lg:grid-cols-8 gap-2 justify-between items-center">
+						<div className="grid grid-flow-row grid-cols-4 items-center justify-between gap-2 lg:grid-cols-8">
 							<Image
 								width={50}
 								height={50}
@@ -333,11 +333,11 @@ export function TechnologiesList() {
 							/>
 						</div>
 					</div>
-					<div className="sm:border-r border-gray-500">
-						<h2 className="text-sm font-bold text-gray-800 dark:text-gray-300">
+					<div className="border-gray-500 sm:border-r">
+						<h2 className="font-bold text-gray-800 text-sm dark:text-gray-300">
 							Testing Frameworks
 						</h2>
-						<div className="grid grid-flow-row grid-cols-4 lg:grid-cols-8 gap-2 justify-between items-center">
+						<div className="grid grid-flow-row grid-cols-4 items-center justify-between gap-2 lg:grid-cols-8">
 							<Image
 								width={50}
 								height={50}

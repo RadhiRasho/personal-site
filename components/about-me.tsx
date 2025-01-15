@@ -25,21 +25,21 @@ export function AboutMe() {
 
 	return (
 		<>
-			<div className="flex sm:flex-row flex-col min-h-fit w-10/12 items-center justify-evenly gap-5 mb-4 bg-gradient-conic">
+			<div className="mb-4 flex min-h-fit w-10/12 flex-col items-center justify-evenly gap-5 bg-gradient-conic sm:flex-row">
 				<Image
-					className="rounded-full w-auto h-auto"
+					className="h-auto w-auto rounded-full"
 					priority
 					alt="Radhi Rasho"
 					width={400}
 					height={400}
 					src={"/Radhi-Rasho-pro.jpg"}
 				/>
-				<div className="flex flex-col w-56 items-center justify-center gap-2">
-					<h1 className="text-3xl font-bold font-serif">Radhi Rasho</h1>
+				<div className="flex w-56 flex-col items-center justify-center gap-2">
+					<h1 className="font-bold font-serif text-3xl">Radhi Rasho</h1>
 					<Typewriter
 						text={words}
 						speed={70}
-						className="text-base/loose font-bold bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent"
+						className="bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text font-bold text-base/loose text-transparent"
 						waitTime={3500}
 						deleteSpeed={40}
 						cursorChar="_"
@@ -52,14 +52,14 @@ export function AboutMe() {
 				defaultValue={"About Me"}
 				collapsible
 				type="single"
-				className="w-10/12 border rounded-lg px-2 mb-4"
+				className="mb-4 w-10/12 rounded-lg border px-2"
 			>
 				<AccordionItem value="About Me">
-					<AccordionTrigger className="hover:text-red-500 font-bold focus:text-red-500 focus-within:text-red-500">
+					<AccordionTrigger className="font-bold focus-within:text-red-500 hover:text-red-500 focus:text-red-500">
 						About Me
 					</AccordionTrigger>
 					<AccordionContent>
-						<p className="dark:text-gray-300 text-sm">
+						<p className="text-sm dark:text-gray-300">
 							Hello, I am Radhi Rasho, a Full Stack Software Engineer who enjoys
 							crafting web applications that solve real-world problems. I have a
 							curious mind and a thirst for knowledge, so I never stop exploring
@@ -70,21 +70,21 @@ export function AboutMe() {
 							<br />
 							I&apos;m currently working at&nbsp;
 							<Link
-								className="dark:text-gray-200 hover:text-red-500"
+								className="hover:text-red-500 dark:text-gray-200"
 								target="_blank"
 								href="https://www.sandhills.com/"
 							>
-								<span className="underline text-sm hover:text-red-500">
+								<span className="text-sm underline hover:text-red-500">
 									Sandhills Global
 								</span>
 							</Link>
 							&nbsp;. I have a Associates Degree in Computer Science from&nbsp;
 							<Link
-								className="dark:text-gray-200 hover:text-red-500"
+								className="hover:text-red-500 dark:text-gray-200"
 								target="_blank"
 								href="https://www.southeast.edu/"
 							>
-								<span className="underline text-sm hover:text-red-500">
+								<span className="text-sm underline hover:text-red-500">
 									Southeast Community College
 								</span>
 							</Link>
@@ -104,19 +104,19 @@ export function AboutMe() {
 							<br />
 							Feel free to check out my&nbsp;
 							<Link
-								className="dark:text-gray-200 hover:text-red-500"
+								className="hover:text-red-500 dark:text-gray-200"
 								href="/projects"
 							>
-								<span className="underline text-sm hover:text-red-500">
+								<span className="text-sm underline hover:text-red-500">
 									projects
 								</span>
 							</Link>
 							&nbsp; or&nbsp;
 							<Link
-								className="dark:text-gray-200 hover:text-red-500"
+								className="hover:text-red-500 dark:text-gray-200"
 								href="/contact"
 							>
-								<span className="underline text-sm hover:text-red-500">
+								<span className="text-sm underline hover:text-red-500">
 									contact me
 								</span>
 							</Link>
@@ -125,12 +125,12 @@ export function AboutMe() {
 					</AccordionContent>
 				</AccordionItem>
 				<AccordionItem value="Professional Experience">
-					<AccordionTrigger className="hover:text-red-500 font-bold focus:text-red-500 focus-within:text-red-500">
+					<AccordionTrigger className="font-bold focus-within:text-red-500 hover:text-red-500 focus:text-red-500">
 						Professional Experience
 					</AccordionTrigger>
 					<AccordionContent className="text-sm">
 						<div className="flex flex-col gap-2 dark:text-gray-300">
-							<div className="text-sm font-semibold underline hover:text-red-500">
+							<div className="font-semibold text-sm underline hover:text-red-500">
 								<Link
 									as="https://www.sandhills.com/"
 									target="_blank"
@@ -139,20 +139,20 @@ export function AboutMe() {
 									Sandhills Global
 								</Link>
 							</div>
-							<div className="text-xs italic font-semibold dark:text-gray-300">
+							<div className="font-semibold text-xs italic dark:text-gray-300">
 								Software Developer
-								<span className="text-xs dark:text-gray-300 text-gray-900">
+								<span className="text-gray-900 text-xs dark:text-gray-300">
 									{" "}
 									- 2021 to Present
 								</span>
 								<br />
 								Software Developer Intern
-								<span className="text-xs dark:text-gray-300 text-gray-900">
+								<span className="text-gray-900 text-xs dark:text-gray-300">
 									{" "}
 									- 2020 to 2021
 								</span>
 							</div>
-							<div className="dark:text-gray-300 text-sm">
+							<div className="text-sm dark:text-gray-300">
 								I first started off as an intern at Sandhills Global in Summer
 								of 2020, where I worked on a small projects that allowed me to
 								learn the ropes of the company&apos;s development process. After
@@ -163,9 +163,9 @@ export function AboutMe() {
 								During my time at Sandhills Global, I&apos;ve had the
 								opportunity to work on two significant projects:
 							</div>
-							<div className="dark:text-gray-300 text-sm">
+							<div className="text-sm dark:text-gray-300">
 								<Link
-									className="font-semibold  underline text-sm hover:text-red-500"
+									className="font-semibold text-sm underline hover:text-red-500"
 									target="_blank"
 									href={"https://www.fr8star.com"}
 								>
@@ -179,7 +179,7 @@ export function AboutMe() {
 								<br />
 								<br />
 								<Link
-									className="font-semibold  underline text-sm hover:text-red-500"
+									className="font-semibold text-sm underline hover:text-red-500"
 									target="_blank"
 									href={"https://www.gocurrency.com/"}
 								>
@@ -196,7 +196,7 @@ export function AboutMe() {
 					</AccordionContent>
 				</AccordionItem>
 				<AccordionItem value="Technologies">
-					<AccordionTrigger className="hover:text-red-500 font-bold peer-focus-within:text-red-500">
+					<AccordionTrigger className="font-bold hover:text-red-500 peer-focus-within:text-red-500">
 						Technologies
 					</AccordionTrigger>
 					<AccordionContent className="hover:text-white">

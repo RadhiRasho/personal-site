@@ -40,15 +40,3 @@
 		@apply bg-background text-foreground;
 	}
 }
-
-.globe-canvas {
-	height: 100vh;
-	width: 60vw;
-}
-
-@media (max-width: 768px) {
-	.globe-canvas {
-		width: 80vw;
-		height: 50vh;
-	}
-}

@@ -46,8 +46,8 @@ export default function Projects() {
 		},
 	];
 	return (
-		<main className="flex min-h-full flex-col items-center mt-4 mx-2 justify-between">
-			<div className="grid  xl:grid-cols-2 gap-2 translation-all">
+		<main className="mx-2 mt-4 flex min-h-full flex-col items-center justify-between">
+			<div className="translation-all grid gap-2 xl:grid-cols-2">
 				{projects.map((project, index) => (
 					<Project key={`${project.title}-${index}`} {...project} />
 				))}
