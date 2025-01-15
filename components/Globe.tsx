@@ -85,7 +85,7 @@ function Globe() {
 				premultipliedAlpha: true,
 				preserveDrawingBuffer: true,
 				depth: true,
-				powerPreference: 'low-power',
+				powerPreference: "low-power",
 				desynchronized: true,
 				failIfMajorPerformanceCaveat: true,
 				stencil: false,
