@@ -26,7 +26,7 @@ export default function ProjectCard({
 
 	return (
 		<motion.div
-			className="relative overflow-hidden rounded-lg bg-white shadow-lg"
+			className="relative overflow-hidden rounded-lg bg-white shadow-lg w-full h-full flex flex-col justify-between"
 			whileHover={{ scale: 1.05 }}
 			transition={{ duration: 0.3 }}
 		>
@@ -34,8 +34,8 @@ export default function ProjectCard({
 				src={imageUrl || "/placeholder.svg"}
 				alt={title}
 				width={400}
-				height={300}
-				className="h-48 w-full object-cover"
+				height={400}
+				className="w-auto h-auto object-cover"
 			/>
 			<div className="p-4">
 				<h3 className="mb-2 font-bold text-xl">{title}</h3>

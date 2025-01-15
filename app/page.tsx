@@ -5,6 +5,7 @@ import { Socials } from "@/components/Socials";
 import Float from "@/components/fancy/float";
 import ScrambleIn from "@/components/fancy/scramblein";
 import Typewriter from "@/components/fancy/typewriter";
+import { ProjectsGrid } from "@/components/project-grid";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { useMemo } from "react";
@@ -23,28 +24,28 @@ export default function Home() {
 	}, []);
 
 	return (
-		<main className="flex h-full min-h-screen w-full min-w-screen items-center justify-between">
+		<main className="relative flex flex-col h-full min-h-screen w-full min-w-screen items-center justify-between">
 			<div className="md:-right-96 -bottom-32 -z-30 fixed h-full w-full">
 				<Globe />
 			</div>
-			<div className="-z-10 fixed inset-0 bg-gradient-to-tr from-black via-black/80 to-transparent">
+			<div className="-z-[5] fixed inset-0 bg-gradient-to-tr from-black via-black/60 to-transparent">
 				&nbsp;
 			</div>
 			<section className="relative mb-4 flex h-full min-h-screen w-full min-w-screen p-4">
 				<div className="flex w-full items-center justify-between gap-2 md:w-8/12">
 					<div className="flex w-full flex-col items-center justify-center gap-2">
-						<Float className={"-z-10"}>
+						<Float>
 							<div className="relative h-52 w-52 cursor-pointer overflow-hidden shadow-2xl transition-transform duration-200 hover:scale-105">
 								<Image
 									src={"/Radhi-Rasho-pro.jpg"}
 									alt="Me"
 									height={1000}
 									width={1000}
-									className="absolute h-auto w-auto rounded-3xl object-cover"
+									className="absolute h-auto w-auto rounded-3xl object-cover opacity-60 transition-opacity duration-200 hover:opacity-100"
 								/>
 							</div>
 						</Float>
-						<div className="-m-1 flex w-full flex-col items-center justify-center rounded-xl border bg-background/80 px-10 py-6 shadow-2xl backdrop-blur-sm md:w-7/12 md:rounded-none md:border-none md:bg-background/0 md:shadow-none md:backdrop-blur-none">
+						<div className="-m-2 z-20 flex w-full flex-col items-center justify-center rounded-xl border bg-background/80 px-10 py-6 shadow-2xl backdrop-blur-sm md:w-7/12 md:rounded-none md:border-none md:bg-background/0 md:shadow-none md:backdrop-blur-none">
 							<div className="flex flex-col items-baseline justify-between gap-1 font-bold md:flex-row">
 								Hi, I'm
 								<ScrambleIn
@@ -72,6 +73,10 @@ export default function Home() {
 						<Socials />
 					</div>
 				</div>
+			</section>
+			<section className="relative mb-4 mt-4 flex flex-col gap-10 p-10 h-full min-h-screen w-full min-w-screen">
+				<span className="text-2xl">Projects</span>
+				<ProjectsGrid />
 			</section>
 		</main>
 	);

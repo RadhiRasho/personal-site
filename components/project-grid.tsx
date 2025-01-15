@@ -37,7 +37,6 @@ const projects: ProjectCardProps[] = [
 			"Simple Todo CLI tool where you can add, delete, list and prioritize your tasks in a cli. Can be ran on both windows and linux, but I have yet to add auto addition to PATH, will be working on that next",
 		categories: ["CLI Tools"],
 		technologies: ["Go", "SQLite", "CLI"],
-		image: "/Todo-CLI.png",
 		link: "https://github.com/radhirasho/todo-cli",
 	},
 	{
@@ -100,25 +99,20 @@ const allCategories = [
 export function ProjectsGrid() {
 	const [filter, setFilter] = useState("All");
 
-	const filteredProjects =
-		filter === "All"
-			? projects
-			: projects.filter((project) => project.categories.includes(filter));
+	const filteredProjects = filter === "All" ? projects : projects.filter((project) => project.categories.includes(filter));
 
 	return (
-		<div className="container mx-auto px-4 py-16">
-			<h2 className="mb-12 text-center font-bold text-4xl">My Projects</h2>
-			<div className="mb-8 flex flex-wrap justify-center gap-4">
+		<div>
+			<div className="mb-8 flex flex-wrap gap-4">
 				{allCategories.map((category) => (
 					<button
 						type="button"
 						key={category}
 						onClick={() => setFilter(category)}
-						className={`rounded-full px-4 py-2 ${
-							filter === category
-								? "bg-blue-500 text-white"
-								: "bg-gray-200 text-gray-800 hover:bg-gray-300"
-						} transition-colors duration-200`}
+						className={`rounded-xl px-4 py-2 ${filter === category
+							? "bg-blue-500 text-white dark:bg-blue-700 dark:text-white"
+							: "bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
+							} transition-colors duration-300`}
 					>
 						{category}
 					</button>
@@ -132,6 +126,7 @@ export function ProjectsGrid() {
 					{filteredProjects.map((project) => (
 						<motion.div
 							key={project.id}
+							className="w-full h-full"
 							layout
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}

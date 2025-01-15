@@ -1,8 +1,8 @@
 import createGlobe, { type Marker, type COBEOptions } from "cobe";
-import { memo, useCallback, useEffect, useMemo, useRef } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import { useWindowSize } from "usehooks-ts";
 
-function Globe() {
+export default function Globe() {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 	const globeRef = useRef<ReturnType<typeof createGlobe> | null>(null);
 	const windowSize = useWindowSize();
@@ -113,7 +113,6 @@ function Globe() {
 		};
 	}, [createAndRenderGlobe, handleZoom]);
 
-	return <canvas ref={canvasRef} className="sm:-rotate-12 h-full w-full" />;
+	return <canvas ref={canvasRef} className="sm:-rotate-[18deg] h-full w-full" />;
 }
 
-export default memo(Globe);
