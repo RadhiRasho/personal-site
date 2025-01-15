@@ -16,8 +16,8 @@ export function Socials() {
 			<Link
 				aria-label="Go to my X/Twitter profile"
 				target="_blank"
-				as="https://twitter.com/RadhiH1"
-				href="https://twitter.com/RadhiH1"
+				as="https://twitter.com/RadhiRasho"
+				href="https://twitter.com/RadhiRasho"
 			>
 				<TwitterIcon size={35} className="text-xs hover:text-red-500" />
 			</Link>

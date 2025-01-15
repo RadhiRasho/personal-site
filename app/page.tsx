@@ -24,8 +24,11 @@ export default function Home() {
 
 	return (
 		<main className="flex h-full min-h-screen w-full min-w-screen items-center justify-between">
-			<div className="md:-right-96 -bottom-32 -z-20 fixed h-full w-full">
+			<div className="md:-right-96 -bottom-32 -z-30 fixed h-full w-full">
 				<Globe />
+			</div>
+			<div className="-z-10 fixed inset-0 bg-gradient-to-tr from-black via-black/80 to-transparent">
+				&nbsp;
 			</div>
 			<section className="relative mb-4 flex h-full min-h-screen w-full min-w-screen p-4">
 				<div className="flex w-full items-center justify-between gap-2 md:w-8/12">
@@ -68,9 +71,6 @@ export default function Home() {
 					<div className="hidden md:fixed md:block">
 						<Socials />
 					</div>
-				</div>
-				<div className="-z-10 fixed inset-0 bg-gradient-to-tr from-black to-transparent blur-lg">
-					&nbsp;
 				</div>
 			</section>
 		</main>

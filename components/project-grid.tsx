@@ -10,7 +10,13 @@ const projects: ProjectCardProps[] = [
 		title: "Personal Site",
 		description:
 			"This is what you are viewing currently, a project to show off stuff I like to do, and stuff I've built over time.",
-		categories: ["Web Development"],
+		categories: [
+			"Web Development",
+			"Full Stack",
+			"Front End",
+			"Back End",
+			"React",
+		],
 		technologies: [
 			"Next.js",
 			"Vercel",
@@ -39,7 +45,7 @@ const projects: ProjectCardProps[] = [
 		title: "German Quiz CLI",
 		description:
 			"Simple CLI tool to help me learn German, can be used by anyone to learn German",
-		categories: ["CLI Tools"],
+		categories: ["CLI Tools", "Learning"],
 		technologies: ["Go", "CLI", "JSON"],
 		image: "/GermanQuiz.png",
 		link: "https://github.com/radhirasho/german-quiz-cli",
@@ -49,7 +55,7 @@ const projects: ProjectCardProps[] = [
 		title: "@radhirasho/latest",
 		description:
 			"@radhirasho/latest is a Node.js utility that checks the latest version of a given package from npm or other registries. It can be used as a CLI tool or as a library in your Node.js projects.",
-		categories: ["Node.js Utilities"],
+		categories: ["Node.js Utilities", "NPM Packages", "CLI Tools"],
 		technologies: ["Node.js", "CLI"],
 		link: "https://github.com/RadhiRasho/latest",
 	},
@@ -60,6 +66,29 @@ const projects: ProjectCardProps[] = [
 		categories: ["Web Development"],
 		technologies: ["Deno", "TypeScript"],
 		link: "https://github.com/RadhiRasho/simple-deno",
+	},
+	{
+		id: 6,
+		title: "React Experiments",
+		description: "Expirementing with React Related Technologies",
+		categories: ["Web Development", "Front End", "React"],
+		technologies: [
+			"React",
+			"TypeScript",
+			"Next.js",
+			"TailwindCSS",
+			"React Hooks",
+			"TanStack Query",
+		],
+		link: "https://github.com/RadhiRasho/react-experiments",
+	},
+	{
+		id: 7,
+		title: "Simple Speed",
+		description: "Simple performance testing different languages ⚡",
+		categories: ["Performance Testing"],
+		technologies: ["Go", "Node.js", "C++", "Rust", "C", "Zig", "Bun"],
+		link: "https://github.com/RadhiRasho/simple-speed",
 	},
 ];
 
