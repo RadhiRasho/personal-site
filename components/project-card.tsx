@@ -52,7 +52,7 @@ export default function ProjectCard({
 							{categories.map((category, index) => (
 								<span
 									key={index}
-									className="rounded-full bg-blue-500 px-2 py-1 text-white text-xs"
+									className="rounded-full bg-blue-900 px-2 py-1 text-white text-xs"
 								>
 									{category}
 								</span>
@@ -74,7 +74,7 @@ export default function ProjectCard({
 						href={link}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="inline-flex items-center text-blue-500 transition-colors duration-200 hover:text-blue-700"
+						className="inline-flex items-center text-blue-700 transition-colors duration-200 hover:text-blue-800"
 					>
 						View Project <ArrowUpRight className="ml-1 h-4 w-4" />
 					</a>
