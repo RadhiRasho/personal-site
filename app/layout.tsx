@@ -6,7 +6,7 @@ import type { ReactNode } from "react";
 import "./globals.css";
 import { Socials } from "@/components/Socials";
 
-const robotoMono = Roboto_Mono({ subsets: ["latin"] });
+const Font = Roboto_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: "Radhi Rasho",
@@ -51,7 +51,7 @@ type Props = {
 export default function RootLayout({ children }: Props) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body className={robotoMono.className}>
+			<body className={`${Font.className} min-h-screen min-w-screen bg-[length:12rem] bg-topography bg-fixed bg-repeat`}>
 				<div className="fixed w-full min-w-screen p-4 md:hidden">
 					<Socials />
 				</div>

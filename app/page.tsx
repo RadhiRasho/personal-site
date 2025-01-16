@@ -24,8 +24,8 @@ export default function Home() {
 	}, []);
 
 	return (
-		<main className="relative flex flex-col h-full min-h-screen w-full min-w-screen items-center justify-between">
-			<div className="md:-right-96 -bottom-32 -z-30 fixed h-full w-full">
+		<main className="relative flex h-full min-h-screen w-full min-w-screen flex-col items-center justify-between">
+			<div className="md:-right-64 lg:-right-96 -bottom-32 -z-30 fixed h-full w-full transition-all duration-300">
 				<Globe />
 			</div>
 			<div className="-z-[5] fixed inset-0 bg-gradient-to-tr from-black via-black/60 to-transparent">
@@ -38,11 +38,15 @@ export default function Home() {
 							<div className="relative h-52 w-52 cursor-pointer overflow-hidden shadow-2xl transition-transform duration-200 hover:scale-105">
 								<Image
 									src={"/Radhi-Rasho-pro.jpg"}
-									alt="Me"
-									height={1000}
-									width={1000}
-									className="absolute h-auto w-auto rounded-3xl object-cover opacity-60 transition-opacity duration-200 hover:opacity-100"
+									alt="Hello There, es is mich"
+									title="Hallo, es is mich!"
+									height={300}
+									width={300}
+									className="absolute h-full w-full rounded-3xl object-cover antialiased"
 								/>
+								<div className="absolute inset-0 bg-black bg-opacity-50 transition-opacity duration-200 hover:bg-opacity-0">
+									&nbsp;
+								</div>
 							</div>
 						</Float>
 						<div className="-m-2 z-20 flex w-full flex-col items-center justify-center rounded-xl border bg-background/80 px-10 py-6 shadow-2xl backdrop-blur-sm md:w-7/12 md:rounded-none md:border-none md:bg-background/0 md:shadow-none md:backdrop-blur-none">
@@ -74,7 +78,7 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<section className="relative mb-4 mt-4 flex flex-col gap-10 p-10 h-full min-h-screen w-full min-w-screen">
+			<section className="relative mx-10 flex h-full min-h-screen w-full min-w-screen flex-col gap-10 p-10">
 				<span className="text-2xl">Projects</span>
 				<ProjectsGrid />
 			</section>

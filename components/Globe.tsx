@@ -113,6 +113,6 @@ export default function Globe() {
 		};
 	}, [createAndRenderGlobe, handleZoom]);
 
-	return <canvas ref={canvasRef} className="sm:-rotate-[18deg] h-full w-full" />;
+	return <canvas ref={canvasRef} className="md:-rotate-[18deg] h-full w-full" />;
 }
 

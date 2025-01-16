@@ -102,15 +102,14 @@ export function ProjectsGrid() {
 	const filteredProjects = filter === "All" ? projects : projects.filter((project) => project.categories.includes(filter));
 
 	return (
-		<div>
+		<div className="mx-5">
 			<div className="mb-8 flex flex-wrap gap-4">
 				{allCategories.map((category) => (
 					<button
 						type="button"
 						key={category}
 						onClick={() => setFilter(category)}
-						className={`rounded-xl px-4 py-2 ${filter === category
-							? "bg-blue-500 text-white dark:bg-blue-700 dark:text-white"
+						className={`rounded p-2 text-xs ${filter === category ? "bg-blue-500 text-white dark:bg-blue-700 dark:text-white"
 							: "bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
 							} transition-colors duration-300`}
 					>
@@ -126,7 +125,7 @@ export function ProjectsGrid() {
 					{filteredProjects.map((project) => (
 						<motion.div
 							key={project.id}
-							className="w-full h-full"
+							className="h-full w-full"
 							layout
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
