@@ -99,7 +99,10 @@ const allCategories = [
 export function ProjectsGrid() {
 	const [filter, setFilter] = useState("All");
 
-	const filteredProjects = filter === "All" ? projects : projects.filter((project) => project.categories.includes(filter));
+	const filteredProjects =
+		filter === "All"
+			? projects
+			: projects.filter((project) => project.categories.includes(filter));
 
 	return (
 		<div className="mx-5">
@@ -109,9 +112,11 @@ export function ProjectsGrid() {
 						type="button"
 						key={category}
 						onClick={() => setFilter(category)}
-						className={`rounded p-2 text-xs ${filter === category ? "bg-blue-500 text-white dark:bg-blue-700 dark:text-white"
-							: "bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
-							} transition-colors duration-300`}
+						className={`rounded p-2 text-xs ${
+							filter === category
+								? "bg-blue-500 text-white dark:bg-blue-700 dark:text-white"
+								: "bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
+						} transition-colors duration-300`}
 					>
 						{category}
 					</button>

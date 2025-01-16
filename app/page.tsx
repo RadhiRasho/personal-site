@@ -6,7 +6,6 @@ import Float from "@/components/fancy/float";
 import ScrambleIn from "@/components/fancy/scramblein";
 import Typewriter from "@/components/fancy/typewriter";
 import { ProjectsGrid } from "@/components/project-grid";
-import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { useMemo } from "react";
 
@@ -22,7 +21,6 @@ export default function Home() {
 			"It's Gotta Be Cornflower Bluuueee",
 		];
 	}, []);
-
 
 	return (
 		<main className="relative flex h-full min-h-screen w-full min-w-screen flex-col items-center justify-between">

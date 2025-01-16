@@ -44,13 +44,13 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-	themeColor: 'black',
-	colorScheme: 'dark',
-	width: 'device-width',
+	themeColor: "black",
+	colorScheme: "dark",
+	width: "device-width",
 	initialScale: 1,
 	maximumScale: 1,
 	userScalable: false,
-}
+};
 
 type Props = {
 	children: ReactNode;
@@ -59,7 +59,9 @@ type Props = {
 export default function RootLayout({ children }: Props) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body className={`${Font.className} min-h-screen min-w-screen bg-[length:12rem] bg-topography bg-fixed bg-repeat`}>
+			<body
+				className={`${Font.className} min-h-screen min-w-screen bg-[length:12rem] bg-topography bg-fixed bg-repeat`}
+			>
 				<div className="z-50 w-full min-w-screen p-4 md:hidden">
 					<Socials />
 				</div>

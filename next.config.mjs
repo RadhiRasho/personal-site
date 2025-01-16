@@ -9,7 +9,7 @@ const nextConfig = {
 			{
 				protocol: "https",
 				hostname: "api.microlink.io",
-			}
+			},
 		],
 		dangerouslyAllowSVG: true,
 	},
