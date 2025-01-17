@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export interface ProjectCardProps {
 	id?: number;
@@ -26,26 +27,25 @@ export default function ProjectCard({
 
 	return (
 		<motion.div
-			className="relative flex h-full w-full flex-col justify-between overflow-hidden rounded-3xl border bg-background/90 shadow-lg"
+			className={"relative flex h-full w-full flex-col justify-between overflow-hidden rounded-3xl border bg-background/90 bg-no-repeat object-cover p-2 shadow-lg backdrop-blur-sm md:p-0"}
 			whileHover={{ scale: 1.05 }}
-			transition={{ duration: 0.2 }}
-		>
-			<div className="flex flex-col justify-between gap-4 p-4">
-				<div className="flex h-52 w-full overflow-hidden">
+			transition={{ duration: 0.2 }} >
+			<div className="flex flex-col justify-between gap-4">
+				<div className="flex h-56 w-full overflow-hidden rounded-t-2xl">
 					<Image
 						src={imageUrl || "/placeholder.svg"}
 						alt={title}
-						width={400}
-						height={400}
+						width={500}
+						height={500}
 						className="h-full w-full object-cover"
 					/>
 				</div>
-				<div>
+				<div className="px-3">
 					<h3 className="font-bold text-xl">{title}</h3>
 					<p className="text-gray-500 text-sm">{description}</p>
 				</div>
 			</div>
-			<div className="flex flex-col justify-between gap-4 p-4">
+			<div className="flex flex-col justify-between gap-4 p-3">
 				<div className="flex flex-col justify-between gap-2">
 					<div className="flex flex-col justify-between gap-2">
 						<div className="flex flex-wrap gap-2">
@@ -70,14 +70,15 @@ export default function ProjectCard({
 							))}
 						</div>
 					</div>
-					<a
+					<Link
+						as={link}
 						href={link}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="inline-flex items-center text-blue-700 transition-colors duration-200 hover:text-blue-800"
+						className="inline-flex justify-center p-2 items-center text-slate-400 underline-offset-4 transition-all duration-200 hover:text-slate-200 hover:underline border-t-2 w-full"
 					>
 						View Project <ArrowUpRight className="ml-1 h-4 w-4" />
-					</a>
+					</Link>
 				</div>
 			</div>
 		</motion.div>

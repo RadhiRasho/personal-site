@@ -1,3 +1,5 @@
+'use client';
+
 import createGlobe, { type Marker, type COBEOptions } from "cobe";
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import { useWindowSize } from "usehooks-ts";
@@ -63,6 +65,7 @@ export default function Globe() {
 
 	const createAndRenderGlobe = useCallback(() => {
 		let phi = 0;
+
 		if (!canvasRef.current) return;
 
 		if (globeRef.current) {

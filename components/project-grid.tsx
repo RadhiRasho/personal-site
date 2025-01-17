@@ -106,17 +106,14 @@ export function ProjectsGrid() {
 
 	return (
 		<div className="mx-5">
-			<div className="mb-8 flex flex-wrap gap-4">
+			<div className="mb-8 flex flex-wrap items-center justify-center gap-4">
 				{allCategories.map((category) => (
 					<button
 						type="button"
 						key={category}
 						onClick={() => setFilter(category)}
-						className={`rounded p-2 text-xs ${
-							filter === category
-								? "bg-blue-500 text-white dark:bg-blue-700 dark:text-white"
-								: "bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
-						} transition-colors duration-300`}
+						data-active={filter === category}
+						className={"rounded-xl bg-gray-200 px-4 py-2 font-medium text-gray-800 text-sm transition-colors duration-300 hover:bg-gray-300 data-[active=true]:bg-purple-600 data-[active=true]:text-white dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"}
 					>
 						{category}
 					</button>
@@ -124,7 +121,7 @@ export function ProjectsGrid() {
 			</div>
 			<motion.div
 				layout
-				className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+				className="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-3"
 			>
 				<AnimatePresence>
 					{filteredProjects.map((project) => (

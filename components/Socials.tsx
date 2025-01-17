@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function Socials() {
 	return (
-		<div className="flex items-center justify-between gap-8 md:flex-col">
+		<div className="flex w-full items-center justify-between gap-8 md:w-auto md:flex-col">
 			<Link
 				aria-label="Go to my Github profile"
 				target="_blank"
