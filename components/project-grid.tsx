@@ -113,7 +113,9 @@ export function ProjectsGrid() {
 						key={category}
 						onClick={() => setFilter(category)}
 						data-active={filter === category}
-						className={"rounded-xl bg-gray-200 px-4 py-2 font-medium text-gray-800 text-sm transition-colors duration-300 hover:bg-gray-300 data-[active=true]:bg-purple-600 data-[active=true]:text-white dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"}
+						className={
+							"rounded-xl bg-gray-200 px-4 py-2 font-medium text-gray-800 text-sm transition-colors duration-300 hover:bg-gray-300 data-[active=true]:bg-purple-600 data-[active=true]:text-white dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
+						}
 					>
 						{category}
 					</button>

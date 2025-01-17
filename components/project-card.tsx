@@ -27,9 +27,12 @@ export default function ProjectCard({
 
 	return (
 		<motion.div
-			className={"relative flex h-full w-full flex-col justify-between overflow-hidden rounded-3xl border bg-background/90 bg-no-repeat object-cover p-2 shadow-lg backdrop-blur-sm md:p-0"}
+			className={
+				"relative flex h-full w-full flex-col justify-between overflow-hidden rounded-3xl border bg-background/90 bg-no-repeat object-cover p-2 shadow-lg backdrop-blur-sm md:p-0"
+			}
 			whileHover={{ scale: 1.05 }}
-			transition={{ duration: 0.2 }} >
+			transition={{ duration: 0.2 }}
+		>
 			<div className="flex flex-col justify-between gap-4">
 				<div className="flex h-56 w-full overflow-hidden rounded-t-2xl">
 					<Image
@@ -75,7 +78,7 @@ export default function ProjectCard({
 						href={link}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="inline-flex justify-center p-2 items-center text-slate-400 underline-offset-4 transition-all duration-200 hover:text-slate-200 hover:underline border-t-2 w-full"
+						className="inline-flex w-full items-center justify-center border-t-2 p-2 text-slate-400 underline-offset-4 transition-all duration-200 hover:text-slate-200 hover:underline"
 					>
 						View Project <ArrowUpRight className="ml-1 h-4 w-4" />
 					</Link>

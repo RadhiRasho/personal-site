@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import createGlobe, { type Marker, type COBEOptions } from "cobe";
 import { useCallback, useEffect, useMemo, useRef } from "react";
