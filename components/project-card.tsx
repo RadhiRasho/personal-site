@@ -2,13 +2,14 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import type { JSX } from "react";
 
 export interface ProjectCardProps {
 	id?: number;
 	title: string;
 	description: string;
 	categories: string[];
-	technologies: string[];
+	technologies: JSX.Element[];
 	image?: string;
 	link: string;
 }
@@ -28,7 +29,7 @@ export default function ProjectCard({
 	return (
 		<motion.div
 			className={
-				"relative flex h-full w-full flex-col justify-between overflow-hidden rounded-3xl border bg-background/90 bg-no-repeat object-cover p-2 shadow-lg backdrop-blur-sm md:p-0"
+				"flex h-full w-full flex-col justify-between overflow-hidden rounded-3xl border bg-background/90 bg-no-repeat object-cover shadow-lg backdrop-blur-sm"
 			}
 			whileHover={{ scale: 1.05 }}
 			transition={{ duration: 0.2 }}
@@ -38,14 +39,15 @@ export default function ProjectCard({
 					<Image
 						src={imageUrl || "/placeholder.svg"}
 						alt={title}
+						priority
 						width={500}
 						height={500}
 						className="h-full w-full object-cover"
 					/>
 				</div>
 				<div className="px-3">
-					<h3 className="font-bold text-xl">{title}</h3>
-					<p className="text-gray-500 text-sm">{description}</p>
+					<h3 className="font-bold text-sm">{title}</h3>
+					<p className="text-gray-500 text-xs">{description}</p>
 				</div>
 			</div>
 			<div className="flex flex-col justify-between gap-4 p-3">
@@ -62,12 +64,9 @@ export default function ProjectCard({
 							))}
 						</div>
 						<h4 className="font-semibold text-xs">Technologies used:</h4>
-						<div className="flex flex-wrap gap-1">
+						<div className="flex flex-wrap justify-between gap-1">
 							{technologies.map((tech, index) => (
-								<span
-									key={index}
-									className="rounded-full bg-muted px-2 py-1 text-xs"
-								>
+								<span className="hover:scale-125" key={index}>
 									{tech}
 								</span>
 							))}

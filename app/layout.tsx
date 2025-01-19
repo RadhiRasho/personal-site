@@ -1,13 +1,13 @@
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
-import { Roboto_Mono } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
-import Globe from "@/components/Globe";
-import { Socials } from "@/components/Socials";
+import Globe from "@/components/globe";
+import { Socials } from "@/components/socials";
 
-const Font = Roboto_Mono({ subsets: ["latin"] });
+const Font = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: "Radhi Rasho",
@@ -63,19 +63,13 @@ export default function RootLayout({ children }: Props) {
 			<body
 				className={`${Font.className} min-h-screen min-w-screen bg-[length:12rem] bg-topography bg-fixed bg-repeat`}
 			>
-				<div className="z-50 flex h-full w-full items-center justify-center p-4 md:fixed md:w-10 md:justify-start">
-					<Socials />
-				</div>
-				<div className="md:-right-[30%] -bottom-52 md:-bottom-32 -z-30 fixed h-full w-full transition-all duration-300">
-					<Globe />
-				</div>
-				<div className="-z-[5] fixed inset-0 bg-gradient-to-tr from-black via-black/60 to-transparent">
-					&nbsp;
-				</div>
+				<Socials />
+				<Globe />
+				<div className="-z-[5] fixed inset-0 bg-gradient-to-tr from-black via-black/50 to-transparent md:via-black/60" />
 				{children}
 				<SpeedInsights />
 				<Analytics />
 			</body>
-		</html>
+		</html >
 	);
 }

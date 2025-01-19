@@ -43,26 +43,25 @@ export default function Globe() {
 		[],
 	);
 
-	const randomBrightColor = useCallback((): [number, number, number] => {
+	const randomBrightColor = useMemo((): [number, number, number] => {
 		return [200, Math.random(), Math.random()]; // Red hue with random green and blue components
 	}, []);
 
-	const randomDarkColor = useCallback((): [number, number, number] => {
+	const randomDarkColor = useMemo((): [number, number, number] => {
 		return [0.5, Math.random(), Math.random()]; // Red hue with random green and blue components
 	}, []);
 
-	const randomSoftColor = useCallback((): [number, number, number] => {
+	const randomSoftColor = useMemo((): [number, number, number] => {
 		return [Math.random(), Math.random(), Math.random()]; // Random hue with random saturation and value
 	}, []);
 
-	const randomizeColors = useCallback((): COBEOptions => {
+	const randomizeColors = useMemo((): COBEOptions => {
 		return {
-			baseColor: randomDarkColor(),
-			markerColor: randomBrightColor(),
-			glowColor: randomSoftColor(),
+			baseColor: randomDarkColor,
+			markerColor: randomBrightColor,
+			glowColor: randomSoftColor,
 		} as COBEOptions;
 	}, [randomBrightColor, randomDarkColor, randomSoftColor]);
-
 	const createAndRenderGlobe = useCallback(() => {
 		let phi = 0;
 
@@ -73,7 +72,7 @@ export default function Globe() {
 		}
 
 		globeRef.current = createGlobe(canvasRef.current, {
-			...randomizeColors(),
+			...randomizeColors,
 			devicePixelRatio: 1,
 			width: windowSize.width,
 			height: windowSize.height,
@@ -117,6 +116,8 @@ export default function Globe() {
 	}, [createAndRenderGlobe, handleZoom]);
 
 	return (
-		<canvas ref={canvasRef} className="md:-rotate-[18deg] h-full w-full" />
+		<div className="lg:-right-[30%] -bottom-52 md:-bottom-32 -z-30 fixed h-full w-full transition-all duration-300">
+			<canvas ref={canvasRef} className="md:-rotate-[18deg] h-full w-full" />
+		</div>
 	);
 }

@@ -2,6 +2,10 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { FaGolang } from 'react-icons/fa6'
+import { RiGithubFill, RiNextjsFill, RiNodejsFill, RiReactjsFill, RiTailwindCssFill, RiVercelFill } from 'react-icons/ri'
+import { SiBun, SiC, SiDeno, SiGnubash, SiJson, SiReactquery, SiRust, SiSqlite, SiTypescript, SiZig } from 'react-icons/si'
+import { TbBrandCpp } from 'react-icons/tb'
 import ProjectCard, { type ProjectCardProps } from "./project-card";
 
 const projects: ProjectCardProps[] = [
@@ -18,14 +22,14 @@ const projects: ProjectCardProps[] = [
 			"React",
 		],
 		technologies: [
-			"Next.js",
-			"Vercel",
-			"GitHub",
-			"Node.js",
-			"Bun",
-			"React",
-			"TailwindCSS",
-			"TypeScript",
+			<RiNextjsFill size={35} key={'Next.JS'} />,
+			<RiVercelFill size={35} key={'Vercel'} />,
+			<RiGithubFill size={35} key="Github" />,
+			<RiNodejsFill fill="limegreen" size={35} key="Nodejs" />,
+			<SiBun fill="#ffedd5" size={35} key={"Bun"} />,
+			<RiReactjsFill fill="cyan" size={35} key="Reactjs" />,
+			<RiTailwindCssFill fill="cyan" size={35} key="TailwindCss" />,
+			<SiTypescript fill="#3b82f6" size={35} key={"Typescript"} />,
 		],
 		image: "/radhi-rasho.dev.jpeg",
 		link: "https://github.com/radhirasho/personal-site",
@@ -36,7 +40,7 @@ const projects: ProjectCardProps[] = [
 		description:
 			"Simple Todo CLI tool where you can add, delete, list and prioritize your tasks in a cli. Can be ran on both windows and linux, but I have yet to add auto addition to PATH, will be working on that next",
 		categories: ["CLI Tools"],
-		technologies: ["Go", "SQLite", "CLI"],
+		technologies: [<FaGolang fill="cyan" size={35} key="Golang" />, <SiSqlite fill="#3b82f6" size={35} key="SQLite" />, <SiGnubash fill="green" size={35} key="Bash" />],
 		link: "https://github.com/radhirasho/todo-cli",
 	},
 	{
@@ -45,7 +49,7 @@ const projects: ProjectCardProps[] = [
 		description:
 			"Simple CLI tool to help me learn German, can be used by anyone to learn German",
 		categories: ["CLI Tools", "Learning"],
-		technologies: ["Go", "CLI", "JSON"],
+		technologies: [<FaGolang fill="cyan" size={35} key="Golang" />, <SiGnubash fill="green" size={35} key="Bash" />, <SiJson fill="yellow" size={35} key="JSON" />],
 		image: "/GermanQuiz.png",
 		link: "https://github.com/radhirasho/german-quiz-cli",
 	},
@@ -55,7 +59,7 @@ const projects: ProjectCardProps[] = [
 		description:
 			"@radhirasho/latest is a Node.js utility that checks the latest version of a given package from npm or other registries. It can be used as a CLI tool or as a library in your Node.js projects.",
 		categories: ["Node.js Utilities", "NPM Packages", "CLI Tools"],
-		technologies: ["Node.js", "CLI"],
+		technologies: [<RiNodejsFill fill="limegreen" size={35} key="Nodejs" />, <SiGnubash fill="green" size={35} key="Bash" />],
 		link: "https://github.com/RadhiRasho/latest",
 	},
 	{
@@ -63,7 +67,7 @@ const projects: ProjectCardProps[] = [
 		title: "Simple Deno",
 		description: "🧪 Experimenting with Deno 🦕",
 		categories: ["Web Development"],
-		technologies: ["Deno", "TypeScript"],
+		technologies: [<SiDeno fill="white" size={35} key="Deno" />, <SiTypescript fill="#3b82f6" size={35} key="Typescript" />],
 		link: "https://github.com/RadhiRasho/simple-deno",
 	},
 	{
@@ -72,12 +76,11 @@ const projects: ProjectCardProps[] = [
 		description: "Expirementing with React Related Technologies",
 		categories: ["Web Development", "Front End", "React"],
 		technologies: [
-			"React",
-			"TypeScript",
-			"Next.js",
-			"TailwindCSS",
-			"React Hooks",
-			"TanStack Query",
+			<RiReactjsFill fill="cyan" size={35} key="Reactjs" />,
+			<RiNextjsFill fill="white" size={35} key="Nextjs" />,
+			<SiTypescript fill="#3b82f6" size={35} key="Typescript" />,
+			<RiTailwindCssFill fill="cyan" size={35} key="TailwindCss" />,
+			<SiReactquery fill="red" size={35} key="ReactQuery" />,
 		],
 		link: "https://github.com/RadhiRasho/react-experiments",
 	},
@@ -86,7 +89,15 @@ const projects: ProjectCardProps[] = [
 		title: "Simple Speed",
 		description: "Simple performance testing different languages ⚡",
 		categories: ["Performance Testing"],
-		technologies: ["Go", "Node.js", "C++", "Rust", "C", "Zig", "Bun"],
+		technologies: [
+			<FaGolang fill="cyan" size={35} key="Golang" />,
+			<RiNodejsFill fill="limegreen" size={35} key="Nodejs" />,
+			<TbBrandCpp stroke="purple" size={35} key="Cpp" />,
+			<SiBun fill="#ffedd5" size={35} key="Bun" />,
+			<SiRust fill="orange" size={35} key="Rust" />,
+			<SiZig fill="yellow" size={35} key="Zig" />,
+			<SiC fill="#6366f1" size={35} key="C" />
+		],
 		link: "https://github.com/RadhiRasho/simple-speed",
 	},
 ];
@@ -114,7 +125,7 @@ export function ProjectsGrid() {
 						onClick={() => setFilter(category)}
 						data-active={filter === category}
 						className={
-							"rounded-xl bg-gray-200 px-4 py-2 font-medium text-gray-800 text-sm transition-colors duration-300 hover:bg-gray-300 data-[active=true]:bg-purple-600 data-[active=true]:text-white dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
+							"rounded-xl bg-gray-200 px-4 py-2 font-medium text-gray-800 text-xs transition-colors duration-300 hover:bg-gray-300 data-[active=true]:bg-purple-600 data-[active=true]:text-white dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
 						}
 					>
 						{category}
