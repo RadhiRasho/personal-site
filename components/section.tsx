@@ -21,7 +21,7 @@ export function Section({ imageAlt, image, content, reverse = false }: SectionPr
                         className="h-full w-full rounded-lg object-cover"
                         width={500}
                         height={500}
-                        loading="lazy"
+                        priority
                     />
                 </div>
             </div>

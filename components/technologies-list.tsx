@@ -62,6 +62,7 @@ function TechnologyCategory({ name, icons }: { name: string; icons: string[] }) 
 										<Image
 											width={100}
 											height={100}
+											priority
 											className="h-auto w-full object-contain"
 											src={`https://skillicons.dev/icons?i=${icon}`}
 											alt={`${icon} icon`}
