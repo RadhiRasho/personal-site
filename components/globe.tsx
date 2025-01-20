@@ -1,7 +1,8 @@
 "use client";
 
 import createGlobe, { type Marker, type COBEOptions } from "cobe";
-import { useCallback, useEffect, useMemo, useRef } from "react";
+import { motion } from "motion/react";
+import { useCallback, useLayoutEffect, useMemo, useRef } from "react";
 import { useWindowSize } from "usehooks-ts";
 
 export default function Globe() {
@@ -103,7 +104,7 @@ export default function Globe() {
 		});
 	}, [markers, windowSize.height, windowSize.width, randomizeColors]);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		createAndRenderGlobe();
 
 		window.addEventListener("wheel", handleZoom);
@@ -116,8 +117,21 @@ export default function Globe() {
 	}, [createAndRenderGlobe, handleZoom]);
 
 	return (
-		<div className="lg:-right-[30%] -bottom-52 md:-bottom-32 -z-30 fixed h-full w-full transition-all duration-300">
+		<motion.div
+			layout
+			initial={"hidden"}
+			animate={"visible"}
+			transition={{
+				duration: 0.5,
+				ease: "easeIn",
+
+			}}
+			variants={{
+				hidden: { opacity: 0, x: '100%' },  // Increased y value for more dramatic effect from bottom
+				visible: { opacity: 1, x: 0 },   // Maintains center position as destination
+			}}
+			className="lg:-right-[30%] -bottom-52 md:-bottom-32 -z-30 fixed h-full w-full transition-all duration-300">
 			<canvas ref={canvasRef} className="md:-rotate-[18deg] h-full w-full" />
-		</div>
+		</motion.div>
 	);
 }

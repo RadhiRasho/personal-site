@@ -29,7 +29,7 @@ export default function ProjectCard({
 	return (
 		<motion.div
 			className={
-				"flex h-full w-full flex-col justify-between overflow-hidden rounded-3xl border bg-background/90 bg-no-repeat object-cover shadow-lg backdrop-blur-sm"
+				"flex h-full w-full flex-col justify-between overflow-hidden rounded-3xl border bg-background/90 bg-no-repeat object-cover shadow-lg backdrop-blur-xs"
 			}
 			whileHover={{ scale: 1.05 }}
 			transition={{ duration: 0.2 }}

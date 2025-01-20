@@ -1,7 +1,6 @@
 "use client";
 import Landing from "@/components/Landing";
 import About from "@/components/about";
-import { AboutMe } from "@/components/about-me";
 import Projects from "@/components/projects";
 
 export default function Home() {
