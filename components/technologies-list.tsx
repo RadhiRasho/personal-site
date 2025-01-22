@@ -1,14 +1,26 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { motion } from "framer-motion"
-import Image from "next/image"
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 const categories = [
-	{ name: "Front End", icons: ["ts,js,html,css,sass", "nextjs,react,tailwind,svelte,astro"] },
-	{ name: "Back End", icons: ["ts,js,python,go,cs", "elysia,express,nodejs,bun,deno"] },
+	{
+		name: "Front End",
+		icons: ["ts,js,html,css,sass", "nextjs,react,tailwind,svelte,astro"],
+	},
+	{
+		name: "Back End",
+		icons: ["ts,js,python,go,cs", "elysia,express,nodejs,bun,deno"],
+	},
 	{ name: "Databases", icons: ["mongodb,mysql,postgresql,redis,sqlite"] },
-	{ name: "Technologies", icons: ["docker,linux,windows,apple,ubuntu", "visualstudio,vscode,git,github,postman"] },
+	{
+		name: "Technologies",
+		icons: [
+			"docker,linux,windows,apple,ubuntu",
+			"visualstudio,vscode,git,github,postman",
+		],
+	},
 	{ name: "Testing Libraries", icons: ["jest,vitest,bun,nodejs"] },
-]
+];
 
 const containerVariants = {
 	hidden: { opacity: 0 },
@@ -18,7 +30,7 @@ const containerVariants = {
 			staggerChildren: 0.1,
 		},
 	},
-}
+};
 
 const itemVariants = {
 	hidden: { y: 20, opacity: 0 },
@@ -30,26 +42,31 @@ const itemVariants = {
 			stiffness: 100,
 		},
 	},
-}
+};
 
 export function TechnologiesList() {
 	return (
 		<Card className="mx-auto w-full max-w-4xl border-none bg-transparent">
 			<CardContent className="p-0 py-2">
-				<motion.div className="space-y-6" variants={containerVariants} initial="hidden" animate="visible">
+				<motion.div
+					className="space-y-6"
+					variants={containerVariants}
+					initial="hidden"
+					animate="visible"
+				>
 					{categories.map((category) => (
 						<TechnologyCategory key={category.name} {...category} />
 					))}
 				</motion.div>
 			</CardContent>
 		</Card>
-	)
+	);
 }
 
 type TechnologyCategoryProps = {
-	name: string
-	icons: string[]
-}
+	name: string;
+	icons: string[];
+};
 
 function TechnologyCategory({ name, icons }: TechnologyCategoryProps) {
 	return (
@@ -61,7 +78,10 @@ function TechnologyCategory({ name, icons }: TechnologyCategoryProps) {
 						<Card className="w-full flex-shrink-0 overflow-hidden bg-transparent p-0 transition-all hover:scale-105 hover:shadow-md">
 							<CardContent className="flex w-full items-center justify-between p-2">
 								{iconSet.split(",").map((icon) => (
-									<div key={icon} className="flex w-full items-center justify-center md:h-10 md:w-10">
+									<div
+										key={icon}
+										className="flex w-full items-center justify-center md:h-10 md:w-10"
+									>
 										<Image
 											width={100}
 											height={100}
@@ -79,6 +99,5 @@ function TechnologyCategory({ name, icons }: TechnologyCategoryProps) {
 				))}
 			</div>
 		</motion.div>
-	)
+	);
 }
-

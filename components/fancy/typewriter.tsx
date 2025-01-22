@@ -67,7 +67,7 @@ export default function Typewriter({
 					}
 					setCurrentTextIndex((prev) => (prev + 1) % texts.length);
 					setCurrentIndex(0);
-					timeout = setTimeout(() => { }, waitTime);
+					timeout = setTimeout(() => {}, waitTime);
 				} else {
 					timeout = setTimeout(() => {
 						setDisplayText((prev) => prev.slice(0, -1));

@@ -1,6 +1,11 @@
 "use client";
-import { DownloadIcon, GithubIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
-import { motion } from 'motion/react';
+import {
+	DownloadIcon,
+	GithubIcon,
+	LinkedinIcon,
+	TwitterIcon,
+} from "lucide-react";
+import { motion } from "motion/react";
 import Link from "next/link";
 
 export function Socials() {
@@ -15,8 +20,8 @@ export function Socials() {
 					ease: "easeInOut",
 				}}
 				variants={{
-					hidden: { opacity: 0, x: -100 },  // Increased y value for more dramatic effect from bottom
-					visible: { opacity: 1, x: 0 },   // Maintains center position as destination
+					hidden: { opacity: 0, x: -100 }, // Increased y value for more dramatic effect from bottom
+					visible: { opacity: 1, x: 0 }, // Maintains center position as destination
 				}}
 			>
 				<div className="flex h-fit w-full items-center justify-between gap-8 md:w-auto md:flex-col">

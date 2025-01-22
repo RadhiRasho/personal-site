@@ -70,6 +70,6 @@ export default function RootLayout({ children }: Props) {
 				<SpeedInsights />
 				<Analytics />
 			</body>
-		</html >
+		</html>
 	);
 }

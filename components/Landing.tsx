@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import { useCallback, useLayoutEffect, useMemo, useState } from "react";
@@ -31,7 +31,6 @@ export default function Landing() {
 		"/Ocean-View.jpg",
 	];
 
-
 	return (
 		<section className="relative mb-4 flex h-full min-h-screen w-full min-w-screen flex-col items-center justify-center gap-2 p-4 md:w-8/12 lg:items-baseline">
 			<Float>
@@ -45,7 +44,10 @@ export default function Landing() {
 						width={500}
 						className="absolute h-full w-full rounded-3xl object-cover antialiased"
 					/>
-					<div className="absolute inset-0 rounded-3xl bg-black bg-opacity-20 transition-all duration-500 hover:bg-opacity-0" title="Me, at the Helsinki Cathedral" />
+					<div
+						className="absolute inset-0 rounded-3xl bg-black bg-opacity-20 transition-all duration-500 hover:bg-opacity-0"
+						title="Me, at the Helsinki Cathedral"
+					/>
 				</div>
 			</Float>
 			<div className="z-20 flex w-full flex-grow-0 flex-col items-center justify-center rounded-xl border bg-background/80 p-4 shadow-2xl backdrop-blur-sm lg:w-7/12 lg:items-start lg:rounded-none lg:border-none lg:bg-background/0 lg:p-2 lg:shadow-none lg:backdrop-blur-none">
