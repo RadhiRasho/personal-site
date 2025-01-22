@@ -1,4 +1,5 @@
 "use client";
+
 import {
 	DownloadIcon,
 	GithubIcon,
@@ -28,7 +29,6 @@ export function Socials() {
 					<Link
 						aria-label="Go to my Github profile"
 						target="_blank"
-						as="https://github.com/radhirasho"
 						title="Go to my Github profile"
 						href="https://github.com/radhirasho"
 					>
@@ -37,7 +37,6 @@ export function Socials() {
 					<Link
 						aria-label="Go to my X/Twitter profile"
 						target="_blank"
-						as="https://twitter.com/RadhiRasho"
 						title="Go to my Twitter profile"
 						href="https://twitter.com/RadhiRasho"
 					>
@@ -46,17 +45,14 @@ export function Socials() {
 					<Link
 						aria-label="Go to my LinkedIn profile"
 						target="_blank"
-						as="https://www.linkedin.com/in/radhi-rasho/"
 						title="Go to my LinkedIn profile"
-						href="https://www.linkedin.com/in/radhi-rasho/"
+						href="https://www.linkedin.com/in/radhi-rasho"
 					>
 						<LinkedinIcon size={35} className="text-xs hover:text-red-500" />
 					</Link>
 					<Link
 						aria-label="Download my resume"
 						target="_blank"
-						rel="noopener"
-						as="/Radhi-Rasho-Resume.pdf"
 						href="/Radhi-Rasho-Resume.pdf"
 						title="Download my resume"
 					>
