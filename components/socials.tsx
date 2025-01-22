@@ -50,14 +50,15 @@ export function Socials() {
 					>
 						<LinkedinIcon size={35} className="text-xs hover:text-red-500" />
 					</Link>
-					<Link
+					<a
 						aria-label="Download my resume"
 						target="_blank"
 						href="/Resume.pdf"
 						title="Download my resume"
+						rel="noreferrer"
 					>
 						<DownloadIcon size={35} className="text-xs hover:text-red-500" />
-					</Link>
+					</a>
 				</div>
 			</motion.div>
 		</section>
