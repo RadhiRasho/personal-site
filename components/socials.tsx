@@ -55,10 +55,10 @@ export function Socials() {
 					<Link
 						aria-label="Download my resume"
 						target="_blank"
+						rel="noopener"
 						as="/Radhi-Rasho-Resume.pdf"
 						href="/Radhi-Rasho-Resume.pdf"
 						title="Download my resume"
-						download
 					>
 						<DownloadIcon size={35} className="text-xs hover:text-red-500" />
 					</Link>
