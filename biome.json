@@ -10,16 +10,31 @@
 		"useIgnoreFile": true
 	},
 	"files": {
+		"ignoreUnknown": true,
 		"ignore": ["./components/ui/**"]
 	},
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
+			"recommended": true,
+			"suspicious": {
+				"noArrayIndexKey": "off"
+			},
+			"nursery": {
+				"useSortedClasses": "warn"
+			}
 		}
 	},
 	"formatter": {
 		"enabled": true,
 		"indentStyle": "tab"
+	},
+	"css": {
+		"linter": {
+			"enabled": true
+		},
+		"formatter": {
+			"enabled": true
+		}
 	}
 }

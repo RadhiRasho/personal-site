@@ -21,7 +21,8 @@
 		],
 		"paths": {
 			"@/*": ["./*"]
-		}
+		},
+		"target": "ESNext"
 	},
 	"include": [
 		"next-env.d.ts",

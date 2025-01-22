@@ -1,17 +1,56 @@
-import { NavBar } from "@/components/nav-menu";
-import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Geist_Mono } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
+import Globe from "@/components/globe";
+import { Socials } from "@/components/socials";
 
-const inter = Inter({ subsets: ["latin"] });
+const Font = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: "Radhi Rasho",
 	description: "My Personal Website",
+	twitter: {
+		card: "summary_large_image",
+		creator: "@radhirasho",
+		description: "My Personal Website",
+		images: "https://radhi-rasho.dev/radhi-rasho.dev.jpeg",
+		site: "www.radhi-rasho.dev",
+		title: "Radhi Rasho",
+		creatorId: "@radhirasho",
+	},
+	applicationName: "Radhi Rasho",
+	robots: "index, follow",
+	authors: [{ name: "Radhi Rasho", url: "https://github.com/radhirasho" }],
+	category: "Personal Website",
+	classification: "Personal Website",
+	keywords: [
+		"Radhi Rasho",
+		"Personal Website",
+		"Web Developer",
+		"Software Engineer",
+		"Full Stack Developer",
+	],
+	openGraph: {
+		title: "Radhi Rasho",
+		description: "My Personal Website",
+		images: "https://radhi-rasho.dev/radhi-rasho.dev.jpeg",
+		type: "website",
+		url: "https://radhi-rasho.dev",
+		siteName: "Radhi Rasho",
+	},
+	creator: "Radhi Rasho",
+};
+
+export const viewport: Viewport = {
+	themeColor: "black",
+	colorScheme: "dark",
+	width: "device-width",
+	initialScale: 1,
+	maximumScale: 1,
+	userScalable: true,
 };
 
 type Props = {
@@ -21,14 +60,16 @@ type Props = {
 export default function RootLayout({ children }: Props) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body className={inter.className}>
-				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-					<NavBar />
-					{children}
-				</ThemeProvider>
+			<body
+				className={`${Font.className} min-h-screen min-w-screen bg-[length:12rem] bg-topography bg-fixed bg-repeat`}
+			>
+				<Socials />
+				<Globe />
+				<div className="-z-[5] fixed inset-0 bg-gradient-to-tr from-black via-black/50 to-transparent md:via-black/60" />
+				{children}
 				<SpeedInsights />
 				<Analytics />
 			</body>
-		</html>
+		</html >
 	);
 }

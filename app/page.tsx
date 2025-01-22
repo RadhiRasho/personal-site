@@ -1,9 +1,13 @@
-import { AboutMe } from "@/components/about-me";
+import Landing from "@/components/Landing";
+import About from "@/components/about";
+import Projects from "@/components/projects";
 
 export default function Home() {
 	return (
-		<main className="flex min-h-full flex-col items-center justify-between mt-4">
-			<AboutMe />
+		<main className="relative flex h-full min-h-screen w-full min-w-screen flex-col items-center justify-between">
+			<Landing />
+			<About />
+			<Projects />
 		</main>
 	);
 }
