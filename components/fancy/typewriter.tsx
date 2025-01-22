@@ -1,5 +1,5 @@
 import { type Variants, motion } from "motion/react";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -53,7 +53,7 @@ export default function Typewriter({
 
 	const texts = Array.isArray(text) ? text : [text];
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		let timeout: NodeJS.Timeout;
 
 		const currentText = texts[currentTextIndex];
@@ -67,7 +67,7 @@ export default function Typewriter({
 					}
 					setCurrentTextIndex((prev) => (prev + 1) % texts.length);
 					setCurrentIndex(0);
-					timeout = setTimeout(() => {}, waitTime);
+					timeout = setTimeout(() => { }, waitTime);
 				} else {
 					timeout = setTimeout(() => {
 						setDisplayText((prev) => prev.slice(0, -1));

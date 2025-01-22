@@ -1,12 +1,10 @@
-"use client"
-
 import { Card, CardContent } from "@/components/ui/card"
 import { motion } from "framer-motion"
 import Image from "next/image"
 
 const categories = [
 	{ name: "Front End", icons: ["ts,js,html,css,sass", "nextjs,react,tailwind,svelte,astro"] },
-	{ name: "Back End", icons: ["ts,js,nodejs,bun,deno", "elysia,express,python,go,cs"] },
+	{ name: "Back End", icons: ["ts,js,python,go,cs", "elysia,express,nodejs,bun,deno"] },
 	{ name: "Databases", icons: ["mongodb,mysql,postgresql,redis,sqlite"] },
 	{ name: "Technologies", icons: ["docker,linux,windows,apple,ubuntu", "visualstudio,vscode,git,github,postman"] },
 	{ name: "Testing Libraries", icons: ["jest,vitest,bun,nodejs"] },
@@ -36,7 +34,7 @@ const itemVariants = {
 
 export function TechnologiesList() {
 	return (
-		<Card className="mx-auto w-full max-w-4xl overflow-hidden border-none bg-transparent">
+		<Card className="mx-auto w-full max-w-4xl border-none bg-transparent">
 			<CardContent className="p-0 py-2">
 				<motion.div className="space-y-6" variants={containerVariants} initial="hidden" animate="visible">
 					{categories.map((category) => (
@@ -48,7 +46,12 @@ export function TechnologiesList() {
 	)
 }
 
-function TechnologyCategory({ name, icons }: { name: string; icons: string[] }) {
+type TechnologyCategoryProps = {
+	name: string
+	icons: string[]
+}
+
+function TechnologyCategory({ name, icons }: TechnologyCategoryProps) {
 	return (
 		<motion.div variants={itemVariants}>
 			<h2 className="mb-3 font-semibold text-xl">{name}</h2>
@@ -63,6 +66,7 @@ function TechnologyCategory({ name, icons }: { name: string; icons: string[] }) 
 											width={100}
 											height={100}
 											priority
+											loading="eager"
 											className="h-auto w-full object-contain"
 											src={`https://skillicons.dev/icons?i=${icon}`}
 											alt={`${icon} icon`}

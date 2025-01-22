@@ -63,6 +63,7 @@ export default function Globe() {
 			glowColor: randomSoftColor,
 		} as COBEOptions;
 	}, [randomBrightColor, randomDarkColor, randomSoftColor]);
+
 	const createAndRenderGlobe = useCallback(() => {
 		let phi = 0;
 

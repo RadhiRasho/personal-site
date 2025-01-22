@@ -1,4 +1,3 @@
-"use client";
 import Landing from "@/components/Landing";
 import About from "@/components/about";
 import Projects from "@/components/projects";

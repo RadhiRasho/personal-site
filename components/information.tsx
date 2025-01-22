@@ -29,7 +29,7 @@ const sections = [
         imageAlt: "Hönö, Sweden",
         image: '/Ocean-View.jpg',
         content:
-            "I also like to travel and explore new places, try new foods, and meet new people. I am always looking for new adventures and experiences to broaden my horizons and challenge myself to grow as a person. The globe includes markers for all the places I have visited so far, and I hope to add many more in the future.",
+            "I also like to travel and explore new horizons, new places, try new foods, and meet new people. I am always looking for new adventures and experiences to broaden my horizons and challenge myself to grow as a person. The globe includes markers for all the places I have visited so far, and I hope to add many more in the future.",
         reverse: true,
     },
 ]

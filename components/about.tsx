@@ -1,5 +1,4 @@
-"use client"
-
+'use client'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { motion } from "motion/react"
 import { AboutSection } from "./information"

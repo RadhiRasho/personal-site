@@ -3,6 +3,7 @@ import {
 	useCallback,
 	useEffect,
 	useImperativeHandle,
+	useLayoutEffect,
 	useState,
 } from "react";
 
@@ -62,13 +63,13 @@ const ScrambleIn = forwardRef<ScrambleInHandle, ScrambleInProps>(
 			reset,
 		}));
 
-		useEffect(() => {
+		useLayoutEffect(() => {
 			if (autoStart) {
 				startAnimation();
 			}
 		}, [autoStart, startAnimation]);
 
-		useEffect(() => {
+		useLayoutEffect(() => {
 			let interval: NodeJS.Timeout;
 
 			if (isAnimating) {

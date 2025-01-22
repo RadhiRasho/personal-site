@@ -1,5 +1,7 @@
+'use client';
+
 import Image from "next/image";
-import { useMemo } from "react";
+import { useCallback, useLayoutEffect, useMemo, useState } from "react";
 import Float from "./fancy/float";
 import ScrambleIn from "./fancy/scramblein";
 import Typewriter from "./fancy/typewriter";
@@ -17,13 +19,26 @@ export default function Landing() {
 		];
 	}, []);
 
+	const backgroundImages = [
+		"/Altes-Museum-Berlin.jpg",
+		"/Brandenburg-Gate-Berlin.jpg",
+		"/Brandenburg-Gate-Berlin-2.jpg",
+		"/Altes-Museum-Berlin.jpg",
+		"/Cologne-Cathedral-Exterior.jpg",
+		"/Cologne-Cathedral-Interior.jpg",
+		"/Neues-Rathaus-Hannover.jpg",
+		"/Helsinki-Cathedral.jpg",
+		"/Ocean-View.jpg",
+	];
+
+
 	return (
 		<section className="relative mb-4 flex h-full min-h-screen w-full min-w-screen flex-col items-center justify-center gap-2 p-4 md:w-8/12 lg:items-baseline">
 			<Float>
 				<div className="relative flex h-60 w-60 cursor-pointer overflow-hidden shadow-2xl transition-transform duration-200 hover:scale-105">
 					<Image
-						src={"/Helsinki-Cathedral.jpg"}
-						alt="Helsinki Cathedral"
+						src={"/Neues-Rathaus-Hannover.jpg"}
+						alt={"Radhi Rasho"}
 						title="Me, at the Helsinki Cathedral"
 						priority
 						height={500}
