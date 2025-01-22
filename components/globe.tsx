@@ -135,6 +135,6 @@ const Globe = () => {
 			<canvas ref={canvasRef} className="md:-rotate-[18deg] h-full w-full" />
 		</motion.div>
 	);
-}
+};
 
 export default memo(Globe);
