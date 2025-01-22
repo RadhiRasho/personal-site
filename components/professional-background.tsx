@@ -43,7 +43,7 @@ export default function ProfessionalBackground() {
 				<TabsTrigger value="skills">Skills</TabsTrigger>
 			</TabsList>
 			<TabsContent value="experience">
-				<ul className="flex w-full flex-col items-center justify-evenly space-y-4 md:flex-row md:items-start md:space-x-4 md:space-y-0">
+				<ul className="flex w-full flex-col items-center justify-evenly space-y-4 p-2 md:flex-row md:items-start md:space-x-4 md:space-y-0 md:p-4">
 					{experiences.map((exp, index) => (
 						<motion.li
 							key={index}
@@ -54,7 +54,7 @@ export default function ProfessionalBackground() {
 						>
 							<Briefcase className="mt-1 h-5 w-5 text-primary" />
 							<div>
-								<h3 className="font-semibold">{exp.role}</h3>
+								<p className="font-semibold">{exp.role}</p>
 								<p className="text-muted-foreground text-sm">{exp.company}</p>
 								<p className="text-muted-foreground text-sm">{exp.period}</p>
 							</div>
@@ -63,7 +63,7 @@ export default function ProfessionalBackground() {
 				</ul>
 			</TabsContent>
 			<TabsContent value="education">
-				<ul className="flex w-full flex-col items-center justify-evenly space-y-4 md:flex-row md:items-start md:space-x-4 md:space-y-0">
+				<ul className="flex w-full flex-col items-center justify-evenly space-y-4 p-2 md:flex-row md:items-start md:space-x-4 md:space-y-0 md:p-4">
 					{education.map((edu, index) => (
 						<motion.li
 							key={index}
@@ -74,7 +74,7 @@ export default function ProfessionalBackground() {
 						>
 							<GraduationCap className="mt-1 h-5 w-5 text-primary" />
 							<div>
-								<h3 className="font-semibold">{edu.degree}</h3>
+								<p className="font-semibold">{edu.degree}</p>
 								<p className="text-muted-foreground text-sm">{edu.school}</p>
 								<p className="text-muted-foreground text-sm">{edu.year}</p>
 							</div>

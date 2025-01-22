@@ -48,8 +48,6 @@ export const viewport: Viewport = {
 	themeColor: "black",
 	colorScheme: "dark",
 	width: "device-width",
-	initialScale: 1,
-	maximumScale: 1,
 	userScalable: true,
 };
 

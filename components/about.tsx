@@ -40,29 +40,6 @@ export default function ModernAboutMe() {
 				layout
 				initial={"hidden"}
 				whileInView={"visible"}
-				animate={"visible"}
-				viewport={{ once: true, amount: "some" }}
-				transition={{
-					duration: 0.5,
-					ease: "easeIn",
-				}}
-				variants={{
-					hidden: { opacity: 0, x: "100%" },
-					visible: { opacity: 1, x: 0 },
-				}}
-				className="flex w-full flex-col items-center gap-6"
-			>
-				<Card className="w-full bg-black/90 backdrop-blur-xs md:w-10/12">
-					<CardContent className="pt-6">
-						<AboutSection />
-					</CardContent>
-				</Card>
-			</motion.div>
-
-			<motion.div
-				layout
-				initial={"hidden"}
-				whileInView={"visible"}
 				viewport={{ once: true, amount: "some" }}
 				transition={{
 					duration: 0.5,
@@ -84,6 +61,28 @@ export default function ModernAboutMe() {
 					</CardHeader>
 					<CardContent className="transition-all duration-300 ease-in-out">
 						<ProfessionalBackground />
+					</CardContent>
+				</Card>
+			</motion.div>
+			<motion.div
+				layout
+				initial={"hidden"}
+				whileInView={"visible"}
+				animate={"visible"}
+				viewport={{ once: true, amount: "some" }}
+				transition={{
+					duration: 0.5,
+					ease: "easeIn",
+				}}
+				variants={{
+					hidden: { opacity: 0, x: "100%" },
+					visible: { opacity: 1, x: 0 },
+				}}
+				className="flex w-full flex-col items-center gap-6"
+			>
+				<Card className="w-full bg-black/90 backdrop-blur-xs md:w-10/12">
+					<CardContent className="pt-6">
+						<AboutSection />
 					</CardContent>
 				</Card>
 			</motion.div>

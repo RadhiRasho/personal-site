@@ -43,7 +43,7 @@ export function AboutSection() {
 			className="w-full"
 		>
 			<Card className="w-full border-none bg-transparent">
-				<CardContent>
+				<CardContent className="p-0 md:p-6 md:pt-0">
 					<div className="flex flex-col items-center gap-6">
 						{sections.map((section, index) => (
 							<motion.div
