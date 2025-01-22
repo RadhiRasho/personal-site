@@ -1,3 +1,5 @@
+![Home Page](https://github.com/RadhiRasho/personal-site/blob/master/public/Home-Page.png?raw=true)
+
 ## My Personal Site
 
 Hello, my name is Radhi Rasho and this is the Github Repository for my [personal site](https://www.radhi-rasho.dev/).
