@@ -30,7 +30,7 @@ const projects: ProjectCardProps[] = [
             <RiTailwindCssFill fill="cyan" size={35} key="TailwindCss" />,
             <SiTypescript fill="#3b82f6" size={35} key={"Typescript"} />,
         ],
-        image: "/radhi-rasho.dev.jpeg",
+        image: "/Home-Page.png",
         link: "https://github.com/radhirasho/personal-site",
     },
     {

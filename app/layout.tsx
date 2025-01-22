@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		creator: "@radhirasho",
 		description: "My Personal Website",
-		images: "https://radhi-rasho.dev/radhi-rasho.dev.jpeg",
+		images: "https://radhi-rasho.dev/Home-Page.png",
 		site: "www.radhi-rasho.dev",
 		title: "Radhi Rasho",
 		creatorId: "@radhirasho",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: "Radhi Rasho",
 		description: "My Personal Website",
-		images: "https://radhi-rasho.dev/radhi-rasho.dev.jpeg",
+		images: "https://radhi-rasho.dev/Home-Page.png",
 		type: "website",
 		url: "https://radhi-rasho.dev",
 		siteName: "Radhi Rasho",
