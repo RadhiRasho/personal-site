@@ -58,6 +58,9 @@ const config: Config = {
 					foreground: "hsl(var(--card-foreground))",
 				},
 			},
+			backdropBlur: {
+				xs: "1px",
+			},
 			borderRadius: {
 				lg: "var(--radius)",
 				md: "calc(var(--radius) - 2px)",
