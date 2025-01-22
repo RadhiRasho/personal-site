@@ -63,7 +63,7 @@ export default function ProjectCard({
 								</span>
 							))}
 						</div>
-						<h4 className="font-semibold text-xs">Technologies used:</h4>
+						<div className="font-semibold text-xs">Technologies used:</div>
 						<div className="flex flex-wrap justify-between gap-1">
 							{technologies.map((tech, index) => (
 								<span className="hover:scale-125" key={index}>
