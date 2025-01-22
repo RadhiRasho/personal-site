@@ -55,8 +55,8 @@ export default function Landing() {
 					<span className="tracking-tighter">Hi, I'm</span>
 					<ScrambleIn
 						text="Radhi Rasho"
-						className="animate-text bg-[300%] bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 bg-clip-text font-black font-serif text-2xl text-transparent motion-safe:animate-gradient"
-						scrambleSpeed={25}
+						className="animate-text bg-[size:300%] bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 bg-clip-text font-black font-serif text-2xl text-transparent motion-safe:animate-gradient"
+						scrambleSpeed={50}
 						scrambledLetterCount={2}
 						scrambledClassName="text-2xl font-black font-serif bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 animate-text bg-clip-text text-transparent bg-[300%] motion-safe:animate-gradient"
 						characters="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"

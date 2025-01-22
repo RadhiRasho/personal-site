@@ -2,10 +2,10 @@
 
 import createGlobe, { type Marker, type COBEOptions } from "cobe";
 import { motion } from "motion/react";
-import { useCallback, useLayoutEffect, useMemo, useRef } from "react";
+import { memo, useCallback, useLayoutEffect, useMemo, useRef } from "react";
 import { useWindowSize } from "usehooks-ts";
 
-export default function Globe() {
+const Globe = () => {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 	const globeRef = useRef<ReturnType<typeof createGlobe> | null>(null);
 	const windowSize = useWindowSize();
@@ -136,3 +136,5 @@ export default function Globe() {
 		</motion.div>
 	);
 }
+
+export default memo(Globe);

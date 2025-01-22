@@ -5,6 +5,7 @@
 	"scripts": {
 		"dev": "next dev --turbopack",
 		"build": "next build",
+		"start": "next start",
 		"lint": "biome check --write .",
 		"check": "biome check"
 	},

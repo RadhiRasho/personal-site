@@ -59,9 +59,7 @@ const config: Config = {
 					foreground: "hsl(var(--card-foreground))",
 				},
 			},
-			backdropBlur: {
-				xs: "1px",
-			},
+			backdropBlur: { xs: "1px" },
 			keyframes: {
 				"accordion-down": {
 					from: { height: "0" },
@@ -72,12 +70,8 @@ const config: Config = {
 					to: { height: "0" },
 				},
 				gradient: {
-					"0%, 100%": {
-						"background-position": "0% 50%",
-					},
-					"50%": {
-						"background-position": "100% 50%",
-					},
+					"0%, 100%": { "background-position": "0% 50%" },
+					"50%": { "background-position": "100% 50%" },
 				},
 			},
 			animation: {
