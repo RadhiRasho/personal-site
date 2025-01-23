@@ -56,7 +56,7 @@ export default function Landing() {
 					<ScrambleIn
 						text="Radhi Rasho"
 						className="animate-text bg-[size:300%] bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 bg-clip-text font-black font-serif text-2xl text-transparent motion-safe:animate-gradient"
-						scrambleSpeed={50}
+						scrambleSpeed={25}
 						scrambledLetterCount={2}
 						scrambledClassName="text-2xl font-black font-serif bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 animate-text bg-clip-text text-transparent bg-[300%] motion-safe:animate-gradient"
 						characters="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -65,7 +65,7 @@ export default function Landing() {
 				</div>
 				<Typewriter
 					text={words}
-					speed={25}
+					speed={20}
 					className="bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 bg-clip-text font-bold text-base/loose text-transparent"
 					waitTime={3500}
 					deleteSpeed={40}

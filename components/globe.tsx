@@ -94,7 +94,7 @@ const Globe = () => {
 				failIfMajorPerformanceCaveat: true,
 				stencil: false,
 			},
-			mapSamples: 80_000,
+			mapSamples: 32_000,
 			mapBrightness: 8,
 			opacity: 0.8,
 			markers,
