@@ -36,9 +36,9 @@ export default function Landing() {
 			<Float>
 				<div className="relative flex h-60 w-60 cursor-pointer overflow-hidden shadow-2xl transition-transform duration-200 hover:scale-105">
 					<Image
-						src={"/Neues-Rathaus-Hannover.jpg"}
-						alt={"Radhi Rasho"}
-						title="Me, at the Helsinki Cathedral"
+						src="/Neues-Rathaus-Hannover.jpg"
+						alt="Radhi Rasho"
+						title="Neues Rathaus, Hannover"
 						priority
 						height={500}
 						width={500}
@@ -46,7 +46,7 @@ export default function Landing() {
 					/>
 					<div
 						className="absolute inset-0 rounded-3xl bg-black bg-opacity-20 transition-all duration-500 hover:bg-opacity-0"
-						title="Me, at the Helsinki Cathedral"
+						title="Neues Rathaus, Hannover"
 					/>
 				</div>
 			</Float>
@@ -60,7 +60,7 @@ export default function Landing() {
 						scrambledLetterCount={2}
 						scrambledClassName="text-2xl font-black font-serif bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 animate-text bg-clip-text text-transparent bg-[300%] motion-safe:animate-gradient"
 						characters="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-						autoStart={true}
+						autoStart
 					/>
 				</div>
 				<Typewriter
