@@ -5,7 +5,7 @@ import { Geist_Mono } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
 import Globe from "@/components/globe";
-import { Socials } from "@/components/socials";
+import Socials from "@/components/socials";
 
 const Font = Geist_Mono({ subsets: ["latin"] });
 

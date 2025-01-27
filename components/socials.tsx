@@ -9,7 +9,7 @@ import {
 import { motion } from "motion/react";
 import Link from "next/link";
 
-export function Socials() {
+export default function Socials() {
 	return (
 		<section className="z-50 flex h-full w-full items-center justify-center p-4 md:fixed md:w-10 md:justify-start">
 			<motion.div

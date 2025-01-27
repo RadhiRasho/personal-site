@@ -2,7 +2,7 @@
 
 import createGlobe, { type Marker, type COBEOptions } from "cobe";
 import { motion } from "motion/react";
-import { memo, useCallback, useLayoutEffect, useMemo, useRef } from "react";
+import { memo, useCallback, useEffect, useMemo, useRef } from "react";
 import { useWindowSize } from "usehooks-ts";
 
 const Globe = () => {
@@ -64,6 +64,7 @@ const Globe = () => {
 		} as COBEOptions;
 	}, [randomBrightColor, randomDarkColor, randomSoftColor]);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: This is a false positive
 	const createAndRenderGlobe = useCallback(() => {
 		let phi = 0;
 
@@ -99,13 +100,13 @@ const Globe = () => {
 			opacity: 0.8,
 			markers,
 			onRender: (state) => {
-				state.phi = phi;
 				phi += 0.001;
+				state.phi = phi;
 			},
 		});
-	}, [markers, windowSize.height, windowSize.width, randomizeColors]);
+	}, [markers, windowSize.width, randomizeColors]);
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		createAndRenderGlobe();
 
 		window.addEventListener("wheel", handleZoom);
@@ -130,9 +131,14 @@ const Globe = () => {
 				hidden: { opacity: 0, x: "100%" }, // Increased y value for more dramatic effect from bottom
 				visible: { opacity: 1, x: 0 }, // Maintains center position as destination
 			}}
-			className="lg:-right-[30%] -bottom-52 md:-bottom-32 -z-30 fixed h-full w-full transition-all duration-300"
+			className="lg:-right-[30%] -bottom-52 md:-bottom-32 -z-30 pointer-events-none fixed h-full w-full transition-all duration-300"
 		>
-			<canvas ref={canvasRef} className="md:-rotate-[18deg] h-full w-full" />
+			<canvas
+				onClick={(e) => e.preventDefault()}
+				onKeyUp={(e) => e.preventDefault()}
+				ref={canvasRef}
+				className="md:-rotate-[18deg] pointer-events-none h-full w-auto"
+			/>
 		</motion.div>
 	);
 };
