@@ -32,16 +32,20 @@ export default function InitialInfo() {
 			<div className="flex h-full w-full flex-col justify-between gap-4 text-center md:text-left">
 				<div>
 					<h1 className="font-bold text-3xl">{personalInfo.name}</h1>
-					<p className="text-muted-foreground text-xl">
-						{personalInfo.title}
-					</p>
+					<p className="text-muted-foreground text-xl">{personalInfo.title}</p>
 				</div>
 				<div className="flex flex-wrap justify-center gap-2 md:justify-start">
-					<Badge variant="default" className="flex items-center gap-1 px-4 py-2">
+					<Badge
+						variant="default"
+						className="flex items-center gap-1 px-4 py-2"
+					>
 						<MapPinIcon className="h-4 w-4 flex-shrink-0" />
 						{personalInfo.location}
 					</Badge>
-					<Badge variant="default" className="flex items-center gap-1 px-4 py-2">
+					<Badge
+						variant="default"
+						className="flex items-center gap-1 px-4 py-2"
+					>
 						<Link
 							className="inline-flex gap-2 font-normal"
 							as={`mailto:${personalInfo.email}`}

@@ -49,7 +49,7 @@ export default function ProfessionalBackground() {
 							key={index}
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.5, delay: index * 0.1 }}
+							transition={{ duration: 0.5 }}
 							className="flex w-full items-start gap-4 md:w-auto"
 						>
 							<Briefcase className="mt-1 h-5 w-5 text-primary" />
@@ -69,7 +69,7 @@ export default function ProfessionalBackground() {
 							key={index}
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.5, delay: index * 0.1 }}
+							transition={{ duration: 0.5 }}
 							className="flex w-full items-start gap-4 md:w-auto"
 						>
 							<GraduationCap className="mt-1 h-5 w-5 text-primary" />

@@ -30,7 +30,9 @@ export function Section({
 					/>
 				</div>
 			</div>
-			<p className="flex w-full items-center text-xs leading-5 md:text-sm lg:w-3/5">{content}</p>
+			<p className="flex w-full items-center text-xs leading-5 md:text-sm lg:w-3/5">
+				{content}
+			</p>
 		</div>
 	);
 }
