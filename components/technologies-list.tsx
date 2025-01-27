@@ -71,11 +71,11 @@ type TechnologyCategoryProps = {
 function TechnologyCategory({ name, icons }: TechnologyCategoryProps) {
 	return (
 		<motion.div variants={itemVariants}>
-			<h2 className="mb-3 font-semibold text-xl">{name}</h2>
+			<h2 className="mb-3 font-semibold text-sm">{name}</h2>
 			<div className="grid grid-cols-1 gap-4 md:grid-cols-2">
 				{icons.map((iconSet, index) => (
 					<motion.div key={index} variants={itemVariants}>
-						<Card className="w-full flex-shrink-0 overflow-hidden bg-transparent p-0 transition-all hover:scale-105 hover:shadow-md">
+						<Card className="w-full flex-shrink-0 overflow-hidden bg-transparent p-0 transition-all hover:scale-[102%] hover:shadow-md">
 							<CardContent className="flex w-full items-center justify-between p-2">
 								{iconSet.split(",").map((icon) => (
 									<div

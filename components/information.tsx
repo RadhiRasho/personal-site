@@ -7,7 +7,7 @@ import { Section } from "./section";
 
 const sections = [
 	{
-		imageAlt: "Helsinki Cathedral, FIN",
+		imageAlt: "Helsinki Cathedral, Finland",
 		image: "/Helsinki-Cathedral.jpg",
 		content:
 			"I am a Software Engineer that specializes in building web applications with modern technologies such as React, Next.js, and Node.js. I have a passion for creating innovative solutions that solve real-world problems and continuously learning new technologies to stay at the forefront of emerging trends.",
@@ -20,7 +20,7 @@ const sections = [
 		reverse: true,
 	},
 	{
-		imageAlt: "Cologne Cathedral, GER",
+		imageAlt: "Cologne Cathedral, Cologne",
 		image: "/Cologne-Cathedral-Exterior.jpg",
 		content:
 			"In my free time, I enjoy working on personal projects, contributing to open-source software, playing video games and board games with the family. I am a firm believer in the power of technology to change the world for the better and am excited to be a part of the ever-evolving tech industry.",

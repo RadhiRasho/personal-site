@@ -54,9 +54,9 @@ export default function ProfessionalBackground() {
 						>
 							<Briefcase className="mt-1 h-5 w-5 text-primary" />
 							<div>
-								<p className="font-semibold">{exp.role}</p>
-								<p className="text-muted-foreground text-sm">{exp.company}</p>
-								<p className="text-muted-foreground text-sm">{exp.period}</p>
+								<p className="font-semibold text-sm">{exp.role}</p>
+								<p className="text-muted-foreground text-xs">{exp.company}</p>
+								<p className="text-muted-foreground text-xs">{exp.period}</p>
 							</div>
 						</motion.li>
 					))}
@@ -74,9 +74,9 @@ export default function ProfessionalBackground() {
 						>
 							<GraduationCap className="mt-1 h-5 w-5 text-primary" />
 							<div>
-								<p className="font-semibold">{edu.degree}</p>
-								<p className="text-muted-foreground text-sm">{edu.school}</p>
-								<p className="text-muted-foreground text-sm">{edu.year}</p>
+								<p className="font-semibold text-sm">{edu.degree}</p>
+								<p className="text-muted-foreground text-xs">{edu.school}</p>
+								<p className="text-muted-foreground text-xs">{edu.year}</p>
 							</div>
 						</motion.li>
 					))}

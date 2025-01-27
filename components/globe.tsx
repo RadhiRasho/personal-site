@@ -95,7 +95,7 @@ const Globe = () => {
 				failIfMajorPerformanceCaveat: true,
 				stencil: false,
 			},
-			mapSamples: 32_000,
+			mapSamples: 64_000,
 			mapBrightness: 8,
 			opacity: 0.8,
 			markers,
@@ -124,18 +124,16 @@ const Globe = () => {
 			initial={"hidden"}
 			animate={"visible"}
 			transition={{
-				duration: 0.5,
+				duration: 0.2,
 				ease: "easeIn",
 			}}
 			variants={{
 				hidden: { opacity: 0, x: "100%" }, // Increased y value for more dramatic effect from bottom
 				visible: { opacity: 1, x: 0 }, // Maintains center position as destination
 			}}
-			className="lg:-right-[30%] -bottom-52 md:-bottom-32 -z-30 pointer-events-none fixed h-full w-full transition-all duration-300"
+			className="lg:-right-[30%] -bottom-60 md:-bottom-32 -z-30 pointer-events-none fixed h-full w-full transition-all duration-300"
 		>
 			<canvas
-				onClick={(e) => e.preventDefault()}
-				onKeyUp={(e) => e.preventDefault()}
 				ref={canvasRef}
 				className="md:-rotate-[18deg] pointer-events-none h-full w-auto"
 			/>

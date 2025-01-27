@@ -31,8 +31,8 @@ export default function InitialInfo() {
 			</motion.div>
 			<div className="flex h-full w-full flex-col justify-between gap-4 text-center md:text-left">
 				<div>
-					<h1 className="font-bold text-3xl">{personalInfo.name}</h1>
-					<p className="text-muted-foreground text-xl">{personalInfo.title}</p>
+					<h1 className="font-bold text-xl">{personalInfo.name}</h1>
+					<p className="text-md text-muted-foreground">{personalInfo.title}</p>
 				</div>
 				<div className="flex flex-wrap justify-center gap-2 md:justify-start">
 					<Badge
