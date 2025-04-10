@@ -11,6 +11,11 @@ export default function ProfessionalBackground() {
 
 	const experiences = [
 		{
+			company: "Assurity Life Insurance Company",
+			role: "Software Engineer II",
+			period: "March 2025 - Present",
+		},
+		{
 			company: "Sandhills Global",
 			role: "Software Developer",
 			period: "January 2021 - January 2024",
