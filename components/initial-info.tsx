@@ -39,7 +39,7 @@ export default function InitialInfo() {
 						variant="default"
 						className="flex items-center gap-1 px-4 py-2"
 					>
-						<MapPinIcon className="h-4 w-4 flex-shrink-0" />
+						<MapPinIcon className="h-4 w-4 shrink-0" />
 						{personalInfo.location}
 					</Badge>
 					<Badge
@@ -51,7 +51,7 @@ export default function InitialInfo() {
 							as={`mailto:${personalInfo.email}`}
 							href={`mailto:${personalInfo.email}`}
 						>
-							<MailIcon className="h-4 w-4 flex-shrink-0" />
+							<MailIcon className="h-4 w-4 shrink-0" />
 							{personalInfo.email}
 						</Link>
 					</Badge>

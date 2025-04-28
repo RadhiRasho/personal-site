@@ -42,7 +42,7 @@ export default function ProfessionalBackground() {
 
 	return (
 		<Tabs value={activeTab} onValueChange={setActiveTab}>
-			<TabsList className="grid h-full w-full md:grid-cols-3">
+			<TabsList className="grid h-full w-full not-active:bg-zinc-900 not-active:text-white md:grid-cols-3">
 				<TabsTrigger value="experience">Experience</TabsTrigger>
 				<TabsTrigger value="education">Education</TabsTrigger>
 				<TabsTrigger value="skills">Skills</TabsTrigger>

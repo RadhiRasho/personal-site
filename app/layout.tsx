@@ -63,7 +63,7 @@ export default function RootLayout({ children }: Props) {
 			>
 				<Globe />
 				<Socials />
-				<div className="-z-[5] fixed inset-0 bg-gradient-to-tr from-black via-black/50 to-transparent md:via-black/60" />
+				<div className="-z-5 fixed inset-0 bg-linear-to-tr from-black via-black/50 to-transparent md:via-black/60" />
 				{children}
 				<SpeedInsights />
 				<Analytics />
