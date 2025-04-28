@@ -5,7 +5,7 @@ const nextConfig = {
 		remotePatterns: [
 			{
 				protocol: "https",
-				hostname: "skillicons.dev",
+				hostname: "go-skill-icons.vercel.app",
 			},
 			{
 				protocol: "https",

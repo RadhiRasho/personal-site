@@ -30,7 +30,7 @@ export default function ModernAboutMe() {
 				}}
 				className="flex w-full flex-col items-center gap-6"
 			>
-				<Card className="w-full bg-black/90 backdrop-blur-xs md:w-10/12">
+				<Card className="w-full bg-black/50 backdrop-blur-xs md:w-10/12">
 					<CardContent className="pt-6">
 						<InitialInfo />
 					</CardContent>
@@ -51,7 +51,7 @@ export default function ModernAboutMe() {
 				}}
 				className="flex w-full flex-col items-center gap-6"
 			>
-				<Card className="w-full bg-black/90 backdrop-blur-xs transition-none md:w-10/12">
+				<Card className="w-full bg-black/50 backdrop-blur-xs transition-none md:w-10/12">
 					<CardHeader>
 						<CardTitle>About Me</CardTitle>
 						<CardDescription>
@@ -80,7 +80,7 @@ export default function ModernAboutMe() {
 				}}
 				className="flex w-full flex-col items-center gap-6"
 			>
-				<Card className="w-full bg-black/90 backdrop-blur-xs md:w-10/12">
+				<Card className="w-full bg-black/50 backdrop-blur-xs md:w-10/12">
 					<CardContent className="pt-6">
 						<AboutSection />
 					</CardContent>
