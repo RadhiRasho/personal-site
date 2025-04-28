@@ -44,16 +44,15 @@ export default function InitialInfo() {
 					</Badge>
 					<Badge
 						variant="default"
-						className="flex items-center gap-1 px-4 py-2"
+						className="flex items-center gap-1 px-4 py-2 hover:bg-white/80"
 					>
-						<Link
-							className="inline-flex gap-2 font-normal"
-							as={`mailto:${personalInfo.email}`}
+						<a
+							className="flex items-center justify-center gap-2 font-normal text-sm md:text-md"
 							href={`mailto:${personalInfo.email}`}
 						>
-							<MailIcon className="h-4 w-4 shrink-0" />
+							<MailIcon size={24} className="shrink-0" />
 							{personalInfo.email}
-						</Link>
+						</a>
 					</Badge>
 				</div>
 			</div>

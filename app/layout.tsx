@@ -59,7 +59,7 @@ export default function RootLayout({ children }: Props) {
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body
-				className={`${Font.className} min-h-screen min-w-screen bg-[length:12rem] bg-topography bg-fixed bg-repeat`}
+				className={`${Font.className} min-h-screen min-w-screen bg-[length:12rem] bg-[url(/topography.svg)] bg-fixed bg-repeat`}
 			>
 				<Globe />
 				<Socials />
