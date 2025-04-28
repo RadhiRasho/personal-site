@@ -20,7 +20,7 @@ export default function Landing() {
 	}, []);
 
 	return (
-		<section className="relative mb-4 flex h-full min-h-screen w-full min-w-screen flex-col items-center justify-center gap-2 p-4 md:w-8/12 lg:items-baseline">
+		<section className="relative mb-4 flex h-full min-h-screen w-10/12 flex-col items-baseline justify-center md:w-8/12">
 			<Float>
 				<div className="relative flex h-52 w-52 cursor-pointer overflow-hidden shadow-2xl transition-transform duration-200 hover:scale-105">
 					<Image
