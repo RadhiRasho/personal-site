@@ -107,7 +107,7 @@ function TechnologyCategory({ name, icons }: TechnologyCategoryProps) {
 				{icons.map((iconSet, index) => (
 					<motion.div key={index} variants={itemVariants} className="w-full">
 						<div className="relative">
-							<Card className="w-full flex-shrink-0 border bg-card/30 p-0 backdrop-blur-sm transition-all hover:scale-[102%] hover:shadow-md">
+							<Card className="w-full shrink-0 border bg-card/30 p-0 backdrop-blur-sm transition-all hover:scale-[102%] hover:shadow-md">
 								<CardContent className="flex w-full items-center justify-evenly gap-2 p-3">
 									{iconSet.split(",").map((icon, idx) => (
 										<Tooltip key={icon}>

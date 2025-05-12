@@ -11,7 +11,7 @@ import { AboutSection } from "./information";
 import InitialInfo from "./initial-info";
 import ProfessionalBackground from "./professional-background";
 
-export default function ModernAboutMe() {
+export default function Background() {
 	return (
 		<div className="flex h-full w-full flex-col items-center justify-center gap-y-8 overflow-hidden px-4 py-12 sm:px-6 lg:px-8">
 			<motion.div

@@ -41,11 +41,11 @@ export default function ProfessionalBackground() {
 	];
 
 	return (
-		<Tabs value={activeTab} onValueChange={setActiveTab}>
-			<TabsList className="grid h-full w-full md:grid-cols-3">
-				<TabsTrigger value="experience">Experience</TabsTrigger>
-				<TabsTrigger value="education">Education</TabsTrigger>
-				<TabsTrigger value="skills">Skills</TabsTrigger>
+		<Tabs defaultValue="experience" value={activeTab} onValueChange={setActiveTab}>
+			<TabsList className="grid h-full w-full grid-cols-1 gap-0.5 bg-accent/80 md:grid-cols-3">
+				<TabsTrigger className="cursor-pointer rounded-t-md rounded-b-xs md:rounded-r-xs md:rounded-l-md" value="experience">Experience</TabsTrigger>
+				<TabsTrigger className="cursor-pointer rounded-xs md:rounded-r-xs md:rounded-l-xs" value="education">Education</TabsTrigger>
+				<TabsTrigger className="cursor-pointer rounded-t-xs rounded-b-md md:rounded-r-md md:rounded-l-xs" value="skills">Skills</TabsTrigger>
 			</TabsList>
 			<TabsContent value="experience">
 				<ul className="flex w-full flex-col items-center justify-evenly space-y-4 p-2 md:flex-row md:items-start md:space-x-4 md:space-y-0 md:p-4">
