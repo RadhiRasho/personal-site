@@ -31,7 +31,7 @@ export default function Background() {
 				className="flex w-full flex-col items-center gap-6"
 			>
 				<Card className="w-full bg-black/50 backdrop-blur-xs md:w-10/12">
-					<CardContent className="pt-6">
+					<CardContent>
 						<InitialInfo />
 					</CardContent>
 				</Card>
@@ -80,8 +80,8 @@ export default function Background() {
 				}}
 				className="flex w-full flex-col items-center gap-6"
 			>
-				<Card className="w-full bg-black/50 backdrop-blur-xs md:w-10/12">
-					<CardContent className="pt-6">
+				<Card className="w-full bg-black/50 backdrop-blur-[0.1px] md:w-10/12">
+					<CardContent>
 						<AboutSection />
 					</CardContent>
 				</Card>

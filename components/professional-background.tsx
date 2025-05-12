@@ -4,7 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Briefcase, GraduationCap } from "lucide-react";
 import { motion } from "motion/react";
 import { useState } from "react";
-import { TechnologiesList } from "./technologies-list";
+import TechnologiesList from "./technologies-list";
 
 export default function ProfessionalBackground() {
 	const [activeTab, setActiveTab] = useState("experience");

@@ -131,11 +131,11 @@ const Globe = () => {
 				hidden: { opacity: 0, x: "100%" }, // Increased y value for more dramatic effect from bottom
 				visible: { opacity: 1, x: 0 }, // Maintains center position as destination
 			}}
-			className="lg:-right-[30%] -bottom-60 md:-bottom-32 -z-30 pointer-events-none fixed h-full w-full transition-all duration-300"
+			className="lg:-right-[30%] -bottom-60 md:-bottom-32 -z-30 pointer-events-none fixed h-full w-full overflow-hidden transition-all duration-300"
 		>
 			<canvas
 				ref={canvasRef}
-				className="md:-rotate-[18deg] pointer-events-none h-full w-auto"
+				className="md:-rotate-[18deg] pointer-events-none h-full w-auto overflow-hidden"
 			/>
 		</motion.div>
 	);

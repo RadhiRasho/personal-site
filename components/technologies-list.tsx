@@ -15,7 +15,7 @@ const categories: Categories[] = [
 	},
 	{
 		name: "Back End",
-		icons: ["ts,js,python,go,cs", "elysia,hono,express,nodejs,bun,deno"],
+		icons: ["ts,js,python,go,cs,vb", "elysia,hono,express,nodejs,bun,deno"],
 	},
 	{ name: "Databases", icons: ["mongodb,mysql,postgresql,redis,sqlite"] },
 	{
@@ -53,41 +53,45 @@ const itemVariants = {
 };
 
 // Helper function to capitalize and format technology names
-const formatTechName = (name: string): string => {
+function formatTechName(name: string): string {
 	const specialCases: Record<string, string> = {
 		ts: "TypeScript",
 		js: "JavaScript",
 		cs: "C#",
+		vb: "Visual Basic",
 		nextjs: "Next.js",
 		vuejs: "Vue.js",
 		nodejs: "Node.js",
 		vscode: "VS Code",
 		npm: "NPM",
 		postgresql: "PostgreSQL",
+		visualstudio: "Visual Studio",
 	};
 
 	return specialCases[name] || name.charAt(0).toUpperCase() + name.slice(1);
 };
 
-export function TechnologiesList() {
+export default function TechnologiesList() {
 	return (
-		<TooltipProvider delayDuration={300}>
-			<Card className="mx-auto w-full max-w-4xl border-none bg-transparent shadow-none">
-				<CardContent className="p-0 py-4">
-					<motion.div
-						className="space-y-8"
-						variants={containerVariants}
-						initial="hidden"
-						animate="visible"
-						viewport={{ once: true }}
-					>
-						{categories.map((category) => (
-							<TechnologyCategory key={category.name} {...category} />
-						))}
-					</motion.div>
-				</CardContent>
-			</Card>
-		</TooltipProvider>
+		<>
+			<TooltipProvider delayDuration={300}>
+				<Card className="mx-auto w-full max-w-4xl border-none bg-transparent shadow-none">
+					<CardContent className="p-0 py-4">
+						<motion.div
+							className="space-y-8"
+							variants={containerVariants}
+							initial="hidden"
+							animate="visible"
+							viewport={{ once: true }}
+						>
+							{categories.map((category) => (
+								<TechnologyCategory key={category.name} {...category} />
+							))}
+						</motion.div>
+					</CardContent>
+				</Card>
+			</TooltipProvider>
+		</>
 	);
 }
 
@@ -106,41 +110,39 @@ function TechnologyCategory({ name, icons }: TechnologyCategoryProps) {
 			<div className="grid grid-cols-1 gap-4 sm:grid-cols-1 lg:grid-cols-2">
 				{icons.map((iconSet, index) => (
 					<motion.div key={index} variants={itemVariants} className="w-full">
-						<div className="relative">
-							<Card className="w-full shrink-0 border bg-card/30 p-0 backdrop-blur-sm transition-all hover:scale-[102%] hover:shadow-md">
-								<CardContent className="flex w-full items-center justify-evenly gap-2 p-3">
-									{iconSet.split(",").map((icon, idx) => (
-										<Tooltip key={icon}>
-											<TooltipTrigger asChild>
-												<motion.div
-													className="flex h-8 w-8 cursor-pointer items-center justify-center sm:h-10 sm:w-10"
-													whileHover={{ scale: 1.1 }}
-													role="img"
-													aria-label={`${formatTechName(icon)} technology`}
-												>
-													<Image
-														width={100}
-														height={100}
-														priority={index === 0 && idx < 2}
-														loading={index === 0 && idx < 2 ? "eager" : "lazy"}
-														className="h-auto w-full object-contain"
-														src={`https://go-skill-icons.vercel.app/api/icons?i=${icon}`}
-														alt={`${formatTechName(icon)} icon`}
-													/>
-												</motion.div>
-											</TooltipTrigger>
-											<TooltipContent
-												side="bottom"
-												align="center"
-												sideOffset={8}
-												className="font-medium text-xs">
-												{formatTechName(icon)}
-											</TooltipContent>
-										</Tooltip>
-									))}
-								</CardContent>
-							</Card>
-						</div>
+						<Card className="w-full shrink-0 rounded-sm border bg-card/30 p-0 backdrop-blur-sm transition-all hover:scale-[102%] hover:shadow-md">
+							<CardContent className="flex w-full items-center justify-evenly gap-2 p-3">
+								{iconSet.split(",").map((icon, idx) => (
+									<Tooltip key={icon}>
+										<TooltipTrigger asChild>
+											<motion.div
+												className="flex h-8 w-8 cursor-pointer items-center justify-center sm:h-10 sm:w-10"
+												whileHover={{ scale: 1.1 }}
+												role="img"
+												aria-label={`${formatTechName(icon)} technology`}
+											>
+												<Image
+													width={100}
+													height={100}
+													priority={index === 0 && idx < 2}
+													loading={index === 0 && idx < 2 ? "eager" : "lazy"}
+													className="h-auto w-full object-contain"
+													src={`https://go-skill-icons.vercel.app/api/icons?i=${icon}`}
+													alt={`${formatTechName(icon)} icon`}
+												/>
+											</motion.div>
+										</TooltipTrigger>
+										<TooltipContent
+											side="bottom"
+											align="center"
+											sideOffset={8}
+											className="font-medium text-xs">
+											{formatTechName(icon)}
+										</TooltipContent>
+									</Tooltip>
+								))}
+							</CardContent>
+						</Card>
 					</motion.div>
 				))}
 			</div>
