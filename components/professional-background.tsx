@@ -1,9 +1,9 @@
 "use client";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Briefcase, GraduationCap } from "lucide-react";
 import { motion } from "motion/react";
 import { useState } from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import TechnologiesList from "./technologies-list";
 
 export default function ProfessionalBackground() {
@@ -41,11 +41,30 @@ export default function ProfessionalBackground() {
 	];
 
 	return (
-		<Tabs defaultValue="experience" value={activeTab} onValueChange={setActiveTab}>
+		<Tabs
+			defaultValue="experience"
+			value={activeTab}
+			onValueChange={setActiveTab}
+		>
 			<TabsList className="grid h-full w-full grid-cols-1 gap-0.5 bg-accent/80 md:grid-cols-3">
-				<TabsTrigger className="cursor-pointer rounded-t-md rounded-b-xs md:rounded-r-xs md:rounded-l-md" value="experience">Experience</TabsTrigger>
-				<TabsTrigger className="cursor-pointer rounded-xs md:rounded-r-xs md:rounded-l-xs" value="education">Education</TabsTrigger>
-				<TabsTrigger className="cursor-pointer rounded-t-xs rounded-b-md md:rounded-r-md md:rounded-l-xs" value="skills">Skills</TabsTrigger>
+				<TabsTrigger
+					className="cursor-pointer rounded-t-md rounded-b-xs md:rounded-r-xs md:rounded-l-md"
+					value="experience"
+				>
+					Experience
+				</TabsTrigger>
+				<TabsTrigger
+					className="cursor-pointer rounded-xs md:rounded-r-xs md:rounded-l-xs"
+					value="education"
+				>
+					Education
+				</TabsTrigger>
+				<TabsTrigger
+					className="cursor-pointer rounded-t-xs rounded-b-md md:rounded-r-md md:rounded-l-xs"
+					value="skills"
+				>
+					Skills
+				</TabsTrigger>
 			</TabsList>
 			<TabsContent value="experience">
 				<ul className="flex w-full flex-col items-center justify-evenly space-y-4 p-2 md:flex-row md:items-start md:space-x-4 md:space-y-0 md:p-4">

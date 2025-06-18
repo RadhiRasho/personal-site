@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "motion/react";
 import {
 	Card,
 	CardContent,
@@ -6,7 +7,6 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { motion } from "motion/react";
 import { AboutSection } from "./information";
 import InitialInfo from "./initial-info";
 import ProfessionalBackground from "./professional-background";

@@ -1,6 +1,6 @@
 "use client";
 
-import createGlobe, { type Marker, type COBEOptions } from "cobe";
+import createGlobe, { type COBEOptions, type Marker } from "cobe";
 import { motion } from "motion/react";
 import { memo, useCallback, useEffect, useMemo, useRef } from "react";
 import { useWindowSize } from "usehooks-ts";
@@ -10,6 +10,7 @@ const Globe = () => {
 	const globeRef = useRef<ReturnType<typeof createGlobe> | null>(null);
 	const windowSize = useWindowSize();
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: Causes issues with the globe rendering and performance
 	const handleZoom = useCallback((event: WheelEvent) => {
 		if (event.ctrlKey) {
 			event.preventDefault();

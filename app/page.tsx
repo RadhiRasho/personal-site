@@ -1,5 +1,5 @@
-import Landing from "@/components/Landing";
 import Background from "@/components/background";
+import Landing from "@/components/Landing";
 import Projects from "@/components/projects";
 
 export default function Home() {

@@ -1,11 +1,10 @@
 import { motion, useAnimationFrame, useMotionValue } from "motion/react";
-import type React from "react";
-import { useRef } from "react";
+import { type ReactNode, useRef } from "react";
 
 import { cn } from "@/lib/utils";
 
 type FloatProps = {
-	children: React.ReactNode;
+	children: ReactNode;
 	speed?: number;
 	amplitude?: [number, number, number]; // [x, y, z]
 	rotationRange?: [number, number, number]; // [x, y, z]

@@ -4,10 +4,10 @@ import type { Metadata, Viewport } from "next";
 import { Roboto_Mono } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
+import dynamic from "next/dynamic";
 import Socials from "@/components/socials";
-import dynamic from 'next/dynamic';
 
-const Globe = dynamic(() => import('@/components/globe'), { ssr: true });
+const Globe = dynamic(() => import("@/components/globe"), { ssr: true });
 
 const Font = Roboto_Mono({ subsets: ["latin"] });
 

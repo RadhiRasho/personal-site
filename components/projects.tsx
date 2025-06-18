@@ -1,9 +1,14 @@
 "use client";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { TooltipPortal } from "@radix-ui/react-tooltip";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import { useState } from "react";
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipProvider,
+	TooltipTrigger,
+} from "@/components/ui/tooltip";
 import ProjectCard, { type ProjectCardProps } from "./project-card";
 
 // Helper function to capitalize and format technology names (similar to technologies-list.tsx)
@@ -63,12 +68,7 @@ const projects: ProjectCardProps[] = [
 		title: "Personal Site",
 		description:
 			"This is what you are viewing currently, a project to show off stuff I like to do, and stuff I've built over time.",
-		categories: [
-			"Web Development",
-			"Full Stack",
-			"Front End",
-			"React",
-		],
+		categories: ["Web Development", "Full Stack", "Front End", "React"],
 		technologies: [
 			<SkillIcon name="nextjs" key="nextjs" />,
 			<SkillIcon name="vercel" key="vercel" />,

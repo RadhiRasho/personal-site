@@ -1,17 +1,25 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipProvider,
+	TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 type Categories = {
 	name: string;
-	icons: string[]
-}
+	icons: string[];
+};
 
 const categories: Categories[] = [
 	{
 		name: "Front End",
-		icons: ["ts,js,html,css,sass,reactquery", "nextjs,react,tailwind,svelte,astro,vuejs"],
+		icons: [
+			"ts,js,html,css,sass,reactquery",
+			"nextjs,react,tailwind,svelte,astro,vuejs",
+		],
 	},
 	{
 		name: "Back End",
@@ -69,7 +77,7 @@ function formatTechName(name: string): string {
 	};
 
 	return specialCases[name] || name.charAt(0).toUpperCase() + name.slice(1);
-};
+}
 
 export default function TechnologiesList() {
 	return (
@@ -103,8 +111,10 @@ type TechnologyCategoryProps = {
 function TechnologyCategory({ name, icons }: TechnologyCategoryProps) {
 	return (
 		<motion.div variants={itemVariants} className="group">
-			<h3 className="mb-4 font-medium text-muted-foreground text-sm tracking-wide transition-colors group-hover:text-foreground"
-				aria-label={`${name} technologies`}>
+			<h3
+				className="mb-4 font-medium text-muted-foreground text-sm tracking-wide transition-colors group-hover:text-foreground"
+				aria-label={`${name} technologies`}
+			>
 				{name}
 			</h3>
 			<div className="grid grid-cols-1 gap-4 sm:grid-cols-1 lg:grid-cols-2">
@@ -136,7 +146,8 @@ function TechnologyCategory({ name, icons }: TechnologyCategoryProps) {
 											side="bottom"
 											align="center"
 											sideOffset={8}
-											className="font-medium text-xs">
+											className="font-medium text-xs"
+										>
 											{formatTechName(icon)}
 										</TooltipContent>
 									</Tooltip>

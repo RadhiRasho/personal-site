@@ -1,8 +1,6 @@
 {
 	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-	"organizeImports": {
-		"enabled": true
-	},
+	"assist": { "actions": { "source": { "organizeImports": "on" } } },
 	"vcs": {
 		"enabled": true,
 		"clientKind": "git",
@@ -11,9 +9,12 @@
 	},
 	"files": {
 		"ignoreUnknown": true,
-		"ignore": ["./components/ui/**"]
+		"includes": ["!components/ui/**"]
 	},
 	"linter": {
+		"domains": {
+			"next": "recommended"
+		},
 		"enabled": true,
 		"rules": {
 			"recommended": true,
