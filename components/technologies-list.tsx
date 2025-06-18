@@ -54,7 +54,7 @@ const itemVariants = {
 		y: 0,
 		opacity: 1,
 		transition: {
-			type: "spring",
+			type: "spring" as const,
 			stiffness: 100,
 		},
 	},
@@ -119,7 +119,7 @@ function TechnologyCategory({ name, icons }: TechnologyCategoryProps) {
 			</h3>
 			<div className="grid grid-cols-1 gap-4 sm:grid-cols-1 lg:grid-cols-2">
 				{icons.map((iconSet, index) => (
-					<motion.div key={index} variants={itemVariants} className="w-full">
+					<motion.div key={`${name}-${iconSet}`} variants={itemVariants} className="w-full">
 						<Card className="w-full shrink-0 rounded-sm border bg-card/30 p-0 backdrop-blur-sm transition-all hover:scale-[102%] hover:shadow-md">
 							<CardContent className="flex w-full items-center justify-evenly gap-2 p-3">
 								{iconSet.split(",").map((icon, idx) => (
