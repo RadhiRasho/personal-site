@@ -80,6 +80,7 @@ const projects: ProjectCardProps[] = [
 			<SkillIcon name="ts" key="typescript" />,
 		],
 		image: "/Home-Page.png",
+		sizes: [1861, 995],
 		link: "https://github.com/radhirasho/personal-site",
 	},
 	{
@@ -107,6 +108,7 @@ const projects: ProjectCardProps[] = [
 			<SkillIcon name="json" key="json" />,
 		],
 		image: "/GermanQuiz.png",
+		sizes: [541, 310],
 		link: "https://github.com/radhirasho/german-quiz-cli",
 	},
 	{

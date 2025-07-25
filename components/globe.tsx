@@ -2,22 +2,26 @@
 
 import createGlobe, { type COBEOptions, type Marker } from "cobe";
 import { motion } from "motion/react";
-import { memo, useCallback, useEffect, useMemo, useRef } from "react";
-import { useWindowSize } from "usehooks-ts";
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useMediaQuery, useWindowSize } from "usehooks-ts";
+
+function isWebGLContext() {
+	const canvas = document.createElement("canvas");
+	const gl =
+		canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+
+	console.log(gl);
+
+	return gl instanceof WebGLRenderingContext;
+}
 
 const Globe = () => {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 	const globeRef = useRef<ReturnType<typeof createGlobe> | null>(null);
 	const windowSize = useWindowSize();
+	const prefersReducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: Causes issues with the globe rendering and performance
-	const handleZoom = useCallback((event: WheelEvent) => {
-		if (event.ctrlKey) {
-			event.preventDefault();
-			globeRef.current?.destroy();
-			createAndRenderGlobe();
-		}
-	}, []);
+	const [disabledWebGL, setDisabledWebGL] = useState(false);
 
 	const markers: Marker[] = useMemo(
 		() => [
@@ -65,17 +69,14 @@ const Globe = () => {
 		} as COBEOptions;
 	}, [randomBrightColor, randomDarkColor, randomSoftColor]);
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: This is a false positive
 	const createAndRenderGlobe = useCallback(() => {
 		let phi = 0;
-
-		if (!canvasRef.current) return;
 
 		if (globeRef.current) {
 			globeRef.current.destroy();
 		}
 
-		globeRef.current = createGlobe(canvasRef.current, {
+		globeRef.current = createGlobe(canvasRef.current!, {
 			...randomizeColors,
 			devicePixelRatio: 1,
 			width: windowSize.width,
@@ -101,23 +102,50 @@ const Globe = () => {
 			opacity: 0.8,
 			markers,
 			onRender: (state) => {
-				phi += 0.001;
-				state.phi = phi;
+				if (!prefersReducedMotion) {
+					state.phi = phi;
+
+					phi += 0.001;
+				}
 			},
 		});
 	}, [markers, windowSize.width, randomizeColors]);
 
+
 	useEffect(() => {
+		if (!document) return;
+		if (!canvasRef.current) return;
+
+		if (!isWebGLContext()) {
+			setDisabledWebGL(true);
+			return;
+		}
+
 		createAndRenderGlobe();
 
-		window.addEventListener("wheel", handleZoom);
+		setTimeout(() => {
+			const canvas = canvasRef.current;
+
+			if (!canvas) return;
+
+			canvas.style.opacity = "1";
+		})
+
 		return () => {
-			if (globeRef.current) {
-				globeRef.current.destroy();
-				removeEventListener("wheel", handleZoom);
-			}
+			globeRef.current?.destroy();
 		};
-	}, [createAndRenderGlobe, handleZoom]);
+	}, [createAndRenderGlobe]);
+
+	if (disabledWebGL) {
+		return (
+			<div className="flex items-center justify-center">
+				<p className="text-muted-foreground text-sm">
+					<span className="font-semibold">Hint</span>: enable{" "}
+					<span className="font-semibold">WebGL</span> to render the globe.
+				</p>
+			</div>
+		);
+	}
 
 	return (
 		<motion.div

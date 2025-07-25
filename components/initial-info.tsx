@@ -22,8 +22,8 @@ export default function InitialInfo() {
 				<Image
 					src="/Radhi-Rasho.jpg"
 					alt="Radhi Rasho"
-					width={250}
-					height={250}
+					width={460}
+					height={460}
 					priority
 					className="h-auto w-auto rounded-lg"
 				/>

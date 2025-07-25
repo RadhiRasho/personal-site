@@ -61,11 +61,10 @@ export default function RootLayout({ children }: Props) {
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body
-				className={`${Font.className} max-h-screen max-w-screen overflow-x-hidden bg-[length:12rem] bg-[url(/topography.svg)] bg-fixed bg-repeat`}
+				className={`${Font.className} max-h-screen max-w-screen overflow-x-hidden bg-[length:12rem] bg-[url(/topography.svg)] bg-fixed bg-repeat bg-black/95`}
 			>
 				<Globe />
 				<Socials />
-				<div className="-z-5 fixed inset-0 bg-linear-to-tr from-black via-black/50 to-transparent md:via-black/60" />
 				{children}
 				<SpeedInsights />
 				<Analytics />

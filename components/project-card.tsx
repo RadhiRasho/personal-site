@@ -12,6 +12,7 @@ export interface ProjectCardProps {
 	technologies: JSX.Element[];
 	image?: string;
 	link: string;
+	sizes?: number[];
 }
 
 export default function ProjectCard({
@@ -21,27 +22,23 @@ export default function ProjectCard({
 	technologies,
 	image,
 	link,
+	sizes
 }: ProjectCardProps) {
 	const imageUrl =
 		image ||
 		`https://api.microlink.io/?url=${encodeURIComponent(link)}&screenshot=true&meta=true&embed=screenshot.url`;
 
 	return (
-		<motion.div
-			className={"flex h-full w-full flex-col justify-between overflow-hidden rounded-3xl border bg-background/90 bg-no-repeat object-cover shadow-lg backdrop-blur-xs"
-			}
-			whileHover={{ scale: 1.05, rotateZ: -2 }}
-			transition={{ duration: 0.2 }}
-		>
+		<div className="flex h-full w-full flex-col justify-between overflow-hidden rounded-3xl border bg-background/90 bg-no-repeat object-cover shadow-lg backdrop-blur-xxs">
 			<div className="flex flex-col justify-between gap-4">
 				<div className="flex h-56 w-full overflow-hidden rounded-t-2xl">
 					<Image
 						src={imageUrl || "/placeholder.svg"}
 						alt={title}
 						priority
-						width={800}
-						height={800}
-						className="h-full w-full object-cover antialiased"
+						width={sizes?.[0] || 800}
+						height={sizes?.[1] || 800}
+						className="h-full w-full object-cover"
 					/>
 				</div>
 				<div className="px-3">
@@ -82,6 +79,6 @@ export default function ProjectCard({
 					</Link>
 				</div>
 			</div>
-		</motion.div>
+		</div>
 	);
 }

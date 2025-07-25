@@ -5,6 +5,7 @@ interface SectionProps {
 	image: string;
 	content: string;
 	reverse?: boolean;
+	sizes: number[];
 }
 
 export function Section({
@@ -12,6 +13,7 @@ export function Section({
 	image,
 	content,
 	reverse = false,
+	sizes
 }: SectionProps) {
 	return (
 		<div
@@ -24,8 +26,8 @@ export function Section({
 						src={image}
 						title={imageAlt}
 						className="h-full w-full rounded-lg object-cover"
-						width={500}
-						height={500}
+						width={sizes[0]}
+						height={sizes[1]}
 						priority
 					/>
 				</div>
