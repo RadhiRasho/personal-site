@@ -28,7 +28,7 @@ export function Section({
 						className="h-full w-full rounded-lg object-cover"
 						width={sizes[0]}
 						height={sizes[1]}
-						priority
+						loading="lazy"
 					/>
 				</div>
 			</div>

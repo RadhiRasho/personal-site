@@ -13,7 +13,12 @@ const nextConfig = {
 			},
 		],
 		dangerouslyAllowSVG: true,
+		formats: ["image/avif", "image/webp"],
 	},
+	experimental: {
+		optimizePackageImports: ["lucide-react", "@vercel/analytics", "cobe"],
+	},
+	cacheComponents: true,
 } satisfies NextConfig;
 
 export default nextConfig;

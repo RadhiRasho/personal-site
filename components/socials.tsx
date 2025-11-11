@@ -1,25 +1,21 @@
 "use client";
 
 import { DownloadIcon } from "lucide-react";
-import { motion } from "motion/react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6'
 
 export default function Socials() {
+	const [isVisible, setIsVisible] = useState(false);
+
+	useEffect(() => {
+		setIsVisible(true);
+	}, []);
+
 	return (
-		<motion.div
-			layout
-			initial={"hidden"}
-			animate={"visible"}
-			transition={{
-				duration: 0.2,
-				ease: "easeInOut",
-			}}
-			variants={{
-				hidden: { opacity: 0, x: -100 }, // Increased y value for more dramatic effect from bottom
-				visible: { opacity: 1, x: 0 }, // Maintains center position as destination
-			}}
-			className="z-50 flex h-full w-full items-center justify-center p-4 md:fixed md:w-10 md:justify-start"
+		<div
+			data-visible={isVisible}
+			className="relative z-50 flex h-fit w-full items-center justify-center p-4 md:fixed md:left-0 md:top-0 md:h-screen md:w-10 md:justify-start data-[visible=true]:opacity-100 data-[visible=false]:opacity-0 data-[visible=false]:translate-x-[-100px] data-[visible=true]:translate-x-0 transition-all"
 		>
 			<div className="flex h-fit w-full items-center justify-between gap-8 md:w-auto md:flex-col">
 				<Link
@@ -56,6 +52,6 @@ export default function Socials() {
 					<DownloadIcon size={35} className="text-xs hover:text-red-500" />
 				</a>
 			</div>
-		</motion.div>
+		</div>
 	);
 }

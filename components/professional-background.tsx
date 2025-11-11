@@ -1,10 +1,100 @@
 "use client";
 
 import { Briefcase, GraduationCap } from "lucide-react";
-import { motion } from "motion/react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import TechnologiesList from "./technologies-list";
+
+type Experience = {
+	company: string;
+	role: string;
+	period: string;
+};
+
+type Education = {
+	degree: string;
+	school: string;
+	year: string;
+};
+
+function AnimatedListItem({
+	children,
+	delay = 0
+}: {
+	children: React.ReactNode;
+	delay?: number;
+}) {
+	const [isVisible, setIsVisible] = useState(false);
+	const ref = useRef<HTMLLIElement>(null);
+
+	useEffect(() => {
+		const element = ref.current;
+		if (!element) return;
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						setTimeout(() => setIsVisible(true), delay);
+						observer.disconnect();
+					}
+				});
+			},
+			{ threshold: 0.1 }
+		);
+
+		observer.observe(element);
+		return () => observer.disconnect();
+	}, [delay]);
+
+	return (
+		<li
+			ref={ref}
+			className="flex w-full items-start gap-4 md:w-auto"
+			style={{
+				opacity: isVisible ? 1 : 0,
+				transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+				transition: 'opacity 0.5s ease-out, transform 0.5s ease-out',
+			}}
+		>
+			{children}
+		</li>
+	);
+}
+
+function ExperienceList({ experiences }: { experiences: Experience[] }) {
+	return (
+		<ul className="flex w-full flex-col items-center justify-evenly space-y-4 p-2 md:flex-row md:items-start md:space-x-4 md:space-y-0 md:p-4">
+			{experiences.map((exp, index) => (
+				<AnimatedListItem key={index} delay={index * 100}>
+					<Briefcase className="mt-1 h-5 w-5 text-primary" />
+					<div>
+						<p className="font-semibold text-sm">{exp.role}</p>
+						<p className="text-muted-foreground text-xs">{exp.company}</p>
+						<p className="text-muted-foreground text-xs">{exp.period}</p>
+					</div>
+				</AnimatedListItem>
+			))}
+		</ul>
+	);
+}
+
+function EducationList({ education }: { education: Education[] }) {
+	return (
+		<ul className="flex w-full flex-col items-center justify-evenly space-y-4 p-2 md:flex-row md:items-start md:space-x-4 md:space-y-0 md:p-4">
+			{education.map((edu, index) => (
+				<AnimatedListItem key={index} delay={index * 100}>
+					<GraduationCap className="mt-1 h-5 w-5 text-primary" />
+					<div>
+						<p className="font-semibold text-sm">{edu.degree}</p>
+						<p className="text-muted-foreground text-xs">{edu.school}</p>
+						<p className="text-muted-foreground text-xs">{edu.year}</p>
+					</div>
+				</AnimatedListItem>
+			))}
+		</ul>
+	);
+}
 
 export default function ProfessionalBackground() {
 	const [activeTab, setActiveTab] = useState("experience");
@@ -45,6 +135,7 @@ export default function ProfessionalBackground() {
 			defaultValue="experience"
 			value={activeTab}
 			onValueChange={setActiveTab}
+			className="w-full"
 		>
 			<TabsList className="grid h-full w-full grid-cols-1 gap-0.5 bg-accent/80 md:grid-cols-3">
 				<TabsTrigger
@@ -67,44 +158,10 @@ export default function ProfessionalBackground() {
 				</TabsTrigger>
 			</TabsList>
 			<TabsContent value="experience">
-				<ul className="flex w-full flex-col items-center justify-evenly space-y-4 p-2 md:flex-row md:items-start md:space-x-4 md:space-y-0 md:p-4">
-					{experiences.map((exp, index) => (
-						<motion.li
-							key={index}
-							initial={{ opacity: 0, y: 20 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.5 }}
-							className="flex w-full items-start gap-4 md:w-auto"
-						>
-							<Briefcase className="mt-1 h-5 w-5 text-primary" />
-							<div>
-								<p className="font-semibold text-sm">{exp.role}</p>
-								<p className="text-muted-foreground text-xs">{exp.company}</p>
-								<p className="text-muted-foreground text-xs">{exp.period}</p>
-							</div>
-						</motion.li>
-					))}
-				</ul>
+				<ExperienceList experiences={experiences} />
 			</TabsContent>
 			<TabsContent value="education">
-				<ul className="flex w-full flex-col items-center justify-evenly space-y-4 p-2 md:flex-row md:items-start md:space-x-4 md:space-y-0 md:p-4">
-					{education.map((edu, index) => (
-						<motion.li
-							key={index}
-							initial={{ opacity: 0, y: 20 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.5 }}
-							className="flex w-full items-start gap-4 md:w-auto"
-						>
-							<GraduationCap className="mt-1 h-5 w-5 text-primary" />
-							<div>
-								<p className="font-semibold text-sm">{edu.degree}</p>
-								<p className="text-muted-foreground text-xs">{edu.school}</p>
-								<p className="text-muted-foreground text-xs">{edu.year}</p>
-							</div>
-						</motion.li>
-					))}
-				</ul>
+				<EducationList education={education} />
 			</TabsContent>
 			<TabsContent value="skills">
 				<TechnologiesList />

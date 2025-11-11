@@ -4,12 +4,16 @@ import type { Metadata, Viewport } from "next";
 import { Roboto_Mono } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
-import dynamic from "next/dynamic";
+import GlobeWrapper from "@/components/globe-wrapper";
 import Socials from "@/components/socials";
 
-const Globe = dynamic(() => import("@/components/globe"), { ssr: true });
 
-const Font = Roboto_Mono({ subsets: ["latin"] });
+const Font = Roboto_Mono({
+	subsets: ["latin"],
+	display: "swap",
+	preload: true,
+	variable: "--font-roboto-mono",
+});
 
 export const metadata: Metadata = {
 	title: "Radhi Rasho",
@@ -61,10 +65,10 @@ export default function RootLayout({ children }: Props) {
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body
-				className={`${Font.className} max-h-screen max-w-screen overflow-x-hidden bg-[length:12rem] bg-[url(/topography.svg)] bg-fixed bg-repeat bg-black/95`}
+				className={`${Font.className} max-h-screen max-w-screen overflow-x-hidden bg-size-[12rem] bg-[url(/topography.svg)] bg-fixed bg-repeat bg-black/95`}
 			>
-				<Globe />
 				<Socials />
+				<GlobeWrapper />
 				{children}
 				<SpeedInsights />
 				<Analytics />

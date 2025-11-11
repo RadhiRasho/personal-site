@@ -1,9 +1,32 @@
 import { MailIcon, MapPinIcon } from "lucide-react";
-import { motion } from "motion/react";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import { Badge } from "./ui/badge";
 
 export default function InitialInfo() {
+	const [isVisible, setIsVisible] = useState(false);
+	const ref = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		const element = ref.current;
+		if (!element) return;
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						setIsVisible(true);
+						observer.disconnect();
+					}
+				});
+			},
+			{ threshold: 0.1 }
+		);
+
+		observer.observe(element);
+		return () => observer.disconnect();
+	}, []);
+
 	const personalInfo = {
 		name: "Radhi Rasho",
 		title: "Software Engineer",
@@ -13,21 +36,24 @@ export default function InitialInfo() {
 
 	return (
 		<div className="flex flex-col items-center gap-6 md:flex-row md:items-start">
-			<motion.div
-				initial={{ opacity: 0, scale: 0.5 }}
-				animate={{ opacity: 1, scale: 1 }}
-				transition={{ duration: 0.5 }}
+			<div
+				ref={ref}
 				className="mx-auto w-full max-w-[250px] md:mx-0"
+				style={{
+					opacity: isVisible ? 1 : 0,
+					transform: isVisible ? 'scale(1)' : 'scale(0.5)',
+					transition: 'opacity 0.5s ease-out, transform 0.5s ease-out',
+				}}
 			>
 				<Image
 					src="/Radhi-Rasho.jpg"
 					alt="Radhi Rasho"
-					width={460}
-					height={460}
+					width={250}
+					height={250}
 					priority
 					className="h-auto w-auto rounded-lg"
 				/>
-			</motion.div>
+			</div>
 			<div className="flex h-full w-full flex-col justify-between gap-4 text-center md:text-left">
 				<div>
 					<h1 className="font-bold text-xl">{personalInfo.name}</h1>

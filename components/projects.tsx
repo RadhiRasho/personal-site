@@ -1,6 +1,5 @@
 "use client";
 import { TooltipPortal } from "@radix-ui/react-tooltip";
-import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import { useState } from "react";
 import {
@@ -11,7 +10,6 @@ import {
 } from "@/components/ui/tooltip";
 import ProjectCard, { type ProjectCardProps } from "./project-card";
 
-// Helper function to capitalize and format technology names (similar to technologies-list.tsx)
 const formatTechName = (name: string): string => {
 	const specialCases: Record<string, string> = {
 		ts: "TypeScript",
@@ -23,30 +21,38 @@ const formatTechName = (name: string): string => {
 		vscode: "VS Code",
 		npm: "NPM",
 		postgresql: "PostgreSQL",
+		reactquery: "React Query",
 	};
 
 	return specialCases[name] || name.charAt(0).toUpperCase() + name.slice(1);
 };
 
-// Custom SkillIcon component
 const SkillIcon = ({ name, size = 35 }: { name: string; size?: number }) => {
+	const [isHovered, setIsHovered] = useState(false);
+
 	return (
 		<Tooltip>
 			<TooltipTrigger asChild>
-				<motion.div
+				<div
 					className="flex items-center justify-center"
-					whileHover={{ scale: 1.1 }}
+					onMouseEnter={() => setIsHovered(true)}
+					onMouseLeave={() => setIsHovered(false)}
 					role="img"
 					aria-label={`${formatTechName(name)} technology`}
+					style={{
+						transform: isHovered ? 'scale(1.1)' : 'scale(1)',
+						transition: 'transform 0.2s ease-out',
+					}}
 				>
 					<Image
 						width={size}
 						height={size}
+						loading="lazy"
 						className="h-auto w-full object-contain"
 						src={`https://go-skill-icons.vercel.app/api/icons?i=${name}`}
 						alt={`${formatTechName(name)} icon`}
 					/>
-				</motion.div>
+				</div>
 			</TooltipTrigger>
 			<TooltipPortal>
 				<TooltipContent
@@ -80,7 +86,7 @@ const projects: ProjectCardProps[] = [
 			<SkillIcon name="ts" key="typescript" />,
 		],
 		image: "/Home-Page.png",
-		sizes: [1861, 995],
+		sizes: [800, 450],
 		link: "https://github.com/radhirasho/personal-site",
 	},
 	{
@@ -108,7 +114,7 @@ const projects: ProjectCardProps[] = [
 			<SkillIcon name="json" key="json" />,
 		],
 		image: "/GermanQuiz.png",
-		sizes: [541, 310],
+		sizes: [800, 450],
 		link: "https://github.com/radhirasho/german-quiz-cli",
 	},
 	{
@@ -199,26 +205,19 @@ export default function Projects() {
 					))}
 				</div>
 				<TooltipProvider delayDuration={300}>
-					<motion.div
-						layout
+					<div
+						key={filter}
 						className="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-3"
 					>
-						<AnimatePresence>
-							{filteredProjects.map((project) => (
-								<motion.div
-									key={project.id}
-									className="h-full w-full"
-									layout
-									initial={{ opacity: 0 }}
-									animate={{ opacity: 1 }}
-									exit={{ opacity: 0 }}
-									transition={{ duration: 0.5 }}
-								>
-									<ProjectCard {...project} />
-								</motion.div>
-							))}
-						</AnimatePresence>
-					</motion.div>
+						{filteredProjects.map((project) => (
+							<div
+								key={project.id}
+								className="h-full w-full animate-fadeIn"
+							>
+								<ProjectCard {...project} />
+							</div>
+						))}
+					</div>
 				</TooltipProvider>
 			</div>
 		</section>

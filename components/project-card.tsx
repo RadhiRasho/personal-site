@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -35,9 +34,9 @@ export default function ProjectCard({
 					<Image
 						src={imageUrl || "/placeholder.svg"}
 						alt={title}
-						priority
+						loading="lazy"
 						width={sizes?.[0] || 800}
-						height={sizes?.[1] || 800}
+						height={sizes?.[1] || 450}
 						className="h-full w-full object-cover"
 					/>
 				</div>
