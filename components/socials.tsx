@@ -1,16 +1,16 @@
 "use client";
 
 import { DownloadIcon } from "lucide-react";
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import Link from "next/link";
 import { FaGithub, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 
-const itemAnimation = {
+const itemAnimation: Variants = {
   initial: { opacity: 0, x: -20 },
   animate: (index: number) => ({
     opacity: 1,
     x: 0,
-    transition: { delay: index * 0.08, duration: 0.35, ease: [0.22, 1, 0.36, 1] },
+    transition: { delay: index * 0.08, duration: 0.35, ease: [0.22, 1, 0.36, 1] as const },
   }),
 };
 
@@ -20,7 +20,7 @@ export default function Socials() {
       className="relative z-50 flex h-fit w-full items-center justify-center p-4 md:fixed md:top-0 md:left-0 md:h-screen md:w-10 md:justify-start"
       initial={{ opacity: 0, x: -100 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] as const }}
     >
       <div className="flex h-fit w-full items-center justify-between gap-8 md:w-auto md:flex-col">
         <Link
