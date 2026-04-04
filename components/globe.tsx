@@ -1,155 +1,155 @@
 "use client";
 
 import createGlobe, { type Marker } from "cobe";
-import { memo, useCallback, useEffect, useRef, useState } from "react";
-import { useMediaQuery, useWindowSize } from "usehooks-ts";
+import { motion } from "motion/react";
+import { useEffect, useRef } from "react";
+import { useWindowSize } from "usehooks-ts";
 
-function isWebGLContext() {
-	const canvas = document.createElement("canvas");
-	const gl =
-		canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+type GlobeColor = [number, number, number];
 
-	return gl instanceof WebGLRenderingContext;
+type GlobeTheme = {
+  baseColor: GlobeColor;
+  markerColor: GlobeColor;
+  glowColor: GlobeColor;
+};
+
+const goldenHourTheme = {
+  baseColor: [1, 0.96, 0.88],
+  markerColor: [0.96, 0.66, 0.08],
+  glowColor: [1, 0.82, 0.42],
+} satisfies GlobeTheme;
+
+function getGlobeSize(viewportWidth: number, viewportHeight: number) {
+  const safeWidth = viewportWidth || 1200;
+  const safeHeight = viewportHeight || 900;
+
+  return Math.round(Math.max(720, Math.min(safeWidth, safeHeight) * 1.15));
+}
+
+function buildGlobeOptions(
+  viewportWidth: number,
+  viewportHeight: number,
+  phi: number,
+): Parameters<typeof createGlobe>[1] {
+  const size = getGlobeSize(viewportWidth, viewportHeight);
+
+  return {
+    devicePixelRatio: Math.min(window.devicePixelRatio || 1, 2),
+    width: size,
+    height: size,
+    phi,
+    theta: 0.3,
+    dark: 1,
+    diffuse: 1,
+    mapSamples: 30000,
+    mapBrightness: 1,
+    markerElevation: 0,
+    context: {
+      antialias: true,
+    },
+    baseColor: goldenHourTheme.baseColor,
+    markerColor: goldenHourTheme.markerColor,
+    glowColor: goldenHourTheme.glowColor,
+    opacity: 0.9,
+    markers,
+  };
 }
 
 const markers: Marker[] = [
-	{ location: [40.8113, -96.707], size: 0.03 }, // Lincoln, NE, Home
-	{ location: [25.792, -80.135], size: 0.03 }, // Miami, FL
-	{ location: [52.52, 13.405], size: 0.03 }, // Berlin, Germany
-	{ location: [52.1814, 8.53238], size: 0.03 }, // Minden, Germany
-	{ location: [52.375, 9.732], size: 0.03 }, // Hannover, Germany
-	{ location: [50.937, 6.96], size: 0.03 }, // Cologne, Germany
-	{ location: [36.314, 41.862], size: 0.03 }, // Sinjar, Iraq
-	{ location: [36.8658, 42.9877], size: 0.03 }, // Duhok, Iraq
-	{ location: [36.34, 43.13], size: 0.03 }, // Zakho, Iraq
-	{ location: [33.3185, 44.3689], size: 0.03 }, // Baghdad, Iraq
-	{ location: [16.863, -99.882], size: 0.03 }, // Acapulco, Mexico
-	{ location: [57.7089, 11.9746], size: 0.03 }, // Gothenburg, Sweden
-	{ location: [59.3293, 18.0686], size: 0.03 }, // Stockholm, Sweden
-	{ location: [60.1695, 24.9354], size: 0.03 }, // Helsinki, Finland
-	{ location: [38.8344, -104.8139], size: 0.03 }, // Colorado Springs, CO
-	{ location: [40.763, -111.8907], size: 0.03 }, // Salt Lake City, UT
-	{ location: [44.7583, -110.0369], size: 0.03 }, // Yellowstone National Park, WY
-	{ location: [39.1788, -94.4857], size: 0.03 }, // Worlds of Fun, Kansas City, MO
-	{ location: [44.9503, -92.8326], size: 0.03 }, // Mall of America, Minneapolis, MN
-	{ location: [38.9003, -77.0314], size: 0.03 }, // The White House, Washington, D.C.
+  { location: [40.8113, -96.707], size: 0.02, id: "Lincoln" }, // Lincoln, NE, Home
+  { location: [25.792, -80.135], size: 0.02, id: "Miami" }, // Miami, FL
+  { location: [52.52, 13.405], size: 0.02, id: "Berlin" }, // Berlin, Germany
+  { location: [52.1814, 8.53238], size: 0.02, id: "Minden" }, // Minden, Germany
+  { location: [52.375, 9.732], size: 0.02, id: "Hannover" }, // Hannover, Germany
+  { location: [50.937, 6.96], size: 0.02, id: "Cologne" }, // Cologne, Germany
+  { location: [36.314, 41.862], size: 0.02, id: "Sinjar" }, // Sinjar, Iraq
+  { location: [36.8658, 42.9877], size: 0.02, id: "Duhok" }, // Duhok, Iraq
+  { location: [36.34, 43.13], size: 0.02, id: "Zakho" }, // Zakho, Iraq
+  { location: [33.3185, 44.3689], size: 0.02, id: "Baghdad" }, // Baghdad, Iraq
+  { location: [16.863, -99.882], size: 0.02, id: "Acapulco" }, // Acapulco, Mexico
+  { location: [57.7089, 11.9746], size: 0.02, id: "Gothenburg" }, // Gothenburg, Sweden
+  { location: [59.3293, 18.0686], size: 0.02, id: "Stockholm" }, // Stockholm, Sweden
+  { location: [60.1695, 24.9354], size: 0.02, id: "Helsinki" }, // Helsinki, Finland
+  { location: [38.8344, -104.8139], size: 0.02, id: "Colorado Springs" }, // Colorado Springs, CO
+  { location: [40.763, -111.8907], size: 0.02, id: "Salt Lake City" }, // Salt Lake City, UT
+  { location: [44.7583, -110.0369], size: 0.02, id: "Yellowstone National Park" }, // Yellowstone National Park, WY
+  { location: [39.1788, -94.4857], size: 0.02, id: "Worlds of Fun" }, // Worlds of Fun, Kansas City, MO
+  { location: [44.9503, -92.8326], size: 0.02, id: "Mall of America" }, // Mall of America, Minneapolis, MN
+  { location: [38.9003, -77.0314], size: 0.02, id: "The White House" }, // The White House, Washington, D.C.
 ];
 
 const Globe = () => {
-	const canvasRef = useRef<HTMLCanvasElement>(null);
-	const globeRef = useRef<ReturnType<typeof createGlobe> | null>(null);
-	const windowSize = useWindowSize();
-	const prefersReducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
-	const phiRef = useRef(0); // Store phi in a ref to maintain rotation state
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const globeRef = useRef<ReturnType<typeof createGlobe> | null>(null);
+  const frameRef = useRef<number | null>(null);
+  const windowSize = useWindowSize();
+  const phiRef = useRef(0);
 
-	const [disabledWebGL, setDisabledWebGL] = useState(false);
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    if (!canvasRef.current) return;
 
-	// Use refs for colors to keep them stable across renders
-	const colorsRef = useRef({
-		baseColor: [0.5, Math.random(), Math.random()] as [number, number, number],
-		markerColor: [200, Math.random(), Math.random()] as [number, number, number],
-		glowColor: [Math.random(), Math.random(), Math.random()] as [number, number, number],
-	});
+    globeRef.current = createGlobe(
+      canvasRef.current,
+      buildGlobeOptions(window.innerWidth, window.innerHeight, phiRef.current),
+    );
 
-	const createAndRenderGlobe = useCallback(() => {
-		if (!canvasRef.current) return;
+    return () => {
+      if (frameRef.current !== null) {
+        cancelAnimationFrame(frameRef.current);
+        frameRef.current = null;
+      }
+      globeRef.current?.destroy();
+      globeRef.current = null;
+    };
+  }, []);
 
-		if (globeRef.current) {
-			globeRef.current.destroy();
-			globeRef.current = null;
-		}
+  useEffect(() => {
+    if (!globeRef.current) return;
 
-		globeRef.current = createGlobe(canvasRef.current, {
-			baseColor: colorsRef.current.baseColor,
-			markerColor: colorsRef.current.markerColor,
-			glowColor: colorsRef.current.glowColor,
-			devicePixelRatio: 1,
-			width: windowSize.width,
-			height: windowSize.height,
-			phi: phiRef.current, // Use stored phi value
-			theta: 0.3,
-			dark: 1,
-			offset: [10, 50],
-			diffuse: 3,
-			context: {
-				antialias: true,
-				alpha: true,
-				premultipliedAlpha: true,
-				preserveDrawingBuffer: true,
-				depth: true,
-				powerPreference: "low-power",
-				desynchronized: true,
-				failIfMajorPerformanceCaveat: false,
-				stencil: false,
-			},
-			mapSamples: 64_000,
-			mapBrightness: 8,
-			opacity: 0.8,
-			markers,
-			onRender: (state) => {
-				if (!prefersReducedMotion) {
-					phiRef.current += 0.001; // Update the ref
-					state.phi = phiRef.current;
-				}
-			},
-		});
-	}, [markers, windowSize.width, windowSize.height, prefersReducedMotion]);
+    globeRef.current.update(buildGlobeOptions(windowSize.width, windowSize.height, phiRef.current));
+  }, [windowSize.height, windowSize.width]);
 
-	// Initial setup effect - runs once
-	useEffect(() => {
-		if (typeof document === 'undefined') return;
-		if (!canvasRef.current) return;
+  useEffect(() => {
+    if (!globeRef.current) return;
 
-		if (!isWebGLContext()) {
-			setDisabledWebGL(true);
-			return;
-		}
+    if (frameRef.current !== null) {
+      cancelAnimationFrame(frameRef.current);
+      frameRef.current = null;
+    }
 
-		createAndRenderGlobe();
+    const rotate = () => {
+      phiRef.current = (phiRef.current + 0.002) % (Math.PI * 2);
+      globeRef.current?.update({ phi: phiRef.current });
+      frameRef.current = requestAnimationFrame(rotate);
+    };
 
-		const canvas = canvasRef.current;
-		if (!canvas) return;
+    frameRef.current = requestAnimationFrame(rotate);
 
-		return () => {
-			if (globeRef.current) {
-				globeRef.current.destroy();
-				globeRef.current = null;
-			}
-		};
-	}, []); // Only run once on mount
+    return () => {
+      if (frameRef.current !== null) {
+        cancelAnimationFrame(frameRef.current);
+        frameRef.current = null;
+      }
+    };
+  }, []);
 
-	// Handle window resize with debounce
-	useEffect(() => {
-		if (!globeRef.current) return;
-
-		createAndRenderGlobe();
-	}, [windowSize.width, windowSize.height, createAndRenderGlobe]);
-
-	if (disabledWebGL) {
-		return (
-			<div className="flex items-center justify-center">
-				<p className="text-muted-foreground text-sm">
-					<span className="font-semibold">Hint</span>: enable{" "}
-					<span className="font-semibold">WebGL</span> to render the globe.
-				</p>
-			</div>
-		);
-	}
-
-	return (
-		<div
-			className="lg:-right-[30%] -bottom-60 md:-bottom-32 -z-30 pointer-events-none fixed h-full w-full overflow-hidden transition-all duration-300 animate-in slide-in-from-right"
-			style={{
-				animation: 'slideInFromRight 0.2s ease-in forwards',
-			}}
-		>
-			<canvas
-				ref={canvasRef}
-				style={{ transition: 'opacity 0.3s ease-in' }}
-				className="md:-rotate-18 pointer-events-none h-full w-auto overflow-hidden"
-			/>
-		</div>
-	);
+  return (
+    <motion.div
+      className="pointer-events-none fixed inset-0 -z-30 overflow-hidden"
+      initial={{ opacity: 0, x: 120 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <motion.canvas
+        ref={canvasRef}
+        className="absolute -right-50 -bottom-10 h-full w-auto max-w-none origin-bottom-right -rotate-25 overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.3, ease: "easeOut", delay: 0.08 }}
+      />
+    </motion.div>
+  );
 };
 
-export default memo(Globe);
+export default Globe;

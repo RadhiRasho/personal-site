@@ -1,146 +1,106 @@
-import {
-	forwardRef,
-	useCallback,
-	useEffect,
-	useImperativeHandle,
-	useState,
-} from "react";
+import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from "react";
+import { animate } from "motion/react";
 
 interface ScrambleInProps {
-	text: string;
-	scrambleSpeed?: number;
-	scrambledLetterCount?: number;
-	characters?: string;
-	className?: string;
-	scrambledClassName?: string;
-	autoStart?: boolean;
-	onStart?: () => void;
-	onComplete?: () => void;
+  text: string;
+  scrambleSpeed?: number;
+  scrambledLetterCount?: number;
+  characters?: string;
+  className?: string;
+  scrambledClassName?: string;
+  autoStart?: boolean;
+  onStart?: () => void;
+  onComplete?: () => void;
 }
 
 export interface ScrambleInHandle {
-	start: () => void;
-	reset: () => void;
+  start: () => void;
+  reset: () => void;
 }
 
 const ScrambleIn = forwardRef<ScrambleInHandle, ScrambleInProps>(
-	(
-		{
-			text,
-			scrambleSpeed = 50,
-			scrambledLetterCount = 2,
-			characters = "abcdefghijklmnopqrstuvwxyz!@#$%^&*()_+",
-			className = "",
-			scrambledClassName = "",
-			autoStart = true,
-			onStart,
-			onComplete,
-		},
-		ref,
-	) => {
-		const [displayText, setDisplayText] = useState("");
-		const [isAnimating, setIsAnimating] = useState(false);
-		const [visibleLetterCount, setVisibleLetterCount] = useState(0);
-		const [scrambleOffset, setScrambleOffset] = useState(0);
+  (
+    {
+      text,
+      scrambleSpeed = 50,
+      scrambledLetterCount = 2,
+      characters = "abcdefghijklmnopqrstuvwxyz!@#$%^&*()_+",
+      className = "",
+      scrambledClassName = "",
+      autoStart = true,
+      onStart,
+      onComplete,
+    },
+    ref,
+  ) => {
+    const [revealedText, setRevealedText] = useState("");
+    const [scrambledText, setScrambledText] = useState("");
+    const controlsRef = useRef<ReturnType<typeof animate> | null>(null);
 
-		const startAnimation = useCallback(() => {
-			setIsAnimating(true);
-			setVisibleLetterCount(0);
-			setScrambleOffset(0);
-			onStart?.();
-		}, [onStart]);
+    const updateDisplay = useCallback(
+      (progress: number) => {
+        const visibleLetterCount = Math.floor(progress);
+        const remainingSpace = Math.max(0, text.length - visibleLetterCount);
+        const currentScrambleCount = Math.min(remainingSpace, scrambledLetterCount);
 
-		const reset = useCallback(() => {
-			setIsAnimating(false);
-			setVisibleLetterCount(0);
-			setScrambleOffset(0);
-			setDisplayText("");
-		}, []);
+        const scrambledPart = Array.from({ length: currentScrambleCount }, () => {
+          return characters[Math.floor(Math.random() * characters.length)] ?? "";
+        }).join("");
 
-		useImperativeHandle(ref, () => ({
-			start: startAnimation,
-			reset,
-		}));
+        setRevealedText(text.slice(0, visibleLetterCount));
+        setScrambledText(scrambledPart);
+      },
+      [characters, scrambledLetterCount, text],
+    );
 
-		useEffect(() => {
-			if (autoStart) {
-				startAnimation();
-			}
-		}, [autoStart, startAnimation]);
+    const startAnimation = useCallback(() => {
+      controlsRef.current?.stop();
+      setRevealedText("");
+      setScrambledText("");
+      onStart?.();
 
-		useEffect(() => {
-			let interval: NodeJS.Timeout;
+      controlsRef.current = animate(0, text.length, {
+        duration: Math.max((text.length * scrambleSpeed) / 1000, 0.01),
+        ease: "linear",
+        onUpdate: updateDisplay,
+        onComplete: () => {
+          setRevealedText(text);
+          setScrambledText("");
+          onComplete?.();
+        },
+      });
+    }, [onComplete, onStart, scrambleSpeed, text, updateDisplay]);
 
-			if (isAnimating) {
-				interval = setInterval(() => {
-					// Increase visible text length
-					if (visibleLetterCount < text.length) {
-						setVisibleLetterCount((prev) => prev + 1);
-					}
-					// Start sliding scrambled text out
-					else if (scrambleOffset < scrambledLetterCount) {
-						setScrambleOffset((prev) => prev + 1);
-					}
-					// Complete animation
-					else {
-						clearInterval(interval);
-						setIsAnimating(false);
-						onComplete?.();
-					}
+    const reset = useCallback(() => {
+      controlsRef.current?.stop();
+      setRevealedText("");
+      setScrambledText("");
+    }, []);
 
-					// Calculate how many scrambled letters we can show
-					const remainingSpace = Math.max(0, text.length - visibleLetterCount);
-					const currentScrambleCount = Math.min(
-						remainingSpace,
-						scrambledLetterCount,
-					);
+    useImperativeHandle(ref, () => ({
+      start: startAnimation,
+      reset,
+    }));
 
-					// Generate scrambled text
-					const scrambledPart = Array(currentScrambleCount)
-						.fill(0)
-						.map(
-							() => characters[Math.floor(Math.random() * characters.length)],
-						)
-						.join("");
+    useEffect(() => {
+      if (autoStart) {
+        startAnimation();
+      }
 
-					setDisplayText(text.slice(0, visibleLetterCount) + scrambledPart);
-				}, scrambleSpeed);
-			}
+      return () => {
+        controlsRef.current?.stop();
+      };
+    }, [autoStart, startAnimation]);
 
-			return () => {
-				if (interval) clearInterval(interval);
-			};
-		}, [
-			isAnimating,
-			text,
-			visibleLetterCount,
-			scrambleOffset,
-			scrambledLetterCount,
-			characters,
-			scrambleSpeed,
-			onComplete,
-		]);
-
-		const renderText = () => {
-			const revealed = displayText.slice(0, visibleLetterCount);
-			const scrambled = displayText.slice(visibleLetterCount);
-
-			return (
-				<>
-					<span className={className}>{revealed}</span>
-					<span className={scrambledClassName}>{scrambled}</span>
-				</>
-			);
-		};
-
-		return (
-			<>
-				<span className="sr-only">{text}</span>
-				<span className="inline-block whitespace-pre-wrap" aria-hidden="true">
-					{renderText()}
-				</span>
-			</>
-		);
-	},
+    return (
+      <>
+        <span className="sr-only">{text}</span>
+        <span className="inline-block whitespace-pre-wrap" aria-hidden="true">
+          <span className={className}>{revealedText}</span>
+          <span className={scrambledClassName}>{scrambledText}</span>
+        </span>
+      </>
+    );
+  },
 );
 export default ScrambleIn;
