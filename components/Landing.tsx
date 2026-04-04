@@ -28,7 +28,7 @@ export default function Landing() {
       className="relative mb-4 flex h-full min-h-screen w-10/12 flex-col items-baseline justify-center md:w-8/12"
       {...createReveal({ y: 40, duration: 0.7 })}
     >
-      <Float>
+      <Float speed={0.5} className="select-none">
         <motion.div
           className="relative flex h-52 w-52 cursor-pointer overflow-hidden shadow-2xl"
           whileHover={{ scale: 1.05 }}
@@ -46,7 +46,7 @@ export default function Landing() {
         </motion.div>
       </Float>
       <motion.div
-        className="bg-background/80 lg:bg-background/0 z-20 flex w-full grow-0 flex-col items-center justify-center rounded-xl border p-4 shadow-2xl backdrop-blur-xs lg:w-7/12 lg:items-start lg:rounded-none lg:border-none lg:p-2 lg:shadow-none lg:backdrop-blur-none"
+        className="bg-background/80 lg:bg-background/0 z-20 flex w-full grow-0 flex-col items-center justify-center rounded-xl border p-4 shadow-2xl backdrop-blur-xs select-none lg:w-7/12 lg:items-start lg:rounded-none lg:border-none lg:p-2 lg:shadow-none lg:backdrop-blur-none"
         {...createReveal({ y: 24, delay: 0.15, duration: 0.6 })}
       >
         <div className="flex flex-col items-baseline justify-between gap-0.5 font-bold md:gap-2 lg:flex-row">
@@ -78,7 +78,7 @@ export default function Landing() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.5 }}
       >
-        <span className="text-muted-foreground text-[0.55rem] font-medium tracking-[0.3em] uppercase">
+        <span className="text-muted-foreground text-[0.55rem] font-medium tracking-[0.3em] uppercase select-none">
           Scroll
         </span>
         <motion.div

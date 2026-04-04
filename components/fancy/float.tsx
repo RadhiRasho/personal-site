@@ -1,11 +1,12 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
-import { type ReactNode, useMemo } from "react";
+import React, { useRef } from "react";
+import { motion, useAnimationFrame, useMotionValue } from "motion/react";
+
 import { cn } from "@/lib/utils";
 
 type FloatProps = {
-  children: ReactNode;
+  children: React.ReactNode;
   speed?: number;
   amplitude?: [number, number, number]; // [x, y, z]
   rotationRange?: [number, number, number]; // [x, y, z]
@@ -13,51 +14,61 @@ type FloatProps = {
   className?: string;
 };
 
-function buildWave(amplitude: number, frequency: number, offset = 0, samples = 8) {
-  return Array.from({ length: samples + 1 }, (_, index) => {
-    const progress = (index / samples) * Math.PI * 2 + offset;
-    return Number((Math.sin(progress * frequency) * amplitude).toFixed(3));
-  });
-}
-
-export default function Float({
+function Float({
   children,
   speed = 0.5,
-  amplitude = [10, 30, 30],
-  rotationRange = [15, 15, 7.5],
+  amplitude = [10, 30, 30], // Default [x, y, z] amplitudes
+  rotationRange = [15, 15, 7.5], // Default [x, y, z] rotation ranges
   timeOffset = 0,
   className,
 }: FloatProps) {
-  const prefersReducedMotion = useReducedMotion();
-  const duration = useMemo(() => Math.max(12 / Math.max(speed, 0.1), 8), [speed]);
-  const animation = useMemo(
-    () => ({
-      x: buildWave(amplitude[0], 0.5, timeOffset),
-      y: buildWave(amplitude[1], 1, timeOffset),
-      z: buildWave(amplitude[2], 0.3, timeOffset),
-      rotateX: buildWave(rotationRange[0], 0.3, timeOffset),
-      rotateY: buildWave(rotationRange[1], 0.5, timeOffset),
-      rotateZ: buildWave(rotationRange[2], 0.2, timeOffset),
-    }),
-    [amplitude, rotationRange, timeOffset],
-  );
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const z = useMotionValue(0);
+  const rotateX = useMotionValue(0);
+  const rotateY = useMotionValue(0);
+  const rotateZ = useMotionValue(0);
+
+  // Use refs for animation values to avoid recreating the animation frame callback
+  const time = useRef(0);
+
+  useAnimationFrame(() => {
+    time.current += speed * 0.02;
+
+    // Smooth floating motion on all axes
+    const newX = Math.sin(time.current * 0.7 + timeOffset) * amplitude[0];
+    const newY = Math.sin(time.current * 0.6 + timeOffset) * amplitude[1];
+    const newZ = Math.sin(time.current * 0.5 + timeOffset) * amplitude[2];
+
+    // 3D rotations with different frequencies for more organic movement
+    const newRotateX = Math.sin(time.current * 0.5 + timeOffset) * rotationRange[0];
+    const newRotateY = Math.sin(time.current * 0.4 + timeOffset) * rotationRange[1];
+    const newRotateZ = Math.sin(time.current * 0.3 + timeOffset) * rotationRange[2];
+
+    x.set(newX);
+    y.set(newY);
+    z.set(newZ);
+    rotateX.set(newRotateX);
+    rotateY.set(newRotateY);
+    rotateZ.set(newRotateZ);
+  });
 
   return (
     <motion.div
+      style={{
+        x,
+        y,
+        z,
+        rotateX,
+        rotateY,
+        rotateZ,
+        transformStyle: "preserve-3d",
+      }}
       className={cn("will-change-transform", className)}
-      style={{ transformStyle: "preserve-3d" }}
-      animate={prefersReducedMotion ? undefined : animation}
-      transition={
-        prefersReducedMotion
-          ? undefined
-          : {
-              duration,
-              ease: "easeInOut",
-              repeat: Number.POSITIVE_INFINITY,
-            }
-      }
     >
       {children}
     </motion.div>
   );
 }
+
+export default Float;

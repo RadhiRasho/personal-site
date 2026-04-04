@@ -3,7 +3,7 @@
 import createGlobe, { type Marker } from "cobe";
 import { motion } from "motion/react";
 import { useEffect, useRef } from "react";
-import { useWindowSize } from "usehooks-ts";
+import { useMediaQuery, useWindowSize } from "usehooks-ts";
 
 type GlobeColor = [number, number, number];
 
@@ -22,19 +22,23 @@ const goldenHourTheme = {
 function getGlobeSize(viewportWidth: number, viewportHeight: number) {
   const safeWidth = viewportWidth || 1200;
   const safeHeight = viewportHeight || 900;
+  const isMobileViewport = safeWidth < 768;
+  const sizeMultiplier = isMobileViewport ? 1.35 : 1.15;
 
-  return Math.round(Math.max(720, Math.min(safeWidth, safeHeight) * 1.15));
+  return Math.round(Math.max(720, Math.min(safeWidth, safeHeight) * sizeMultiplier));
 }
 
 function buildGlobeOptions(
   viewportWidth: number,
   viewportHeight: number,
   phi: number,
+  isMobile: boolean,
 ): Parameters<typeof createGlobe>[1] {
   const size = getGlobeSize(viewportWidth, viewportHeight);
 
   return {
-    devicePixelRatio: Math.min(window.devicePixelRatio || 1, 2),
+    devicePixelRatio: 1,
+    scale: isMobile ? 1.05 : 0.8,
     width: size,
     height: size,
     phi,
@@ -84,6 +88,8 @@ const Globe = () => {
   const frameRef = useRef<number | null>(null);
   const windowSize = useWindowSize();
   const phiRef = useRef(0);
+  const globeSize = getGlobeSize(windowSize.width, windowSize.height);
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   useEffect(() => {
     if (typeof document === "undefined") return;
@@ -91,7 +97,7 @@ const Globe = () => {
 
     globeRef.current = createGlobe(
       canvasRef.current,
-      buildGlobeOptions(window.innerWidth, window.innerHeight, phiRef.current),
+      buildGlobeOptions(windowSize.width, windowSize.height, phiRef.current, isMobile),
     );
 
     return () => {
@@ -107,7 +113,9 @@ const Globe = () => {
   useEffect(() => {
     if (!globeRef.current) return;
 
-    globeRef.current.update(buildGlobeOptions(windowSize.width, windowSize.height, phiRef.current));
+    globeRef.current.update(
+      buildGlobeOptions(windowSize.width, windowSize.height, phiRef.current, isMobile),
+    );
   }, [windowSize.height, windowSize.width]);
 
   useEffect(() => {
@@ -136,18 +144,27 @@ const Globe = () => {
 
   return (
     <motion.div
-      className="pointer-events-none fixed inset-0 -z-30 overflow-hidden"
+      className="fixed inset-0 -z-30 overflow-hidden"
       initial={{ opacity: 0, x: 120 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
     >
-      <motion.canvas
-        ref={canvasRef}
-        className="absolute -right-50 -bottom-10 h-full w-auto max-w-none origin-bottom-right -rotate-25 overflow-hidden"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.3, ease: "easeOut", delay: 0.08 }}
-      />
+      <div
+        className={
+          isMobile
+            ? "absolute -bottom-70 left-1/2 origin-bottom -translate-x-1/2"
+            : "absolute -bottom-15 origin-bottom-right md:-right-80 md:-rotate-25 lg:-right-80"
+        }
+        style={{ width: globeSize, height: globeSize }}
+      >
+        <motion.canvas
+          ref={canvasRef}
+          className="block h-full w-full overflow-hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3, ease: "easeOut", delay: 0.08 }}
+        />
+      </div>
     </motion.div>
   );
 };
