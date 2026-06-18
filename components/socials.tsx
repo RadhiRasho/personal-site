@@ -1,7 +1,8 @@
 "use client";
 
-import { DownloadIcon } from "lucide-react";
+import { FileUserIcon } from "lucide-react";
 import { motion, type Variants } from "motion/react";
+import { Route } from "next";
 import Link from "next/link";
 import { FaGithub, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 
@@ -10,7 +11,11 @@ const itemAnimation: Variants = {
   animate: (index: number) => ({
     opacity: 1,
     x: 0,
-    transition: { delay: index * 0.08, duration: 0.35, ease: [0.22, 1, 0.36, 1] as const },
+    transition: {
+      delay: index * 0.08,
+      duration: 0.35,
+      ease: [0.22, 1, 0.36, 1] as const,
+    },
   }),
 };
 
@@ -24,10 +29,10 @@ export default function Socials() {
     >
       <div className="flex h-fit w-full items-center justify-between gap-8 md:w-auto md:flex-col">
         <Link
-          aria-label="Go to my Github profile"
+          aria-label="Visit my Github profile"
           target="_blank"
-          title="Go to my Github profile"
-          href="https://github.com/radhirasho"
+          title="Visit my Github profile"
+          href="/github"
         >
           <motion.span
             custom={0}
@@ -41,10 +46,10 @@ export default function Socials() {
           </motion.span>
         </Link>
         <Link
-          aria-label="Go to my X/Twitter profile"
+          aria-label="Visit my X/Twitter profile"
           target="_blank"
-          title="Go to my Twitter profile"
-          href="https://twitter.com/RadhiRasho"
+          title="Visit my Twitter profile"
+          href="/x"
         >
           <motion.span
             custom={1}
@@ -58,10 +63,10 @@ export default function Socials() {
           </motion.span>
         </Link>
         <Link
-          aria-label="Go to my LinkedIn profile"
+          aria-label="Visit my LinkedIn profile"
           target="_blank"
-          title="Go to my LinkedIn profile"
-          href="https://www.linkedin.com/in/radhi-rasho"
+          title="Visit my LinkedIn profile"
+          href="/linkedin"
         >
           <motion.span
             custom={2}
@@ -74,12 +79,12 @@ export default function Socials() {
             <FaLinkedinIn size={35} className="text-xs hover:text-red-500" />
           </motion.span>
         </Link>
-        <a
+        <Link
           aria-label="Download my resume"
           target="_blank"
-          href="/Resume.pdf"
+          href={"/Resume.pdf" as Route}
           title="Download my resume"
-          rel="noreferrer"
+          rel="noopener"
         >
           <motion.span
             custom={3}
@@ -89,9 +94,9 @@ export default function Socials() {
             whileHover={{ scale: 1.12, y: -2 }}
             className="block"
           >
-            <DownloadIcon size={35} className="text-xs hover:text-red-500" />
+            <FileUserIcon size={35} className="text-xs hover:text-red-500" />
           </motion.span>
-        </a>
+        </Link>
       </div>
     </motion.div>
   );
