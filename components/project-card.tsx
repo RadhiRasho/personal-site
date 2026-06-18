@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
+import { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import type { JSX } from "react";
@@ -76,7 +77,7 @@ export default function ProjectCard({
           <motion.div transition={{ duration: 0.2, ease: "easeOut" }}>
             <Link
               as={link}
-              href={link}
+              href={link as Route}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex w-full items-center justify-center border-t-2 p-2 text-slate-400 underline-offset-4 hover:text-slate-200 hover:underline"
